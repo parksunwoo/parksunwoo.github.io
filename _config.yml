@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: ko-KR
-title: Django & Dev
+title: Django Dev
 email: psw261@gmail.com
-description: "Django, Dev"
+description: "Practical Django"
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: "https://parksunwoo.github.io"
 author:
