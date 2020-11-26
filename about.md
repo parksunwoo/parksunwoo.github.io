@@ -3,12 +3,9 @@ title: "About"
 layout: about
 ---
 
-Basically Basic is a [Jekyll theme](https://jekyllrb.com/docs/themes/) meant as a substitute for the default --- [Minima](https://github.com/jekyll/minima). Conventions and features found there are fully supported by **Basically Basic**, with a few enhancements thrown in for good measure:
+Django Dev는 기술블로그이자 개발자로서의 성장일기입니다. Django 와 스타트업 개발팀에서 보고 듣고 느낀 것들을 담담히 적어보려합니다. 글들은 아래 대상을 생각하 쓰였습니다:
 
-- Clean responsive design with [six customizable skins](#skin)
-- Curriculum Vitæ/Resume layout powered by [JSON data](http://registry.jsonresume.org/)
-- About page layout
-- Disqus Comments and Google Analytics support
-- SEO best practices via [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag/)
-
-You can find the source code for this theme at: {% include icon-github.html username="mmistakes" %}/[jekyll-theme-basically-basic](https://github.com/mmistakes/jekyll-theme-basically-basic)
+  - 다른 언어를 사용해봤지만 Django 가 궁금한 Django 초보
+  - 스타트업에서 Django 를 사용해서 실제로 서비스를 구축하는 Back-end 개발자
+  - Agile 프로세스를 도입하는데 어떤 어려움이 있는지 미리 알고싶은 팀장님
+  - 인공지능 교육기업의 개발자는 어떤 생각을 하는지 훔쳐보고싶은 모든 분!
