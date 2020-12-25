@@ -10,6 +10,7 @@ last_modified_at: 2020-12-25T08:06:00-00:00
 ---
 API를 알게되고 개발에 직접 사용하게 된 것은 얼마되지 않았다. <br>
 API는 백엔드와 프론트가 분리되어 개발되는 현재 우리팀에서도 물론 필요하고 아래 그림처럼 API를 사용하는 End Consumers 가 다양해지는 앞으로의 환경속에서는 그 사용이 더 늘어날 것이다. 
+<br><br><br>
 ![https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1](https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1)
 
 [출처 : https://www.aloi.io/docs/installation/]
@@ -106,15 +107,13 @@ from rest_framework import viewsets
 class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
-	permission_classes = (permissions.IsAuthenticated, )
+	 permission_classes = (permissions.IsAuthenticated, )
 ```
 
 RSET framework 사이트에선 ViewSet이 View 보다 나은 장점을 2가지 정도 소개한다
 
-- 반복되는 로직이 한 개 클래스에 결합된다. 예를 들어 queryset 을 한번 지정하면 클래스 안의 다양한 views에서 사용이 가능하다. <br>
-> 위의 코드에서는 ListView, DetailView 등에서 동일한 queryset 을 매번 선언했는데 viewset은 모든 view를 통일한 것이라 한번만 선언되어 있다. <br>
-- routers를 사용하면 더 이상 URL conf 설정에 신경쓸 필요가 없다 <br>
-> ListView, DetailView 등으로 만들면 해당하는 View에 맞게 URL conf 설정을 해야하지만 viewset으로 만들면 viewset 을 router에 담으면 자동으로 URL conf 설정이 된다! <br>
+- 반복되는 로직이 한 개 클래스에 결합된다. 예를 들어 queryset 을 한번 지정하면 클래스 안의 다양한 views에서 사용이 가능하다. 위의 코드에서는 ListView, DetailView 등에서 동일한 queryset 을 매번 선언했는데 viewset은 모든 view를 통일한 것이라 한번만 선언되어 있다. <br>
+- routers를 사용하면 더 이상 URL conf 설정에 신경쓸 필요가 없다. ListView, DetailView 등으로 만들면 해당하는 View에 맞게 URL conf 설정을 해야하지만 viewset으로 만들면 viewset 을 router에 담으면 자동으로 URL conf 설정이 된다! <br>
 
 하지만 미리 잘 만들어진 View 에서는 custom 로직을 구현하기가 어렵다.
 
@@ -152,7 +151,7 @@ class UserProfileView(APIView):
 APIView를 사용해 출력값을 dict 형태를 선언해  'user_info' 에 UserSerializer 를 담고 
 'challenge_list'에 UserChallengeSerializer 를 담으면 관련 정보들을 한번에 출력할 수 있다.
 
-REST framework 가 제공하는 APIView 는 View 와는 아래의 부분들에서 다르다.
+REST framework 가 제공하는 APIView 는 View 와는 아래의 부분들에서 다르다고 한다.
 
 - Django의 HttpRequest 가 아닌 REST framework 의 Request를 사용한다
 - 리턴하는 값 역시 HttpResponse 가 아닌 REST framework의 Response 를 출력한다. 출력되는 콘텐츠를 변형하거나 적절한 renderer 를 설정할 수 있다 (JSON, HTMLForm, MultiPart 등)
