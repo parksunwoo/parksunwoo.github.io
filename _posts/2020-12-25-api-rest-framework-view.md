@@ -10,16 +10,14 @@ last_modified_at: 2020-12-25T08:06:00-00:00
 ---
 API를 알게되고 개발에 직접 사용하게 된 것은 얼마되지 않았다. <br>
 API는 백엔드와 프론트가 분리되어 개발되는 현재 우리팀에서도 물론 필요하고 아래 그림처럼 API를 사용하는 End Consumers 가 다양해지는 앞으로의 환경속에서는 그 사용이 더 늘어날 것이다. 
-<br><br><br>
-![https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1](https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1)
-
-[출처 : https://www.aloi.io/docs/installation/]
-<br><br>
 이번 포스트에서는 API 그리고 REST API에 대해 간단히 정리해보고 Django에서 Web API를 생성하는  Django REST framework 패키지의 View 들을 비교해보았다.
 
 ---
 <br>
 <br>
+![https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1](https://www.dropbox.com/s/df942yj9rcvjrat/Screen%20Shot%202020-12-22%20at%208.11.33%20AM.png?raw=1)
+[출처 : https://www.aloi.io/docs/installation/]
+
 <br>
 
 # 우리는 왜 API 를 사용하는 걸까?
