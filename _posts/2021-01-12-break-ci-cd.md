@@ -20,15 +20,21 @@ last_modified_at: 2021-01-12T08:06:00-00:00
 처음 개발을 진행할때 클라우드 환경은 가성비가 좋은 DigitalOcean을, 코드저장소는 GitLab을 사용했고 코드변경이 있을때마다 서버에 반영하는 작업은 아래와 같았다.
 
 1. DigitalOcean Droplets(VM)에 ssh 로 연결 <br>
-`$ ssh username@203.0.113.0`
+```shell
+$ ssh username@203.0.113.0
+```
 
 2. 서버에 붙어서 실행중인 프로그램을 종료
 
 3. 코드가 저장되어있는 dev 폴더로 이동해 개발 branch pull 하기
-`$ git pull origin master_dev`
+```shell
+$ git pull origin master_dev
+```
 
 4. 코드를 최신화했으니 이제 다시 서버를 재시작
-`$ gunicorn --env DJANGO_SETTINGS_MODULE=myproject.settings myproject.wsgi`
+```shell
+$ gunicorn --env DJANGO_SETTINGS_MODULE=myproject.settings myproject.wsgi
+```
 
 
 1-4번까지 정상적으로 수행된다면 다행이지만 코드를 pull 하면서 에러가 발생하면 잘못된 부분을 직접 찾아 수정해야하는 경우도 잦았다.
@@ -41,8 +47,8 @@ last_modified_at: 2021-01-12T08:06:00-00:00
 
 <br><br><br>
 
-![포기하고 싶었습니다](https://www.dropbox.com/s/z2dlitn56t8ipvj/Screen Shot 2021-01-12 at 8.08.08 AM.png?raw=1)
-[포기하고 싶었습니다..]
+![포기하고 싶었습니다](https://www.dropbox.com/s/z2dlitn56t8ipvj/Screen Shot 2021-01-12 at 8.08.08 AM.png?raw=1) <br>
+포기하고 싶었습니다..
 
 <br><br><br>
 
