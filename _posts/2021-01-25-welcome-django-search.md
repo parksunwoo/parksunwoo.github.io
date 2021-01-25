@@ -215,7 +215,7 @@ Edge NGram 적용을 위해 text 필드의 타입을 CharField 에서 EdgeNgramF
 
 이제 한글로 본문의 단어를 검색했을때 검색결과가 나온다.
 
-## 3단계 Django REST Framework 에서의 Haystack 사용
+## 3단계 Django REST Framework 에서 Haystack 사용
 
 Django REST Framework를 사용하고 있다면
 
@@ -296,9 +296,12 @@ HaystackSerializerMixin 과 원래의 TopicSerializer 를 사용해서 Topic 모
 
 이렇게 되면 검색 인덱스를 생성하는 것도 더 수월해지고 일부 화면에서 본문내용을 요약해서 보내야하는 경우도 있어 요약을 하기에도 편해졌다.
 
+<br><br>
 지금까지 Django 에서 검색을 구현해보면서 부딪혔던 문제들을 하나씩 정리해보았다.
 
 실제로 사용해봐야 하겠지만 검색량이 많아지면 검색엔진을 whoosh 에서 다른 엔진으로 바꿔야할 수 도 있을 것 같다.
 
 Django 에서 검색을 구현하는 이에게  이 글이 시간을 단축할 수 있는 참고자료가 되기를 바란다.
+
+<br><br>
 
