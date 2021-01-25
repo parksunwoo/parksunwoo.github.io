@@ -8,7 +8,7 @@ tags:
   - drf_haystack
 last_modified_at: 2021-01-25T08:06:00-00:00
 ---
-**django-haystack + Whoosh  + drf_haystack**
+**django-haystack + Whoosh  + drf_haystack** <br>
 Django 검색관련하여 여러 글들을 확인했지만 해당 패키지 tutorial 예제를 그대로 가져와서 번역한 정도였다. 실제 서비스에 검색을 적용하려고 보니 몇 걸음 더 나아간 설정이 필요했고 그 과정에서 알게된 것들을 이번 포스팅에 정리해 보았다.
 ---
 <br>
@@ -62,7 +62,7 @@ PATH는 Whoosh 인덱스가 위치한 경로를 넣는데 이를 구분하기 �
 
 ![책이 분류되어 정리된 도서관의 모습 ](https://www.dropbox.com/s/v4r4kgr81a9kuwj/Screen%20Shot%202021-01-20%20at%208.00.15%20AM.png?raw=1)
 
-책이 분류되어 정리된 도서관의 모습, (출처 : [https://www.eroun.net/news/articleView.html?idxno=3146](https://www.eroun.net/news/articleView.html?idxno=3146))
+책들이 잘 정리된 도서관의 모습, (출처:[https://www.eroun.net/news/articleView.html?idxno=3146](https://www.eroun.net/news/articleView.html?idxno=3146))
 
 예를 들면 도서관에 갔을떄 우리가 책을 쉽게 찾을 수 있는건 책들이 이미 분류체계에 맞춰 정해진 자리에 위치해 있기 때문이다.
 
@@ -109,12 +109,15 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
         """Used when the entire index for model is updated."""
         return self.get_model().objects.all()
 
+```
 
+```
 # search/indexes/topic_text.txt
 
 {{ object.title }}
 {{ object.first_post.body }}
 ```
+
 
 먼저 text 필드는 검색에서 가장 우선순위가 높은 필드이다. 다른 필드와는 다르게  `document=True`
 
@@ -141,15 +144,15 @@ task job을 걸어두면 하루에 1번 자동으로 인덱스 업데이트가 �
 처음 영문으로 검색했을때 제목과 본문내용 기준으로 원하는 검색결과가 나온다.
 
 ![영문 제목, 본문 검색](https://www.dropbox.com/s/fjvgxzvctt56oy0/Screen%20Shot%202021-01-26%20at%207.39.48%20AM.png?raw=1)
-- 영문검색시 제목과, 본문이 잘 검색된다
+-영문검색시 제목과, 본문 검색이 잘 된다
 
 그런데 한글로 검색을 해보니 제목으로는 검색결과가 나오는데 본문내용은 검색이 안되는 상황이 발생했다.
 
 ![한글 제목 검색](https://www.dropbox.com/s/ddgzjnamdw0uqa2/Screen%20Shot%202021-01-26%20at%207.41.29%20AM.png?raw=1)
-- "블로그"로 제목 검색에 성공한 결과
+-"블로그"로 제목 검색에 성공한 결과
 
 ![한글 본문 검색](https://www.dropbox.com/s/gohwdbh6e24r5v4/Screen%20Shot%202021-01-26%20at%207.43.57%20AM.png?raw=1)
-- "활용"을 검색한 결과 : 없음
+-"활용"을 검색한 결과 : 없음
 <br><br>
 
 ```json
@@ -176,7 +179,7 @@ task job을 걸어두면 하루에 1번 자동으로 인덱스 업데이트가 �
         },
 ```
 
-본문내용에 "활용"을 포함한 질문 실제 데이터는 있지만 검색 되지않는다.
+json 파일을 보면 본문내용에 "활용"을 포함한 질문 실제 데이터는 있지만 검색 되지않는다.
 
 원인을 찾기 위해 좀 더 실험을 해보니 "활용해야"는 검색이 되었다. 즉 있는 단어 그대로는 검색이 되지만 검색하는 "활용" 이라는 단어 기준으로는 검색이 안되는 것이다. 텀이 아닌 단어의 일부만 가지고 검색을 하는 것이 보통 일반적인 검색 방식이고 이런 사용을 위해 검색 텀의 일부만 미리 분리해서 저장을 할 수 있다. 이렇게 단어의 일부를 나눈 부위를 NGram 이라고 한다. 
 
