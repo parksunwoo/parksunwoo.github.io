@@ -11,7 +11,7 @@ last_modified_at: 2021-01-25T08:06:00-00:00
 **django-haystack + Whoosh  + drf_haystack** <br>
 Django 검색관련하여 여러 글들을 확인했지만 해당 패키지 tutorial 예제를 그대로 가져와서 번역한 정도였다. 실제 서비스에 검색을 적용하려고 보니 몇 걸음 더 나아간 설정이 필요했고 그 과정에서 알게된 것들을 이번 포스팅에 정리해 보았다.
 ---
-<br>
+<br><br><br>
 
 ## 1단계 django-haystack + Whoosh 셋팅하기
 
@@ -137,6 +137,7 @@ DB에 있는 데이터를 search index에 붓는 작업이 남았다.
 
 task job을 걸어두면 하루에 1번 자동으로 인덱스 업데이트가 된다.
 
+<br><br><br>
 ## 2단계 한글검색이 이상하다?!
 
 검색 페이지를 간단히 구현해서 (참고 [링크](https://django-haystack.readthedocs.io/en/master/tutorial.html#search-template)) 아래와 같은 검색 페이지를 만들었다.
@@ -215,6 +216,7 @@ Edge NGram 적용을 위해 text 필드의 타입을 CharField 에서 EdgeNgramF
 
 이제 한글로 본문의 단어를 검색했을때 검색결과가 나온다.
 
+<br><br><br>
 ## 3단계 Django REST Framework 에서 Haystack 사용
 
 Django REST Framework를 사용하고 있다면
@@ -265,6 +267,7 @@ HaystackSerializerMixin 과 원래의 TopicSerializer 를 사용해서 Topic 모
 
 이제 처음에 원했던 Topic 모델  포맷에 맞게 검색결과가 나온다.
 
+<br><br>
 ## Json 형태의 본문내용을 어떻게 검색 및 요약할 것인가?
 
 ```json
