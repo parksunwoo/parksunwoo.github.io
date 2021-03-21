@@ -25,27 +25,14 @@ last_modified_at: 2021-03-22T08:06:00-00:00
 소멸차트의 선은 예상과 달리 먼 곳을 향하기 시작했고 
 스프린트 미팅은 으레 2주 단위로 돌아오는 형식적 회의가 되고 있었다
 
-1- 3 회 스프린트
+
+| 1- 3 회 스프린트             |  4- 6 회 스프린트 |
+:-------------------------:|:-------------------------:
+![https://www.dropbox.com/s/ljil6z79b0uoh8n/Screen%20Shot%202021-02-10%20at%209.18.32%20AM.png?raw=1](https://www.dropbox.com/s/ljil6z79b0uoh8n/Screen%20Shot%202021-02-10%20at%209.18.32%20AM.png?raw=1)  |  ![https://www.dropbox.com/s/timtj5pgrixlkk5/Screen%20Shot%202021-02-10%20at%209.24.27%20AM.png?raw=1](https://www.dropbox.com/s/timtj5pgrixlkk5/Screen%20Shot%202021-02-10%20at%209.24.27%20AM.png?raw=1)
+![https://www.dropbox.com/s/2xmaneqy2wseqfz/Screen%20Shot%202021-02-10%20at%209.20.35%20AM.png?raw=1](https://www.dropbox.com/s/2xmaneqy2wseqfz/Screen%20Shot%202021-02-10%20at%209.20.35%20AM.png?raw=1)  |  ![https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1](https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1)
+![https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1](https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1)  |  ![https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1](https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1)
 
 ---
-
-![https://www.dropbox.com/s/ljil6z79b0uoh8n/Screen%20Shot%202021-02-10%20at%209.18.32%20AM.png?raw=1](https://www.dropbox.com/s/ljil6z79b0uoh8n/Screen%20Shot%202021-02-10%20at%209.18.32%20AM.png?raw=1)
-
-
-
-![https://www.dropbox.com/s/2xmaneqy2wseqfz/Screen%20Shot%202021-02-10%20at%209.20.35%20AM.png?raw=1](https://www.dropbox.com/s/2xmaneqy2wseqfz/Screen%20Shot%202021-02-10%20at%209.20.35%20AM.png?raw=1)
-
-![https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1](https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1)
-
-4- 6 회 스프린트
-
----
-
-![https://www.dropbox.com/s/timtj5pgrixlkk5/Screen%20Shot%202021-02-10%20at%209.24.27%20AM.png?raw=1](https://www.dropbox.com/s/timtj5pgrixlkk5/Screen%20Shot%202021-02-10%20at%209.24.27%20AM.png?raw=1)
-
-![https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1](https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1)
-
-![https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1](https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1)
 
 어디서부터 잘못된걸까? 애자일 프로세스를 다시 세우기위해 애자일을 다시 공부하며 정리해보았다
 
