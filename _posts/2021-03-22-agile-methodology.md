@@ -9,6 +9,7 @@ tags:
 last_modified_at: 2021-03-22T08:06:00-00:00
 ---
 코세라 Agile Planning for Software Products 강의를 듣고 Agile을 다시 정리해보았습니다
+
 ---
 <br>
 
@@ -33,6 +34,7 @@ last_modified_at: 2021-03-22T08:06:00-00:00
 ![https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1](https://www.dropbox.com/s/4wtgt81wkpriaci/Screen%20Shot%202021-02-10%20at%209.22.16%20AM.png?raw=1)  |  ![https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1](https://www.dropbox.com/s/lz5hvsrb90ifa4j/Screen%20Shot%202021-02-10%20at%209.25.41%20AM.png?raw=1)
 
 
+<br>
 어디서부터 잘못된걸까? 애자일 프로세스를 다시 세우기위해 애자일을 다시 공부하며 정리해보았다
 
 ---
@@ -219,6 +221,9 @@ last_modified_at: 2021-03-22T08:06:00-00:00
 
 
 참고
-
-[WHY DO PROJECTS FAIL? - 101 Common Causes](http://calleam.com/WTPF/?page_id=2338)
+<br>
 [Agile Planning for Software Products](https://www.coursera.org/learn/agile-planning-for-software-products)
+<br>
+[WHY DO PROJECTS FAIL? - 101 Common Causes](http://calleam.com/WTPF/?page_id=2338) 
+
+
