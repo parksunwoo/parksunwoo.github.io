@@ -111,8 +111,9 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
 
 ```
 
-```
-# search/indexes/topic_text.txt
+```json
+
+#search/indexes/topic_text.txt
 
 {{ object.title }}
 {{ object.first_post.body }}
