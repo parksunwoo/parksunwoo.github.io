@@ -116,6 +116,7 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
 
 {{ object.title }}
 {{ object.first_post.body }}
+
 ```
 
 
