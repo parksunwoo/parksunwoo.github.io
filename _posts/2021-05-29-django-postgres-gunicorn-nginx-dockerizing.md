@@ -462,7 +462,7 @@ command 에 주목해보면 이제는 장고 개발서버가 아닌 gunicorn으�
 
 *.env.prod*:
 
-```yaml
+```python
 DEBUG=0
 SECRET_KEY=change_me
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
@@ -902,7 +902,7 @@ INSTALLED_APPS = [
 
 app/upload/views.py 을 아래와 같이 작성합니다
 
-```yaml
+```python
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
@@ -921,7 +921,7 @@ def image_upload(request):
 
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
-```yaml
+```html
 {% block content %}
 
   <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
@@ -941,7 +941,7 @@ app/hello_django/urls.py
 
 [urls.py](http://urls.py) 파일을 아래와 같이 생성합니다
 
-```yaml
+```python
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
@@ -962,7 +962,7 @@ app/hello_django/settings.py:
 
 [settings.py](http://settings.py) 에 MEDIA 와 관련된 설정을 추가합니다
 
-```yaml
+```python
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 ```
