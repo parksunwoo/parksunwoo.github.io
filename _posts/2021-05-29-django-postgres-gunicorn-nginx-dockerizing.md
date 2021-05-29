@@ -11,26 +11,26 @@ tags:
 last_modified_at: 2021-05-29T14:06:00-00:00
 ---
 
-Django-Postgres-Gunicorn-Nginx 구성환경을 Docker 에 구현하는 튜토리얼을 참고해서 작성한 글입니다.
+Django-Postgres-Gunicorn-Nginx 구성환경을 Docker 에 구현하는 튜토리얼을 참고해 작성한 글입니다.
 
 ---
-<br>
 
-현재 회사에서 개발중인 시스템 환경자체도 도커로 구성되어 있고
+현재 회사에서 개발중인 학습관리시스템 환경은 도커로 구성되어 있고
+시스템과 연결된 클라우드 환경도 도커로 구성되어 있습니다.
+도커는 많은 곳에서 사용하고 있고 실제 사용해보면 편리한 점들을 느낄 수 있습니다.
 
-연결되는 클라우드 환경도 도커파일로 구성되어 있다.
+여러 곳에서 사용되는 도커가 왜 필요한지 어떤 점이 좋아서 많이 사용되는지를 설명해보면
+우선 도커파일을 한번 잘 구성해두면 환경설정을 다시 할 필요가 없습니다.
+원래 환경설정을 다시 할 필요가 없지 않냐고 반문할 수 있겠지만 프로젝트는 혼자서 코딩하는게 아니라 다른 개발자와도 협업을 해야합니다.
+다른 개발자가 프로젝트에 참여했을때 쉽게 접근할 수 있어야 하는데 기존에는 환경 셋업을 하는데 정말 많은 시간이 들어갔습니다. 
+반면 도커환경은 독립된 별도의 공간이어서 도커파일을 실행하는 명령어를 따라하면 쉽게 환경을 구성하고 프로젝트에 착수 할 수 있습니다.
 
-도커 이야기를 많이 듣게 되는데 도커가 왜 필요한지 어떤 점이 좋아서 많이 사용되는지를 알아야 할 것이다.
+**도커 컴포즈를 사용하는 이유**
 
-우선 도커파일을 한번 잘 구성해두면 환경설정을 다시 할 필요가 없다. 원래 환경설정을 다시 할 필요가 없지 않냐고 반문할 수 있겠지만 프로젝트는 혼자서 코딩하는게 아니라 다른 개발자와도 협업을 해야한다. 다른 개발자가 프로젝트에 참여했을때 쉽게 접근할 수 있어야 하는데 기존에는 환경 셋업을 하는데 정말 많은 시간이 들어갔다. 도커환경은 독립된 별도의 공간이어서 도커파일을 실행하는 명령어를 따라하면 쉽게 환경을 구성하고 프로젝트에 착수 할 수 있다.
-
-도커 컴포즈를 사용하는 이유
-
-도커파일은 하나의 환경을 기준으로 한다. 실제로 환경을 구축해보면 장고 백엔드 환경만으로는 부족하다. nginx 를 추가해야할 수도 있고 redis 를 추가해야할 수도 있다. 
-
-구별된 여러개의 도커파일을  한곳에서 제어하는게 도커 컴포즈 파일이다.
-
-도커 컴포즈 파일에서는 여러개의 도커환경을 서로 연결해서 구성하고 저장공간 그리고 의존관계를 설정할 수 있다.
+하나의 도커파일은 하나의 환경을 기준으로 합니다. 실제로 환경을 구축해보면 장고 백엔드 환경만으로는 부족합니다. 
+nginx 를 추가해야할 수도 있고 redis 를 추가해야할 수도 있습니다. 
+구별된 여러개의 도커파일을  한곳에서 제어하는게 도커 컴포즈 파일입니다.
+도커 컴포즈 파일에서는 여러개의 도커환경을 서로 연결해서 구성하고 저장공간 그리고 의존관계를 설정할 수 있습니다.
 
 이하 튜토리얼은 [Dockerizing Django with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/) 해당 튜토리얼을 참고해서 작성했습니다
 
@@ -56,10 +56,10 @@ $ source env/bin/activate
 
 ```
 
-runserver 실행후 [http://localhost:8000/](http://localhost:8000/) 에 접속하면 장고 화면이 나옴을 확인할 수 있다. 
-간단히 동작하는 장고 프로젝트를 만든 것이다
+runserver 실행후 [http://localhost:8000/](http://localhost:8000/) 에 접속하면 장고 화면이 나옴을 확인할 수 있습니다. 
+위 명령어로 간단히 동작하는 장고 프로젝트를 만든 것입니다.
 
-app 폴더내에 requirements.txt 파일을 생성하고  장고 패키지 정보를 입력합니다.
+app 폴더내에 requirements.txt 파일을 생성하고 장고 패키지 정보를 입력합니다.
 
 ```
 Django==3.0.7
@@ -89,8 +89,8 @@ RUN pip install -r requirements.txt
 COPY . .
 ```
 
-1. PYTHONDONTWRITEBYTECODE : 파이썬은 소스 모듈을 임포트 할 때 .pyc 파일을 쓰려고 하지 않습니다 (python -B 옵션과 동일)
-2. PYTHONUNBUFFERED : stdout 과 stderr 스트림을 버퍼링하지 않도록 만듭니다 (python -u옵션과 동일)
+1. PYTHONDONTWRITEBYTECODE : 파이썬이 소스 모듈을 임포트 할 때 .pyc 파일을 쓰지 않습니다 (python -B 옵션과 동일)
+2. PYTHONUNBUFFERED : stdout 과 stderr 스트림을 버퍼링하지 않도록 만듭니다 (python -u 옵션과 동일)
 
 다음으로 docker-compose.yml 파일을 프로젝트 경로에 생성합니다
 
@@ -136,7 +136,7 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
-위 명령어 실행후 [http://localhost:8000/](http://localhost:8000/) 에 접속하면 장고 화면이 나옴을 확인할 수 있다. 
+위 명령어 실행후 [http://localhost:8000/](http://localhost:8000/) 에 접속하면 장고 화면이 나옴을 확인할 수 있습니다. 
 
 # Postgres
 
@@ -190,8 +190,7 @@ SQL_HOST=db
 SQL_PORT=5432
 ```
 
-환경설정 파일을 사용할 [settings.py](http://settings.py) 의 DATABASES 부분도 알맞게 수정합니다
-
+환경설정을 입력하는 [settings.py](http://settings.py) 의 DATABASES 부분도 알맞게 수정합니다
 환경설정 파일에서 해당하는 환경변수 값을 불러오고 해당값이 없을때는 뒤에 있는 디폴트값을 사용합니다.
 
 ```python
@@ -252,15 +251,13 @@ web  서비스내에서 migrate 작업을 실행시킵니다
 $ docker-compose exec web python manage.py migrate --noinput
 ```
 
-아래와 같은 에러가 발생한다면 정상입니다
-
-데이터베이스 내에  hello_django_dev 라는 데이터베이스가 없기때문입니다
+아래와 같은 에러가 발생한다면 정상입니다. 데이터베이스 내에  hello_django_dev 라는 데이터베이스가 없기때문입니다
 
 ```bash
-django.db.utils.OperationalError: FATAL:  database "hello_django_dev" does not existv
+django.db.utils.OperationalError: FATAL:  database "hello_django_dev" does not exists
 ```
 
-아래 명령어로 컨테이너와 함께 volume를 제거합니다
+아래 명령어로 모든 서비스 컨테이너를 정지시키고 volume도 함께 삭제합니다
 
 ```bash
 
@@ -273,7 +270,7 @@ db 컨테이너에 dbname 은 hello_django_dev, username 은 hello_django 로 �
 $ docker-compose exec db psql --username=hello_django --dbname=hello_django_dev
 ```
 
-아래명령어로 volume 이 잘생성되었고 동작하는지 확인해볼수있습니다
+아래명령어로 volume 이 잘생성되었고 제대로 동작하는지 확인해볼수있습니다
 
 ```bash
 $ docker volume inspect django-on-docker_postgres_data
@@ -319,13 +316,13 @@ python manage.py migrate
 exec "$@"
 ```
 
-해당 스크립트의 권한을 변경해서 동작 가능하게 합니다
+해당 스크립트의 권한을 변경해 스크립트가 동작 가능하게 합니다
 
 ```bash
 $ chmod +x app/entrypoint.sh
 ```
 
-도커파일 가장아래에 entrypoint 명령어를 사용해 [entrypoint.sh](http://entrypoint.sh/) 을 실행시키는 것을 추가합니다
+도커파일 가장아래에 entrypoint 명령어를 사용해 [entrypoint.sh](http://entrypoint.sh/) 을 실행을 추가합니다
 
 ```python
 # 공식 베이지 이미지를 pull 합니다
@@ -378,7 +375,6 @@ DATABASE=postgres ## 추가한 부분
 # 노트
 
 첫번째, Postgres 를 더했음에도 불구하고, 장고를 위한 독립적인 도커이미지를 생성할  수 있습니다
-
 DATABASE 환경변수를 postgres 로 설정하지 않는한, 테스트를 위해 새로운 이미지를 빌드하고 컨테이너를 실행해봅니다
 
 ```bash
@@ -391,7 +387,7 @@ $ docker run -d \
 
 [http://localhost:8006](http://localhost:8006) 에 접속하면 장고 페이지를 볼수있습니다
 
-두번째,  [entrypoint.sh](http://entrypoint.sh/) 에서 데이터베이스를 flush, migrate 하는 명령어를 주석처리해서 모든 컨테이너가 시작또는 재시작할때마다 실행되지 않게 합니다
+두번째,  [entrypoint.sh](http://entrypoint.sh/) 에서 데이터베이스를 flush, migrate 하는 명령어를 주석처리해 컨테이너가 시작 또는 재시작할때마다 해당명령어가 실행되지 않게 합니다
 
 ```bash
 #!/bin/sh
@@ -413,7 +409,7 @@ fi
 exec "$@"
 ```
 
-대신에 수동으로 컨테이너가 실행된 다음에 직접 실행시킬수있습니다 
+주석처리한 대신에 컨테이너가 실행된 다음에 직접 실행시킬수있습니다 
 
 ```bash
 $ docker-compose exec web python manage.py flush --no-input
@@ -430,7 +426,7 @@ gunicorn==20.0.4
 psycopg2-binary==2.8.5
 ```
 
-개발용으로 장고 내장서버를 사용하기를 원하기 때문에 운영용으로 docker-compose.prod.yml 컴포즈 파일을 만듭니다
+개발용으로 기존 장고 내장서버를 그대로 사용하기를 원한다면  운영용으로 사용할 docker-compose.prod.yml 컴포즈 파일을 만듭니다
 
 ```yaml
 version: '3.7'
@@ -456,13 +452,13 @@ volumes:
   postgres_data:
 ```
 
-command 에 주목해보면 이제는 장고 개발서버가 아닌 gunicorn으로 동작하게 됩니다. 또한 web servic에서 volume 을 제거했습니다, 운영 환경에서 더이상 필요하지 않기 떄문입니다
+command 에 주목해보면 이제는 장고 개발서버가 아닌 gunicorn으로 동작하게 됩니다. 운영 환경에서 더이상 필요하지 않기 떄문에 web servic에서 volume 을 제거했습니다.
 
 마지막으로  web 과 db에서 구분된 환경변수 파일을 사용해 컨테이너가 run 될때에 각각 다른 환경변수 파일이 사용됩니다. (./.env.prod 그리고 ./.env.prod.db)
 
 *.env.prod*:
 
-```python
+```yaml
 DEBUG=0
 SECRET_KEY=change_me
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
@@ -902,7 +898,7 @@ INSTALLED_APPS = [
 
 app/upload/views.py 을 아래와 같이 작성합니다
 
-```python
+```yaml
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
@@ -921,15 +917,27 @@ def image_upload(request):
 
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
-```html
+```yaml
+{% block content %}
 
+  <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image_file">
+    <input type="submit" value="submit" />
+  </form>
+
+  {% if image_url %}
+    <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
+  {% endif %}
+
+{% endblock %}
 ```
 
 app/hello_django/urls.py
 
 [urls.py](http://urls.py) 파일을 아래와 같이 생성합니다
 
-```python
+```yaml
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
@@ -950,7 +958,7 @@ app/hello_django/settings.py:
 
 [settings.py](http://settings.py) 에 MEDIA 와 관련된 설정을 추가합니다
 
-```python
+```yaml
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 ```
