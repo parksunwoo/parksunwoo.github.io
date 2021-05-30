@@ -917,7 +917,7 @@ def image_upload(request):
 {% raw %}{% block content %}{% endraw %}
 
   <form action="{% raw %}{% url "upload" %}{% endraw %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+    {% raw %}{% csrf_token %}{% endraw %}
     <input type="file" name="image_file">
     <input type="submit" value="submit" />
   </form>
