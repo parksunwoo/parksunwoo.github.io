@@ -452,7 +452,7 @@ volumes:
   postgres_data:
 ```
 
-command 에 주목해보면 이제는 장고 개발서버가 아닌 gunicorn으로 동작하게 됩니다. 운영 환경에서 더이상 필요하지 않기 떄문에 web servic에서 volume 을 제거했습니다.
+command 에 주목해보면 이제는 장고 개발서버가 아닌 gunicorn으로 동작하게 됩니다. 운영 환경에서 더이상 필요하지 않기 떄문에 web service에서 volume 을 제거했습니다.
 
 마지막으로  web 과 db에서 구분된 환경변수 파일을 사용해 컨테이너가 run 될때에 각각 다른 환경변수 파일이 사용됩니다. (./.env.prod 그리고 ./.env.prod.db)
 
@@ -493,9 +493,10 @@ $ docker-compose down -v
 $ docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
-장고 기본 테이블로 hello_django_prod 가 제대로 생성되었는지 확인해봅니다. 테스트는 [http://localhost:8000/admin](http://localhost:8000/admin) 어드민 페이지 에서 확인합니다. 정적 파일들이 아직 로딩되지않았음을 확인할 수 있습니다. 디버그 모드가 꺼져있었기때문에 예상할 수 있었던 부분입니다. 간단히 고쳐보겠습니다.
+장고 기본 테이블로 hello_django_prod 가 제대로 생성되었는지 확인해봅니다. 
+테스트는 [http://localhost:8000/admin](http://localhost:8000/admin) 어드민 페이지 에서 확인합니다. 정적 파일들이 아직 로딩되지않았음을 확인할 수 있습니다. 디버그 모드가 꺼져있었기때문에 예상할 수 있었던 부분입니다. 간단히 고쳐보겠습니다.
 
-컨테이너에서 에러가 발생했을때 에러 로그를 통해 체크할 수 있습니다.
+컨테이너에서 에러가 발생했을때 에러 로그를 통해 어디에서 문제가 발생하는지 체크할 수 있습니다.
 
 ```yaml
 $ docker-compose -f docker-compose.prod.yml logs -f
@@ -504,7 +505,6 @@ $ docker-compose -f docker-compose.prod.yml logs -f
 # 운영용 도커파일
 
 매번 컨테이너를 실행할떄마다 flush 와 migrate 명령어가 동작하던것을 기억하시나요?
-
 개발환경에서는 괜찮지만 운영환경을 위해선 새로운 entrypoint 파일을 생성해야합니다.
 
 [entrypoint.prod.sh](http://entrypoint.prod.sh/):
@@ -526,13 +526,13 @@ fi
 exec "$@"
 ```
 
-파일 권한을 수정합니다
+개발환경때와 마찬가지로 파일 권한을 수정합니다
 
 ```bash
 $ chmod +x app/entrypoint.prod.sh
 ```
 
-위 파일을 사용해 운영환경에서 사용된 새로운 도커파일 [Dockerfile.prod](http://dockerfile.prod) 를 생성합니다 
+위 파일을 사용해 운영환경에서 사용될 새로운 도커파일 [Dockerfile.prod](http://dockerfile.prod) 를 생성합니다 
 
 ```bash
 ###########
@@ -607,7 +607,9 @@ ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
 여기에서 우리는 최종 이미지 사이즈를 줄이기위해 multi-stage 빌드 도커를 사용합니다. 
 builder 는 Python wheels 가 빌드되는 동안 사용되는 임시적인 이미지 입니다. wheels 는 최종 운영 이미지에 복사되고 나서 builder 이미지는 무시됩니다. 
 
-root 가 아닌 유저를 생성한 것을 기억하는가? 기본적으로 도커는 컨테이너 내부적으로는 root 계정과 같이 컨테이너 프로세스를 동작시킨다. 공격자가 도커 호스트의 root 권한을 갖을 수 있게 하는 것은 컨테이너 관리를 함에 있어서 좋지 않은 사례이다. 컨테이너 안에서 root 권한을 갖는다면 호스트 상에서 root 일 것이다.
+root 가 아닌 유저를 생성한 것을 기억하나요? 기본적으로 도커는 컨테이너 내부에선 root 계정과 같은 권한으로 컨테이너 프로세스를 동작시킵니다. 
+따라서 공격자가 도커 호스트의 root 권한을 갖을 수 있게 하는 것은 컨테이너 관리를 함에 있어서 좋지 않은 사례입니다. 
+컨테이너 안에서 root 권한을 갖는다면 호스트 상에서도 root 일 것이기 때문입니다.
 
 docker-compose.prod.yml 파일의 web 서비스 부분에서 사용하는 도커파일을 [Dockerfile.prod](http://dockerfile.prod) 로 수정합니다
 
@@ -696,7 +698,7 @@ web:
     - db
 ```
 
-이제 8000번 포트는 내부적으로만 다른 도커 서비스에 노출됩니다. 포트는 더이상 호스트 머신에서 공개되지 않습니다.
+이제 8000번 포트는 내부적으로만 다른 도커 서비스에 노출됩니다. 포트는 더이상 호스트 머신에 공개되지 않습니다.
 
 다시 테스트 해봅니다.
 
@@ -706,10 +708,9 @@ $ docker-compose -f docker-compose.prod.yml up -d --build
 $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
 
-web 서비스는 8000 포트에 열려있고 nginx.conf 에서 8000포트는 80번 포트에 맵핑, docker-compose.prod.yml 파일에서 nginx 는 80번 포트가 1337 포트에 맵핑되어 있습니다.
-
+web 서비스는 8000 포트에 열려있고 nginx.conf 에서 8000포트는 80번 포트에 맵핑, 
+docker-compose.prod.yml 파일에서 nginx 는 80번 포트가 1337 포트에 맵핑되어 있습니다.
 따라서 외부에서 접속할 수 있는 포트는 1337 포트입니다
-
 [http://localhost:1337](http://localhost:1337/) 접속되는걸 확인할 수 있습니다
 
 컨테이너를 종료시킵니다.
@@ -719,32 +720,28 @@ $ docker-compose -f docker-compose.prod.yml down -v
 ```
 
 Gunicorn은 application 서버이기 때문에 static file을 전송하지 않습니다. 
-
 그럼 static, media 파일을 어떻게 다룰 수 있을까요?
 
 # Static Files
 
-[settings.py](http://settings.py) 를 수정합니다
+[settings.py](http://settings.py) 에 아래 환경변수를 추가합니다.
 
 ```
 STATIC_URL = "/staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 ```
 
-## 개발환경
+### 개발환경
 
-이제 해당 경로의 어느 요청이든   [`http://localhost:8000/staticfiles/*](http://localhost:8000/staticfiles/*)` 
-
+이제 해당 경로의 어느 요청이든 [http://localhost:8000/staticfiles/*](http://localhost:8000/staticfiles/*) 
 staticfiles 폴더에서 파일이 서빙됩니다
-
 테스트를 위해 최초의 이미지를 재빌드하고 새로운 컨테이너를 실행시켜봅니다
 
 [http://localhost:8000/admin](http://localhost:8000/admin) 접속해보면 static 파일이 정확히 서빙되는 것을 확인할 수 있습니다
 
-## 운영환경
+### 운영환경
 
 운영환경을 위해  docker-compose.prod.yml 에  있는 web 과 nginx 서비스에 볼륨을 추가합니다.
-
 각 컨테이너는 staticfiles 라는 이름의 디렉토리를 서로 공유할 수 있습니다
 
  
@@ -759,7 +756,7 @@ services:
       dockerfile: Dockerfile.prod
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/app/web/staticfiles # 공유 디렉토리
     expose:
       - 8000
     env_file:
@@ -775,7 +772,7 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/app/web/staticfiles # 공유 디렉토리
     ports:
       - 1337:80
     depends_on:
@@ -786,7 +783,7 @@ volumes:
   static_volume:
 ```
 
-당신은 또한 [Dockerfile.prod](http://dockerfile.prod) 파일에서 /home/app/web/staticfiles 폴더를 생성해야합니다.
+동작을 위해선 [Dockerfile.prod](http://dockerfile.prod) 파일에 /home/app/web/staticfiles 폴더를 생성해야합니다.
 
 ```yaml
 ...
@@ -810,7 +807,7 @@ WORKDIR $APP_HOME
 1. 도커파일 안에 폴더를 생성한다
 2. 마운트 된 폴더의 권한을 변경한다
 
-여기서는 1번 방법을 사용해보겠습니다
+여기서는 1번 방법을 사용해 진행해보겠습니다
 
 다음으로 Nginx 설정에서 static file  요청이 라우팅 되는 staticfiles 폴더 설정을 수정합니다
 
@@ -829,7 +826,8 @@ server {
         proxy_set_header Host $host;
         proxy_redirect off;
     }
-
+	
+	 # static 관련 추가된 부분
     location /staticfiles/ {
         alias /home/app/web/staticfiles/;
     }
@@ -837,9 +835,7 @@ server {
 }
 ```
 
-개발계 컨테이너를 잠시 내리고
-
-테스트를 해봅니다
+개발계 컨테이너를 잠시 내리고 테스트를 해봅니다
 
 ```yaml
 $ docker-compose -f docker-compose.prod.yml up -d --build
@@ -847,13 +843,13 @@ $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --
 $ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
 ```
 
-다시  [http://localhost:1337/staticfiles/*](http://localhost:1337/staticfiles/*) 접속하면 staticfiles 폴더에서 파일이 서빙됩니다
+다시  [http://localhost:1337/staticfiles/*] 에 접속하면 staticfiles 폴더에서 파일이 서빙됩니다
 
 [http://localhost:1337/admin](http://localhost:1337/admin) 어드민 페이지에 접속했을때에도 static 파일들이 정확히 로딩 되는 것을 확인할 수 있습니다
 
 또한 `docker-compose -f docker-compose.prod.yml logs -f`
 
-로그를 통해서도 요청에서 static 파일들이 Nginx 를 통해 성공적으로 서빙됨을 확인할 수 있습니다
+로그를 통해서도 static 파일들이 Nginx 를 통해 성공적으로 서빙됨을 확인할 수 있습니다
 
 ```yaml
 nginx_1  | 172.31.0.1 - - [13/Jun/2020:20:35:47 +0000] "GET /admin/ HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" "-"
@@ -918,8 +914,6 @@ def image_upload(request):
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
 ```yaml
-{% block content %}
-
   <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="image_file">
@@ -930,11 +924,9 @@ def image_upload(request):
     <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
   {% endif %}
 
-{% endblock %}
 ```
 
 app/hello_django/urls.py
-
 [urls.py](http://urls.py) 파일을 아래와 같이 생성합니다
 
 ```yaml
@@ -955,7 +947,6 @@ if bool(settings.DEBUG):
 ```
 
 app/hello_django/settings.py:
-
 [settings.py](http://settings.py) 에 MEDIA 와 관련된 설정을 추가합니다
 
 ```yaml
@@ -963,7 +954,7 @@ MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 ```
 
-## 개발환경
+### 개발환경
 
 테스트를 위해 
 
@@ -972,10 +963,9 @@ $ docker-compose up -d --build
 ```
 
 이제 [http://localhost:8000/](http://localhost:8000/) 에서 이미지를 업로드할 수 있고
-
 업로드한 이미지를 [http://localhost:8000/mediafiles/IMAGE_FILE_NAME](http://localhost:8000/mediafiles/IMAGE_FILE_NAME) 에서 확인할 수 있습니다
 
-## 운영환경
+### 운영환경
 
 운영환경을 위해서 web 과 nginx 서비스에 또다른 볼륨을 추가합니다
 
@@ -990,7 +980,7 @@ services:
     command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
-      - media_volume:/home/app/web/mediafiles
+      - media_volume:/home/app/web/mediafiles # 추가된 media 공유 디렉토리
     expose:
       - 8000
     env_file:
@@ -1007,7 +997,7 @@ services:
     build: ./nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
-      - media_volume:/home/app/web/mediafiles
+      - media_volume:/home/app/web/mediafiles # 추가된 media 공유 디렉토리
     ports:
       - 1337:80
     depends_on:
@@ -1057,7 +1047,7 @@ server {
         alias /home/app/web/staticfiles/;
     }
 		
-		# 추가된 부분
+	 # 추가된 부분
     location /mediafiles/ {
         alias /home/app/web/mediafiles/;
     }
@@ -1080,9 +1070,9 @@ $ docker-compose -f docker-compose.prod.yml exec web python manage.py collectsta
 1. [http://localhost:1337/](http://localhost:1337/) 에서 이미지를 업로드합니다
 2. [http://localhost:1337/mediafiles/IMAGE_FILE_NAME](http://localhost:1337/mediafiles/IMAGE_FILE_NAME) 에서 이미지를 확인합니다
 
-혹시 413 Request Entity Too Large 에러를 만나게된다면 Nginx 설정에서 클라이언트 request body 에서 허용되는 최대파일의 크기를 변경하면 됩니다
+혹시 413 Request Entity Too Large 에러를 만나게된다면 Nginx 설정에서 클라이언트 request body 에 허용되는 최대파일의 크기를 변경하면 됩니다
 
-예를 들면,
+예를 들면, 아래와 같습니다
 
 ```yaml
 location / {
@@ -1093,3 +1083,14 @@ location / {
     client_max_body_size 100M; # 추가된 부분
 }
 ```
+
+
+이로써 Django 그리고 Postgres, Gunicorn, Nginx 를 도커환경에 구축해보았습니다.
+다음 포스팅에서 해당 셋팅을 바탕으로 AWS Elastic beanstalk 을 활용한 Travis CI/CD 환경 구축을 진행해보겠습니다
+
+긴 글 읽어주셔서 감사합니다
+
+
+
+
+
