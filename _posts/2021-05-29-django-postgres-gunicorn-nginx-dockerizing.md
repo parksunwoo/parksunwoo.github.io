@@ -8,6 +8,10 @@ tags:
   - gunicorn
   - nginx
   - howto
+image:
+  path: /assets/images/django-postgres-gunicorn-nginx.jpeg
+  thumbnail: /assets/images/django-postgres-gunicorn-nginx-400x96.jpeg
+  caption: "Photo from [Djangoboys blog](https://djangoboys.blogspot.com/2018/09/how-to-deploy-django-on-virtual-machine.html)"
 last_modified_at: 2021-05-29T14:06:00-00:00
 ---
 
@@ -914,10 +918,8 @@ def image_upload(request):
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
 ```text
-{% raw %}{% block content %}{% endraw %}
-
-  <form action="{% raw %}{% url "upload" %}{% endraw %}" method="post" enctype="multipart/form-data">
-    {% raw %}{% csrf_token %}{% endraw %}
+  <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     <input type="file" name="image_file">
     <input type="submit" value="submit" />
   </form>
@@ -925,8 +927,6 @@ def image_upload(request):
   {% if image_url %}
     <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
   {% endif %}
-
-{% raw %}{% endblock %}{% endraw %}
 
 ```
 
