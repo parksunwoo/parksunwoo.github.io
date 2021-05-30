@@ -894,7 +894,7 @@ INSTALLED_APPS = [
 
 app/upload/views.py 을 아래와 같이 작성합니다
 
-```yaml
+```python
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
