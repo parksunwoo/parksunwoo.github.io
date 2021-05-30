@@ -913,7 +913,7 @@ def image_upload(request):
 
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
-```yaml
+```html
   <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="image_file">
