@@ -917,8 +917,8 @@ def image_upload(request):
 
 "app/upload" 폴더에 "templates" 폴더를 생성하고 새로운 template 파일 upload.html 을 추가합니다
 
-```text
-  <form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
+```html
+{% raw %}<form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="image_file">
     <input type="submit" value="submit" />
@@ -926,7 +926,7 @@ def image_upload(request):
 
   {% if image_url %}
     <p>File uploaded at: <a href="{{ image_url }}">{{ image_url }}</a></p>
-  {% endif %}
+  {% endif %}{% endraw %}
 
 ```
 
