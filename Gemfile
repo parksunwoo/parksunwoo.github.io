@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-use local theme gem for testing
-gem "jekyll-theme-basically-basic", path: "../"
+# # use local theme gem for testing
+# gem "jekyll-theme-basically-basic", path: "../"
+gem "github-pages"
 
 # Jekyll plugins
 group :jekyll_plugins do
