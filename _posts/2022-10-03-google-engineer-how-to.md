@@ -7,7 +7,7 @@ tags:
   - howto
 image:
   path: /assets/images/about-google-main.png
-  thumbnail: /assets/images/about-google-main_tn.jpg
+  thumbnail: /assets/images/about-google-main-tn.jpg
 last_modified_at: 2022-10-03T09:00:00-00:00
 ---
 
