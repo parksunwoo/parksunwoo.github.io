@@ -14,18 +14,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: ko-KR
-title: Django Dev
+title: 세상을 읽다, 코드로 쓰다
 email: psw261@gmail.com
-description: "Practical Django"
+description: "A developer's blog"
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: "https://parksunwoo.github.io"
 author:
   name: Sunwoo Park
   twitter:
-  picture:
+  picture: /assets/images/replicate-prediction-co73sc4t5jhwdazxblpzgkjnga.png
 twitter_username:
 github_username:
-logo: /assets/icons/django-dev-logo-light.png
+logo: /assets/icons/replicate-prediction-g4xq6uz5m5cfxloc5uni2o7dci.png
 search: true
 search_full_content: true
 search_provider: lunr
@@ -101,4 +101,4 @@ google_analytics: UA-127169212-2
 disqus:
     shortname: parksunwoo
 
-copyright: "© 2020 Django Dev."
+copyright: "© 2020 세상을 읽다, 코드로 쓰다."
