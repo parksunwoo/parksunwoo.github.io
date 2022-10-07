@@ -1,5 +1,5 @@
 ---
-title: 날씨알려주는 알람을 만들어보자 chap1
+title: 날씨알려주는 알람을 만들어보자 chap2
 categories:
   - Dev
 tags:
@@ -8,11 +8,11 @@ tags:
   - jsoup
   - tts
 last_modified_at: 2017-05-03T09:00:00-00:00
-layout: posts
-actions:
-  - label: "Learn More"
-    icon: github  # references name of svg icon, see full list below
-    url: "https://github.com/parksunwoo/StopWatchForecast4"
+# layout: posts
+# actions:
+#   - label: "Learn More"
+#     icon: github  # references name of svg icon, see full list below
+#     url: "https://github.com/parksunwoo/StopWatchForecast4"
 ---
 
 고려해야했던 부분들을 몇가지 짚어보면서 이야기하고자 한다
@@ -99,3 +99,6 @@ myTTS = new TextToSpeech(getActivity().getApplicationContext(), new TextToSpeech
   <img src="/assets/images/mimicekr2.png" alt="Trulli" style="width:900, height:800">
   <figcaption>Wheather Alarm2</figcaption>
 </figure>
+
+\- 작업코드
+https://github.com/parksunwoo/StopWatchForecast4
