@@ -8,11 +8,11 @@ tags:
   - android
   - mimicker
 last_modified_at: 2017-05-03T09:00:00-00:00
-layout: posts
-actions:
-  - label: "Learn More"
-    icon: github  # references name of svg icon, see full list below
-    url: "https://github.com/parksunwoo/StopWatchForecast4"
+# layout: posts
+# actions:
+#   - label: "Learn More"
+#     icon: github  # references name of svg icon, see full list below
+#     url: "https://github.com/parksunwoo/StopWatchForecast4"
 ---
 
 날씨알려주는 알람 아이디어를 실현시키기 위해 
@@ -78,3 +78,7 @@ Mimicker Alarm 소스를 다운받아  기존에 작성된 소스를 살펴보�
 날씨정보를 가져와 음성으로 들을수있게 하는 기능을 기존 Fragment를 변형해서 만들어가기로 마음을 먹었고
 ​
 작업을 시작했다
+
+
+\- 작업코드
+https://github.com/parksunwoo/StopWatchForecast4
