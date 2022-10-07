@@ -16,7 +16,7 @@
 lang: ko-KR
 title: Read the world Write code.
 email: psw261@gmail.com
-description: "A developer's blog"
+description: "A blog about Dev, ML, Code"
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: "https://parksunwoo.github.io"
 author:
@@ -24,7 +24,7 @@ author:
   twitter:
   picture: /assets/images/rsz_replicate-prediction-bjqmfly3h5a65nryq6jxye2zrm.jpg
 twitter_username:
-github_username:
+github_username: parksunwoo
 logo: /assets/icons/1664840650178.png
 search: true
 search_full_content: true
