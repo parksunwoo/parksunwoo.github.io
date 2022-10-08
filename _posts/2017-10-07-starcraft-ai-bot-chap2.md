@@ -47,13 +47,19 @@ ScoutManager.java 를 통해  초기 정찰유닛을 지정하고 정찰지역�
 우리가 설정한 예로 설명하면 1) 건물중에 첫번째 배럭이 올라가고 있으면  2) 배럭위치에서 가장 가까운 일꾼을 정찰유닛으로 지정한다
 ​
 ```java
-for (Unit unit : MyBotModule.Broodwar.self().getUnits()) { if (unit.getType() == UnitType.Terran\_Barracks && unit.getType().isBuilding() == true && unit.getType().isResourceDepot() == false) { firstBuilding = unit; break; } } if (firstBuilding != null) { // grab the closest worker to the first building to send to scout Unit unit = SwWorkerManager.Instance().getClosestMineralWorkerTo(firstBuilding.getPosition()); // if we find a worker (which we should) add it to the scout units // 정찰 나갈 일꾼이 없으면, 아무것도 하지 않는다 if (unit != null) { // set unit as scout unit currentScoutUnit = unit; WorkerManager.Instance().setScoutWorker(currentScoutUnit); } }
+for (Unit unit : MyBotModule.Broodwar.self().getUnits()) { if (unit.getType() == UnitType.Terran\_Barracks && unit.getType().isBuilding() == true && unit.getType().isResourceDepot() == false) { firstBuilding = unit; break; } } if (firstBuilding != null) { // grab the closest worker to the first building to send to scout 
+Unit unit = SwWorkerManager.Instance().getClosestMineralWorkerTo(firstBuilding.getPosition()); // if we find a worker (which we should) add it to the scout units // 정찰 나갈 일꾼이 없으면, 아무것도 하지 않는다 
+if (unit != null) { // set unit as scout unit 
+currentScoutUnit = unit; WorkerManager.Instance().setScoutWorker(currentScoutUnit); } }
 ​```
   
 정찰유닛은 맵에따라 설정되어있는 본진을 현재 우리 본진과의 거리를 계산해서 가장 가까운 본진부터 순차적으로 정찰을 시작한다
 ​
 ```java
-for (BaseLocation startLocation : BWTA.getStartLocations()) { // if we haven't explored it yet (방문했었던 곳은 다시 가볼 필요 없음) if (MyBotModule.Broodwar.isExplored(startLocation.getTilePosition()) == false) { // GroundDistance 를 기준으로 가장 가까운 곳으로 선정 tempDistance = (double)(InformationManager.Instance() .getMainBaseLocation(MyBotModule.Broodwar.self()).getGroundDistance(startLocation) + 0.5); if (tempDistance > 0 && tempDistance < closestDistance) { closestBaseLocation = startLocation; closestDistance = tempDistance; } } } if (closestBaseLocation != null) { // assign a scout to go scout it commandUtil.move(currentScoutUnit, closestBaseLocation.getPosition()); currentScoutTargetBaseLocation = closestBaseLocation; }
+for (BaseLocation startLocation : BWTA.getStartLocations()) { // if we haven't explored it yet (방문했었던 곳은 다시 가볼 필요 없음) 
+if (MyBotModule.Broodwar.isExplored(startLocation.getTilePosition()) == false) { // GroundDistance 를 기준으로 가장 가까운 곳으로 선정 
+tempDistance = (double)(InformationManager.Instance() .getMainBaseLocation(MyBotModule.Broodwar.self()).getGroundDistance(startLocation) + 0.5); if (tempDistance > 0 && tempDistance < closestDistance) { closestBaseLocation = startLocation; closestDistance = tempDistance; } } } if (closestBaseLocation != null) { // assign a scout to go scout it 
+commandUtil.move(currentScoutUnit, closestBaseLocation.getPosition()); currentScoutTargetBaseLocation = closestBaseLocation; }
 ​```
 
 <figure>
@@ -89,7 +95,11 @@ executeCombat() 에는 공격유닛들의 공격조건을 구현했다
 1)지어진 벙커가 있다면 벙커의 위치를 저장해서 2) 마린의 경우 벙커에 들어가있게하고 3) 메딕의 경우 마린 근처에 머물고 4) 탱크는 첫번째입구에서 시즈모드상태로 대기를 하도록 하였다
 ​
 ```java
-for (Unit unit : MyBotModule.Broodwar.self().getUnits()) { // 벙커의 위치를 저장 if (unit.getType() == UnitType.Terran\_Bunker && unit.isCompleted()) { bunker = unit; } // 마린의 경우 벙커에 들어가있거나 주위에 있도록 if (unit.getType() == UnitType.Terran\_Marine && unit.isIdle()){ marine = unit; if (bunker != null && bunker.getSpaceRemaining() != 0){ commandUtil.rightClick(marine, bunker); }else { commandUtil.attackMove(marine, firstChokePoint.getPoint()); } // 메딕의 경우 마린근처에 머물도록 }else if(unit.getType() == UnitType.Terran\_Medic && unit.isIdle()) { medic = unit; if(marine != null){ commandUtil.move(medic, marine.getPosition()); }else{ commandUtil.move(medic, firstChokePoint.getPoint()); } // 시즈탱크는 첫번째길목에서 시즈모드로 대기 }else if(unit.getType() == UnitType.Terran\_Siege\_Tank\_Tank\_Mode){ tank = unit; commandUtil.attackMove(tank, tankPosition); if(tank.getPoint().getDistance(tankPosition) < 50){ tank.useTech(TechType.Tank\_Siege\_Mode); } } }
+for (Unit unit : MyBotModule.Broodwar.self().getUnits()) { // 벙커의 위치를 저장 
+if (unit.getType() == UnitType.Terran\_Bunker && unit.isCompleted()) { bunker = unit; } // 마린의 경우 벙커에 들어가있거나 주위에 있도록 
+if (unit.getType() == UnitType.Terran\_Marine && unit.isIdle()){ marine = unit; if (bunker != null && bunker.getSpaceRemaining() != 0){ commandUtil.rightClick(marine, bunker); }else { commandUtil.attackMove(marine, firstChokePoint.getPoint()); } // 메딕의 경우 마린근처에 머물도록
+ }else if(unit.getType() == UnitType.Terran\_Medic && unit.isIdle()) { medic = unit; if(marine != null){ commandUtil.move(medic, marine.getPosition()); }else{ commandUtil.move(medic, firstChokePoint.getPoint()); } // 시즈탱크는 첫번째길목에서 시즈모드로 대기
+  }else if(unit.getType() == UnitType.Terran\_Siege\_Tank\_Tank\_Mode){ tank = unit; commandUtil.attackMove(tank, tankPosition); if(tank.getPoint().getDistance(tankPosition) < 50){ tank.useTech(TechType.Tank\_Siege\_Mode); } } }
 ​```
   
 초기 공격조건이 만족되면 공격유닛들이 적진으로 공격을 시작하는데
@@ -131,7 +141,13 @@ mainBaseDefence() 에서는 본진에 들어온 적유닛을 제거, 저그의 �
 상태값을 구분하여 넥서스 근처에 접근한 적유닛을 일꾼으로 때려잡는 부분이다
 
 ​```java
-public void mainBaseDefence() { // mineralMoveCount가 0 보다 크면 적군에게서 가장 먼 미네랄로 모인다 if (mineralMoveCount > 0) { moveEnemy\_NearMainBase\_UsingProbe(targetMineral, 300); mineralMoveCount--; return; // mineralMoveCount가 0이 되면 공격 } else if (mineralMoveCount == 0) { attackEnemy\_NearMainBase\_UsingProbe(enemyPosition, 300); mineralMoveCount--; return; // mineralMoveCount가 -1이면 공격 중이라는 뜻이다 } else if (mineralMoveCount == -1) { Unit enemy = getEnemy\_NearMainBase(300); if (enemy != null) { attackEnemy\_NearMainBase\_UsingProbe(enemy.getPosition(), 300); return; } else { mineralMoveCount--; } // mineralMoveCount가 -2이면 공격이 끝났으니 다시 복귀 } else if (mineralMoveCount == -2) { targetMineral = null; enemyPosition = null; stopProbe\_NearMainBase(500); mineralMoveCount--; // -3이 평시 상태. 계속 적이 공격오지는 않았는지 체크한다. } else { if (MyBotModule.Broodwar.getFrameCount() % 5 != 0) return; if (getUnderAttackedUnit\_NearMainBase(300) != null) { Unit enemy = getEnemy\_NearMainBase(300); if (enemy != null) { enemyPosition = enemy.getPosition(); targetMineral = getMineral\_MostFarFrom\_Enemy(enemy); mineralMoveCount = 60; // 50프레임동안 유닛을 모은다. } } } }
+public void mainBaseDefence() { // mineralMoveCount가 0 보다 크면 적군에게서 가장 먼 미네랄로 모인다
+ if (mineralMoveCount > 0) { moveEnemy\_NearMainBase\_UsingProbe(targetMineral, 300); mineralMoveCount--; return; // mineralMoveCount가 0이 되면 공격 
+ } else if (mineralMoveCount == 0) { attackEnemy\_NearMainBase\_UsingProbe(enemyPosition, 300); mineralMoveCount--; return; // mineralMoveCount가 -1이면 공격 중이라는 뜻이다
+ } else if (mineralMoveCount == -1) { Unit enemy = getEnemy\_NearMainBase(300); if (enemy != null) { attackEnemy\_NearMainBase\_UsingProbe(enemy.getPosition(), 300); return; } else { mineralMoveCount--; } //mineralMoveCount가 -2이면 공격이 끝났으니 다시 복귀
+ } else if (mineralMoveCount == -2) { targetMineral = null; enemyPosition = null; stopProbe\_NearMainBase(500); mineralMoveCount--; // -3이 평시 상태. 계속 적이 공격오지는 않았는지 체크한다. 
+ } else { if (MyBotModule.Broodwar.getFrameCount() % 5 != 0) return; if (getUnderAttackedUnit\_NearMainBase(300) != null) { Unit enemy = getEnemy\_NearMainBase(300); if (enemy != null) { enemyPosition = enemy.getPosition(); targetMineral = getMineral\_MostFarFrom\_Enemy(enemy); mineralMoveCount = 60; // 50프레임동안 유닛을 모은다. 
+ } } } }
 ​```
 
 elimination() 은 적의 건물을 다 제거하였는데도 숨겨진 건물을 발견하지 못하여 패배되는걸 막기위해
