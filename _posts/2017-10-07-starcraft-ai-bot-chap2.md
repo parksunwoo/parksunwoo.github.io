@@ -120,7 +120,11 @@ if (unit.canAttack() || unit.canRepair()) { if(unit.isIdle()){ if(!isOkAttackBas
 ​
 2개 게이트를 지을 맵의 중앙위치를 직접 설정하였고
 ​
-[##_Image|t/cfile@9943493359ED7AFF2C|CDM|1.3|{"originWidth":650,"originHeight":516,"style":"alignCenter","width":650,"height":516}_##]
+<figure>
+  <img src="/assets/images/starcraft3.png" alt="Trulli" style="width:650, height:516">
+  <figcaption></figcaption>
+</figure>
+
 ​
 mainBaseDefence() 에서는 본진에 들어온 적유닛을 제거, 저그의 초반러쉬를 막기위한 전략을 구현했다
 ​
@@ -149,14 +153,19 @@ toggleAttackMode() 임의로 설정한 toggleAttackMode\_stopAttack, toggleAttac
 공격유닛이 대기상태이나 일정수를 넘어서면 공격모드로 전환하고, 전투후 유닛들이 파괴되어 일정수 아래로 내려가면 다시 대기모드로 공수전환을 구현했다
 ​
 ```java
-public void toggleAttackMode() { if (MyBotModule.Broodwar.getFrameCount() % 23 != 0) return; if (!isFirstExpantion) return; int idle = 0; for (Unit u : MyBotModule.Broodwar.self().getUnits()) { if (u.getType() == UnitType.Protoss\_Zealot && !u.isAttacking() && !u.isUnderAttack()) { if (BWTA.getGroundDistance(u.getTilePosition(), InformationManager.Instance() .getSecondChokePoint(InformationManager.Instance().selfPlayer).getPoint().toTilePosition()) <= 1000) idle++; } } if (idle <= toggleAttackMode\_stopAttack) isReadyAttack = false; else if (idle >= toggleAttackMode\_startAttack) isReadyAttack = true; } [##_Image|t/cfile@990F173359ED7A2C23|CDM|1.3|{"originWidth":650,"originHeight":516,"style":"alignCenter","width":650,"height":516}_##]
+public void toggleAttackMode() { if (MyBotModule.Broodwar.getFrameCount() % 23 != 0) return; if (!isFirstExpantion) return; int idle = 0; for (Unit u : MyBotModule.Broodwar.self().getUnits()) { if (u.getType() == UnitType.Protoss\_Zealot && !u.isAttacking() && !u.isUnderAttack()) { if (BWTA.getGroundDistance(u.getTilePosition(), InformationManager.Instance() .getSecondChokePoint(InformationManager.Instance().selfPlayer).getPoint().toTilePosition()) <= 1000) idle++; } } if (idle <= toggleAttackMode\_stopAttack) isReadyAttack = false; else if (idle >= toggleAttackMode\_startAttack) isReadyAttack = true; } 
 ​```
 
-일정 유닛수 도달 전까지 첫번째 입구에서 대기모드
-​
-[##_Image|t/cfile@9926893359ED7A7529|CDM|1.3|{"originWidth":650,"originHeight":516,"style":"alignCenter","width":650,"height":516}_##]
-​
-유닛 수 도달과 동시에 적진으로 공격시작
+<figure>
+  <img src="/assets/images/starcraft4.png" alt="Trulli" style="width:650, height:516">
+  <figcaption>일정 유닛수 도달 전까지 첫번째 입구에서 대기모드</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/starcraft5.png" alt="Trulli" style="width:650, height:516">
+  <figcaption>유닛 수 도달과 동시에 적진으로 공격시작</figcaption>
+</figure>
+
 ​
 unlimitedExpantion() 에서는 무한확장전략을 구현했다
 ​
@@ -164,13 +173,16 @@ unlimitedExpantion() 에서는 무한확장전략을 구현했다
 ​
 아군 메인과 적군 메인 그리고 아군의 첫번째 확장지역을 제외한 곳에 넥서스를 짓도록 하였다
 ​
-[##_Image|t/cfile@9904013359ED7B2323|CDM|1.3|{"originWidth":650,"originHeight":516,"style":"alignCenter","width":650,"height":516}_##]
-​
-위 화면은 앞마당 첫번째 확장시작 모습
-​
-[##_Image|t/cfile@99D88D3359ED7B6E13|CDM|1.3|{"originWidth":650,"originHeight":516,"style":"alignCenter","width":650,"height":516}_##]
-​
-앞마당 확장과 동시에 질럿의 대기장소도 두번째 입구로 이동~
+<figure>
+  <img src="/assets/images/starcraft6.png" alt="Trulli" style="width:650, height:516">
+  <figcaption>위 화면은 앞마당 첫번째 확장시작 모습</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/starcraft7.png" alt="Trulli" style="width:650, height:516">
+  <figcaption>앞마당 확장과 동시에 질럿의 대기장소도 두번째 입구로 이동~</figcaption>
+</figure>
+
 ​
 정말 형들과 함께 진행하는 동안 푹 빠져서 살았던것같다 퇴근후에 시청 근처에 모여서도 하고
 ​
