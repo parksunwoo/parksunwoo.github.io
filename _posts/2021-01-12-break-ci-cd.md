@@ -3,9 +3,9 @@ title: "CI/CD 끝장내기"
 categories:
   - Dev
 tags:
-  - CI/CD
-  - DevOps
-  - Azure 
+  - cicd
+  - devops
+  - azure
 last_modified_at: 2021-01-12T08:06:00-00:00
 ---
 어느정도 개발이 진행되고 나면 이제는 개발서버에서 벗어나 실제 운영서버를 갖추어야한다. 

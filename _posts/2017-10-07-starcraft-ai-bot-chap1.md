@@ -3,8 +3,8 @@ title: 스타크래프트 인공지능 봇을 만들어보자 chap1
 categories:
   - Dev
 tags:
-  - BWAPI
-  - BWTA
+  - bwapi
+  - bwta
   - starcraft
   - ai
 last_modified_at: 2017-10-07T09:00:00-00:00

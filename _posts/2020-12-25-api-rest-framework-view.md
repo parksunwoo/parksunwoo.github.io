@@ -5,7 +5,7 @@ categories:
 tags:
   - api
   - restframework
-  - apiview
+  - api
 last_modified_at: 2020-12-25T08:06:00-00:00
 ---
 API를 알게되고 개발에 직접 사용하게 된 것은 얼마되지 않았다. <br>

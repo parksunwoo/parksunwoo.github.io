@@ -3,7 +3,7 @@ title: Number of (binary) heaps on N elements
 categories:
   - Dev
 tags:
-  - algorithm
+  - algorithms
   - heap
 last_modified_at: 2016-12-20T09:00:00-00:00
 ---
