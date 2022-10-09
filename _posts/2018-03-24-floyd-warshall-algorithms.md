@@ -3,7 +3,7 @@ title: 전체쌍 최단경로 문제는 Floyd-Warshall 알고리즘!
 categories:
   - Dev
 tags:
-  - floyd-warshall
+  - floydwarshall
   - algorithms
 last_modified_at: 2018-03-24T09:00:00-00:00
 ---

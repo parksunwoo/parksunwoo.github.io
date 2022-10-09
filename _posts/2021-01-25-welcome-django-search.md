@@ -5,7 +5,7 @@ categories:
 tags:
   - haystack
   - whoosh
-  - drf_haystack
+  - drf
 last_modified_at: 2021-01-25T08:06:00-00:00
 ---
 **django-haystack + Whoosh  + drf_haystack** <br>
