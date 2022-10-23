@@ -9,6 +9,7 @@ tags:
 last_modified_at: 2018-06-18T09:00:00-00:00
 ---
 
+
 Murphy Ch11\. Mixture models and the EM algorithm   
 \* 11.1  Latent variable models  숨겨진 변수 leaden variable or lvm   
 2가지이유에서 이점이 있다 lvm 은 더 적은 파라미터를 갖는다  
