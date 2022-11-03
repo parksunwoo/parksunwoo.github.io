@@ -1,17 +1,15 @@
+---
+title: Show, Attend, and Tell with Pytorch
+categories:
+  - ML
+tags:
+  - image captioning
+  - encoder
+  - decoder
+last_modified_at: 2018-12-29T09:00:00-00:00
+---
 
-> medium-to-markdown@0.0.3 convert
-> node index.js https://medium.com/@sunwoopark/show-attend-and-tell-with-pytorch-e45b1600a749
 
-[![Sunwoo Park](https://miro.medium.com/fit/c/96/96/0*7WGtRGh_TOEmgO2W.)
-
-](https://medium.com/@sunwoopark?source=post_page-----e45b1600a749--------------------------------)[Sunwoo Park](https://medium.com/@sunwoopark?source=post_page-----e45b1600a749--------------------------------)Follow
-
-Dec 29, 2018
-
-·7 min read
-
-Show, Attend, and Tell with Pytorch
-===================================
 
 소개 및 구현
 
