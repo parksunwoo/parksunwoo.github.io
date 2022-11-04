@@ -1,5 +1,5 @@
 ---
-title: [Stitchfix] Lumpers and Splitters- Tensions in Taxonomies
+title: Stitchfix- Lumpers and Splitters- Tensions in Taxonomies
 categories:
   - ML
 tags:
