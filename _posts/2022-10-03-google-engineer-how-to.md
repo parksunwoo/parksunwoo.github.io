@@ -21,7 +21,9 @@ Keep 으로 메모하고 google Docs, jamboard 까지 구글의 여러 제품을
 + 간단히 책의 문구를 정리해서 sns에 올렸는데 놀랍게도 번역자분이 직접 만든 슬라이드를 공유해주셨습니다.
 책의 내용이 워낙 방대하다 보니 슬라이드로 전체 내용을 한번 훑고 원문을 읽어보는 것도 좋은 방법인 것 같습니다.
 
-https://docs.google.com/presentation/d/1xEPcs1-q10QMy8WbBpzS-kdBCGH6d3RooKvHouCX7sE
+
+[구글 엔지니어는 이렇게 일한다 슬라이드](https://docs.google.com/presentation/d/1xEPcs1-q10QMy8WbBpzS-kdBCGH6d3RooKvHouCX7sE)
+
 
 
 ---
