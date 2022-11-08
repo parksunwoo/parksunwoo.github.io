@@ -19,8 +19,6 @@ Travis CI에서 어떻게 사용하고 있었는지 간단히 설명하고 Githu
 
 어떤 부분에서 이슈가 있었는지 정리해 CI/CD를 이해하는데 조금이라도 도움이 되고자합니다. 
 
-</br></br>
-
 # Travis CI
 
 ![TravisCI](https://www.travis-ci.com/wp-content/uploads/2021/12/TravisCI-Full-Color.png)
@@ -148,7 +146,6 @@ Travis CI 사이트에 저장되어있는 환경정보를 가져다 사용합니
 
 브랜치별로도 환경변수 값을 다르게 설정할수 있음 ex. $ENV_TARGET 변수.
 
-</br></br>
 # Github Action
 
 Github Action은 다양한 아이디어를 자동화해서 사용해볼수있는게 장점.
@@ -391,7 +388,6 @@ current-time id를 갖는 step의 출력값으로 time 을 사용하겠다는 �
   <figcaption>스텝별 진행상황 확인, 수행시간도 확인가능</figcaption>
 </figure>
 
-</br></br>
 
 # 더 해보기
 
