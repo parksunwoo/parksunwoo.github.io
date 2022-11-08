@@ -1,5 +1,5 @@
 ---
-title: Travis CI 에서 Gihub Action 으로 AWS Elastic Beanstalk 배포하기
+title: Travis CI 에서 Github Action 으로 AWS Elastic Beanstalk 배포하기
 categories:
   - Dev
 tags:
