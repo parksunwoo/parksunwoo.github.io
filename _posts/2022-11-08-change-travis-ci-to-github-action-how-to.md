@@ -19,7 +19,7 @@ Travis CI에서 어떻게 사용하고 있었는지 간단히 설명하고 Githu
 
 어떤 부분에서 이슈가 있었는지 정리해 CI/CD를 이해하는데 조금이라도 도움이 되고자합니다. 
 
-
+</br></br>
 
 # Travis CI
 
@@ -148,6 +148,7 @@ Travis CI 사이트에 저장되어있는 환경정보를 가져다 사용합니
 
 브랜치별로도 환경변수 값을 다르게 설정할수 있음 ex. $ENV_TARGET 변수.
 
+</br></br>
 # Github Action
 
 Github Action은 다양한 아이디어를 자동화해서 사용해볼수있는게 장점.
@@ -348,7 +349,7 @@ AWS Elasticbeanstalk 배포를 위한 deploy.zip 파일 생성
 
 AWS Elasticbeanstalk 배포환경관련 정보 설정
 
-아래 uses 부분은 깃허브 상 repo와 같고 
+name 아래 uses 부분은 깃허브 상 repo와 같고 
 ([Github Aciton - beanstalk-deploy](https://github.com/einaregilsson/beanstalk-deploy) )
 
 
@@ -357,16 +358,16 @@ AWS Elasticbeanstalk 배포환경관련 정보 설정
 해당 repo에서만 사용하는 변수정보를 확인할 수있음, 위 예제에서는 with 아래 변수들이 repo 변수에 해당
 @v2, @v20 은 repo의 버전정보를 나타냄
 
-`{{ github.run_id }}` 처럼 github action 에서만 사용할수있는 환경변수가 있음
+`github.run_id` 처럼 github action 에서만 사용할수있는 환경변수가 있음
 
-`{{ steps.current-time.outputs.time }}` 은 
+`steps.current-time.outputs.time` 은 
 current-time id를 갖는 step의 출력값으로 time 을 사용하겠다는 의미임
 
 
 
 <figure>
   <img src="/assets/images/github-action-example-1.png" alt="Trulli" style="width:650, height:516">
-  <figcaption>gerred/actions/current-time@master 예시.</figcaption>
+  <figcaption>gerred/actions/current-time@master Github Actino page</figcaption>
 </figure>
 
 
@@ -390,7 +391,7 @@ current-time id를 갖는 step의 출력값으로 time 을 사용하겠다는 �
   <figcaption>스텝별 진행상황 확인, 수행시간도 확인가능</figcaption>
 </figure>
 
-
+</br></br>
 
 # 더 해보기
 
