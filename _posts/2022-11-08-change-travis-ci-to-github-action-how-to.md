@@ -23,7 +23,7 @@ Travis CI에서 어떻게 사용하고 있었는지 간단히 설명하고 Githu
 
 # Travis CI
 
-![https://www.travis-ci.com/wp-content/uploads/2021/12/TravisCI-Full-Color.png](https://www.travis-ci.com/wp-content/uploads/2021/12/TravisCI-Full-Color.png)
+![TravisCI](https://www.travis-ci.com/wp-content/uploads/2021/12/TravisCI-Full-Color.png)
 
 대표적인 CI툴에는 Jenkins, CircleCI, TeamCity, Gitlab 등이 알려져 있고 Travis CI도 진입장벽이 상대적으로 낮아 많이 사용된다
 
@@ -61,15 +61,26 @@ Travis CI를 사용하기 위해서는 프로젝트 상단에 .travis.yml 파일
 .travis.yml 은 크게 아래의 단계로 구성됨
 
 1. `env`
+
 이후 단계들에서 공통으로 사용할 환경변수 설정
+
 2. `before_install`
+
 3번 스크립트 수행 전 실행작업 (ex. 도커 로그인, 환경변수 확인)
+
 3. `script`
+
 배포를 수행하는데 필요한 스크립트 실행 (ex. 실행중인 도커 컨테이너 확인)
+
 4. `after_success`
+
 3번 스크립트 수행후 실행작업 (ex. 도커파일 빌드 및 빌드된 도커이미지를 도커허브에 푸쉬, 배포전 변경 필요한 파일 수정)
+
 5. `deploy`
+
 배포환경관련 정보 설정
+
+
 
 .travis.yml 예시 파일 전체는 아래와 같습니다.
 
@@ -130,23 +141,21 @@ Travis CI 사이트에 저장되어있는 환경정보를 가져다 사용합니
 
 <figure>
   <img src="/assets/images/travis-ci-1.png" alt="Trulli" style="width:650, height:516">
-  <figcaption>Travis CI</figcaption>
-</figure>
-<figure>
   <img src="/assets/images/travis-ci-2.png" alt="Trulli" style="width:650, height:516">
-  <figcaption>Travis CI</figcaption>
+  <figcaption>Travis CI 사이트 > Settings > Settings 화면</figcaption>
 </figure>
-Travis CI 사이트 > Settings > Settings 화면
 
-브랜치별로도 환경변수 값을 다르게 설정할수 있음 $ENV_TARGET 변수.
+
+브랜치별로도 환경변수 값을 다르게 설정할수 있음 ex. $ENV_TARGET 변수.
 
 # Github Action
 
-Github Action은 다양한 아이디어를 자동화해서 사용해볼수있음.
+Github Action은 다양한 아이디어를 자동화해서 사용해볼수있는게 장점.
+아래는 Github Action 사이트 접속시 소개되는 문구
 
 [https://github.com/features/actions](https://github.com/features/actions)
 
-# **Automate your workflowfrom idea to production**
+**Automate your workflowfrom idea to production**
 
 GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
 
@@ -182,7 +191,8 @@ Github Action을 사용하기 위해서는 프로젝트 상단 .github/workflows
 
 .deploy-dev.yml 의 주요단계를 뜯어보겠습니다.
 
-name: Dev deployment from Github to AWS EB — yml 파일의 이름지정, Github Action 탭에서 확인될 Task명
+name: Dev deployment from Github to AWS EB
+#yml 파일의 이름지정, Github Action 탭에서 확인될 Task명
 
 ```yaml
 on:
@@ -195,6 +205,7 @@ on:
 ```
 
 1. `on`
+
 push, `pull_request` 와 같이 Github Action을 수행할 특정 이벤트 종류와, 특정 브랜치를 별도로 지정할 수 있습니다.
 
 ```yaml
@@ -205,7 +216,9 @@ jobs:
 ```
 
 1. `jobs`
+
 아래부분에 수행할 작업들을 순차적으로 명시함, jobs > steps 하위에 수행할 작업을 상세하게 기술함
+
 `runs-on: ubuntu-latest` 
 action을 수행할 환경을 지정함, 여기서는 ubuntu 최신버전을 사용
 
@@ -215,6 +228,7 @@ action을 수행할 환경을 지정함, 여기서는 ubuntu 최신버전을 사
 ```
 
 1. `Checkout Latest Repo`
+
 최신버전 repo checkout
 
 ```yaml
@@ -234,7 +248,9 @@ action을 수행할 환경을 지정함, 여기서는 ubuntu 최신버전을 사
 ```
 
 1. `Setup env variables`
+
 이후 스텝에서 사용할 환경변수 설정, 여기서는 브랜치명을 조회해서 브랜치 별로 환경변수를 별도 설정함
+
 env_target, version 을 환경별로 지정하고 $GITHUB_ENV 에 값을 저장함
 
 ```yaml
@@ -243,6 +259,7 @@ env_target, version 을 환경별로 지정하고 $GITHUB_ENV 에 값을 저장�
 ```
 
 1. `Set up Docker Buildx`
+
 도커 빌드를 위한 환경구성
 
 ```yaml
@@ -255,6 +272,7 @@ env_target, version 을 환경별로 지정하고 $GITHUB_ENV 에 값을 저장�
 ```
 
 1. `Login to DockerHub`
+
 도커 로그인, `username` 은 이메일주소가 아닌 username 만 가능함! (이메일주소로 로그인을 시도했다가 반복해서 로그인실패 발생했습니다.. 주의하세요)
 
 ```yaml
@@ -268,6 +286,7 @@ env_target, version 을 환경별로 지정하고 $GITHUB_ENV 에 값을 저장�
 ```
 
 1. `Build and push backend`
+
 해당하는 도커파일 빌드위치를 지정한 후 도커파일 빌드 및 푸쉬 진행, 이미지 태깅작업 수행
 
 ```yaml
@@ -284,7 +303,9 @@ env_target, version 을 환경별로 지정하고 $GITHUB_ENV 에 값을 저장�
 ```
 
 1. `Mod Dockerrun.aws.json`
+
 AWS Beanstalk 환경 배포를 위한 Dockerrun.aws.json 파일 변경작업 수행후 git commit 실행
+git 사용을 위한 git config 설정포함
 
 ```yaml
 - name: Get Timestamp
@@ -305,6 +326,7 @@ AWS Beanstalk 환경 배포를 위한 Dockerrun.aws.json 파일 변경작업 수
 ```
 
 1. `Generate Deployment Package`
+
 AWS Elasticbeanstalk 배포를 위한 deploy.zip 파일 생성
 
 ```yaml
@@ -323,64 +345,70 @@ AWS Elasticbeanstalk 배포를 위한 deploy.zip 파일 생성
 ```
 
 1. `Deploy to EB`
+
 AWS Elasticbeanstalk 배포환경관련 정보 설정
 
 아래 uses 부분은 깃허브 상 repo와 같고 
-https://github.com/einaregilsson/beanstalk-deploy
+([Github Aciton - beanstalk-deploy](https://github.com/einaregilsson/beanstalk-deploy) )
+
+
+
 해당 repo에 접근하면 repo관련 정보를 확인할수 있습니다
 해당 repo에서만 사용하는 변수정보를 확인할 수있음, 위 예제에서는 with 아래 변수들이 repo 변수에 해당
 @v2, @v20 은 repo의 버전정보를 나타냄
 
-`${{ github.run_id }}` 처럼 github action 에서만 사용할수있는 환경변수가 있음
+`{{ github.run_id }}` 처럼 github action 에서만 사용할수있는 환경변수가 있음
 
-${{ steps.current-time.outputs.time }} 은 
+`{{ steps.current-time.outputs.time }}` 은 
 current-time id를 갖는 step의 출력값으로 time 을 사용하겠다는 의미임
 
-gerred/actions/current-time@master 예시.
+
 
 <figure>
   <img src="/assets/images/github-action-example-1.png" alt="Trulli" style="width:650, height:516">
-  <figcaption>gerred/actions/current-time@master</figcaption>
+  <figcaption>gerred/actions/current-time@master 예시.</figcaption>
 </figure>
 
-Github Repo 상 Acitons 탭에서 Github Action 리스트 조회
+
 
 <figure>
   <img src="/assets/images/github-action-list.png" alt="Trulli" style="width:650, height:516">
   <figcaption>Github Repo 상 Acitons 탭에서 Github Action 리스트 조회</figcaption>
 </figure>
 
+
+
 <figure>
   <img src="/assets/images/github-action-list-detail.png" alt="Trulli" style="width:650, height:516">
   <figcaption>Github Action 리스트 상세 조회</figcaption>
 </figure>
 
-스텝별 진행상황 확인, 수행시간도 확인가능
+
 
 <figure>
   <img src="/assets/images/github-action-detail.png" alt="Trulli" style="width:650, height:516">
-  <figcaption></figcaption>
+  <figcaption>스텝별 진행상황 확인, 수행시간도 확인가능</figcaption>
 </figure>
 
 
 
 # 더 해보기
 
-Travis CI는 유료툴이라 매달 일정금액이 나가고 있었는데 무료인 Github Action으로 변경하면서 비용절감이 되었다. 물론 Github Action은 무료라 배포에 사용할수있는 무료시간을 2000 분/월 까지 제공한다.
+Travis CI는 유료툴이라 매달 일정금액이 나가고 있었는데 무료인 Github Action으로 변경하면서 비용절감이 되었습니다. 
+물론 Github Action은 무료라 배포에 사용할수있는 무료시간을 2000 분/월 까지 제공합니다.
 
-현재 회사에서는 Team Plan을 사용중이라 3000 분/월 까지 무료 사용가능하다
+현재 회사에서는 Team Plan을 사용중이라 3000 분/월 까지 무료로 사용할수 있습니다.
 
-무료시간을 충분히 사용하고 배포속도를 향상시키기 위해서도 배포과정 최적화가 필요하다
+무료시간을 충분히 사용하고 배포속도를 향상시키기 위해서도 배포과정 최적화가 필요합니다.
 
 Github Action 은 앞서 이야기한 것처럼 step마다 repo 들을 블럭처럼 조합해서 사용하는 것이라 
 
 사용하고 있는 업무툴과 연동한다던지 (ex. slack)
 
-배포뿐 아니라 크롤링, sementic release 관리등 업무 자동화부분에도 사용할 수 있을 것이다
+배포뿐 아니라 크롤링, sementic release 관리등 업무 자동화부분에도 사용할 수 있을 것입니다.
 
-Travis CI와 Github Action의 속도비교를 위해 브랜치에서 pr merge시 두개 CI가 모두 동작하도록 하였음.
+추가로 Travis CI와 Github Action의 속도비교를 위해 브랜치에서 pr merge시 두개 CI가 모두 동작하도록 설정후 테스트 진행.
 
 2개 CI는 거의 비슷한 속도로 작업이 진행됨 (Github Action은 Elastic Beanstalk에서 배포되고 정상화되는 시간이 포함되어 총 시간이 늘어나지만 해당 작업을 제외시)
-
 
 
