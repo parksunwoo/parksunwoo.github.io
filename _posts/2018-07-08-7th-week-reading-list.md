@@ -11,9 +11,7 @@ tags:
 last_modified_at: 2018-07-08T09:00:00-00:00
 ---
 
-
-2_Link Analysis (PageRank)
-http://infolab.stanford.edu/~ullman/mmds/ch5.pdf
+[Link Analysis PageRank](http://infolab.stanford.edu/~ullman/mmds/ch5.pdf)
 구글의 핵심기술은 PageRank . 무엇이고 어떤방식으로 효율적으로 계산하는지
 
 5.1 PageRank 
