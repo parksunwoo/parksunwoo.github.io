@@ -24,17 +24,17 @@ last_modified_at: 2022-11-05T22:00:00-00:00
 
 <!-- 16:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=nLL409se8sM"></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nLL409se8sM"></iframe>
 </div>
 
 <!-- 16:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=XKqLz6WJSRA"></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XKqLz6WJSRA"></iframe>
 </div>
 
 <!-- 16:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=3U0cbzmwSYc"></iframe>
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3U0cbzmwSYc"></iframe>
 </div>
 
 
