@@ -10,12 +10,12 @@ last_modified_at: 2018-06-18T09:00:00-00:00
 ---
 
 
-Murphy Ch11\. Mixture models and the EM algorithm   
-\* 11.1  Latent variable models  숨겨진 변수 leaden variable or lvm   
+Murphy Ch11. Mixture models and the EM algorithm   
+* 11.1  Latent variable models  숨겨진 변수 leaden variable or lvm   
 2가지이유에서 이점이 있다 lvm 은 더 적은 파라미터를 갖는다  
   
   
-\* 11.2  Mixture models  다대다 일대다 다대일 일대일 형식의 모델로 구분된다  
+* 11.2  Mixture models  다대다 일대다 다대일 일대일 형식의 모델로 구분된다  
   
 base distribution 을 mixing 하는것이라 mixture model 이라고 부른다혼합모델은 크게 2개가 있는데 하나가 black-box density model이고 데이터 요약, 이상치 검출, 분류를 생성할때 유용하다  
   
@@ -78,18 +78,18 @@ Vector quantization 
 비록 인코딩 과정에서는 속도가 느리나, 디코딩 과정에서는 새인에 의해 코드북을 1회만 참조하게되므로 속도가 빠름  
   
 군집화에서 고려해야하는 중요한 문제점  
-1\. 최적의 클래스(확률분포모델) 개수는 몇 개인가? ( K의 개수 결정)  
-2\. 주어진 데이터에서 가장 근접한 클래스(확률분포모델)은 무엇인가? (클러스터링 과정)  
-3\. 오차가 가장 최소가 되는 클래스(확률분포모델)는 무엇인가? (클래스 특징을 변화)위의 3가지 문제를 고려하여 클래스 구성과 최적화 과정을 EM 알고리즘을 통하여 진행한다  
+1. 최적의 클래스(확률분포모델) 개수는 몇 개인가? ( K의 개수 결정)  
+2. 주어진 데이터에서 가장 근접한 클래스(확률분포모델)은 무엇인가? (클러스터링 과정)  
+3. 오차가 가장 최소가 되는 클래스(확률분포모델)는 무엇인가? (클래스 특징을 변화)위의 3가지 문제를 고려하여 클래스 구성과 최적화 과정을 EM 알고리즘을 통하여 진행한다  
   
-11.4.5 EM for the Student distribution \*   
+* 11.4.5 EM for the Student distribution    
 결측치도 없는데 왜 EM 을 사용하는가? 인공적인 hidden or 보조변수로 알고리즘을 단순화하기 위함이다  
 Gaussian scale mixture   
 Mixtures of Student distributions   
 11.4 도표를 보면 Student 모델은 4개의 에러, 가우시안 모델은 21개의 에러  
 Class 조건부 확률밀도에 극단값이 포함되어 가우시안 모델이 잘못된 선택을 하기떄문이다  
   
-11.4.7 Theoretical basis for EM \*   
+* 11.4.7 Theoretical basis for EM
 11.4.7.1 Expected complete data log likelihood is a lower bound   
 Q(θ ,θ ) = logp(xi|θ ) = l(θ ) (11.93)   
   
@@ -104,8 +104,8 @@ stepwise EM 
   
 11.5 Model selection for latent variable models   
 클러스터의 갯수 K를 특정짓는것 모델을 고르는것이다  
-\* 11.5.1  Model selection for probabilistic models marginal likelihood lvm의 를 측정하기가 어렵다모델의 수가 큰수라 검색할 필요  
-\* 11.5.2  Model selection for non-probabilistic methods  
+* 11.5.1  Model selection for probabilistic models marginal likelihood lvm의 를 측정하기가 어렵다모델의 수가 큰수라 검색할 필요  
+* 11.5.2  Model selection for non-probabilistic methods  
   
 11.21 도표에서 c그림은 무얼 의미하는가?  
 K를 어떻게 고를수있나  
