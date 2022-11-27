@@ -389,7 +389,7 @@ current-time id를 갖는 step의 출력값으로 time 을 사용하겠다는 �
 </figure>
 
 
-# 더 해보기
+# ps. 더 해보기
 
 Travis CI는 유료툴이라 매달 일정금액이 나가고 있었는데 무료인 Github Action으로 변경하면서 비용절감이 되었습니다. 
 물론 Github Action은 무료라 배포에 사용할수있는 무료시간을 2000 분/월 까지 제공합니다.
@@ -408,4 +408,164 @@ Github Action 은 앞서 이야기한 것처럼 step마다 repo 들을 블럭처
 
 2개 CI는 거의 비슷한 속도로 작업이 진행됨 (Github Action은 Elastic Beanstalk에서 배포되고 정상화되는 시간이 포함되어 총 시간이 늘어나지만 해당 작업을 제외시)
 
+
+# pss. Job을 병렬적으로 실행하기
+
+위 예시에선 Travis CI와 Github Action이 별 차이가 없는 것으로 나와있는데
+
+실제 운영환경에 배포할때에 이슈가 하나 있었습니다. 
+
+.travis.yml 에선 deploy 부분에 여러 task를 생성해 브랜치 기준으로 작업들을 병렬처리할 수 있었으나
+
+Github Action으로 변경후에는 모든 step들이 작성된 순서대로 순차적으로 진행되었습니다.
+
+운영환경에서는 특정브랜치를 기준으로 2개의 웹서버에 배포되고 있어서
+
+A서버와 B서버에 동시 배포되어야하는데 A서버에 배포완료된 후에 B서버 배포가 시작되었습니다.
+
+이 문제를 어떻게 해결할 수 있을지 검색한 결과 아래 내용을 찾을 수 있었습니다.
+
+*Github Action에서 작업(job)은 어떤 이벤트가 발생했을 때 독립된 환경에서 실행되어야 하는 일련의 일을 나타내는 매우 중요한 개념. 워크플로우 (workflow)는 작업(job)의 상위 개념이고 단계(step)은 하위 개념이라고 볼수 있음.*
+
+*즉, 하나 이상의 작업(job)이 하나의 워크플로우(workflow)를 구성하며, 하나의 작업(job)은 순차적으로 수행되는 여러 개의 단계(step)로 이뤄짐*
+
+*Github Action에서 작업 설정을 할 때, 하나의 워크플로우 상에서 각각의 작업이 완전히 격리된 환경에서 실행된다는 것. 2개의 작업을 실행하면 각 작업은 서로 CI 서버, 다른 컴퓨터에서 돌아가는 것*
+
+*작업간의 완전한 격리는 병렬 처리가 가능해져 성능 측면에서 유리.*
+
+아래와 같이 구성되어 있던 yaml 파일을 TOBE 형태로 변경하였다.
+
+## ASIS
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+```
+
+## TOBE - step1
+
+```yaml
+jobs:
+	build:
+    runs-on: ubuntu-latest
+    steps:
+
+  deploy1:
+    runs-on: ubuntu-latest
+    steps:
+
+  deploy2:
+    runs-on: ubuntu-latest
+    steps:
+```
+
+그럼 ASIS에서는 jobs > deploy 하위에 작성된 순서대로 steps 들이 실행되지만
+
+TOBE에서는 jobs 하위 build, deploy1, deploy2가 병렬적으로 실행된다.
+
+여기서 고려해야할 게 deploy job 은 build job이 수행완료된 다음에 실행되어야 최신버전의 코드가 반영될수 있다는 것이다.
+
+## TOBE - step2
+
+```yaml
+jobs:
+	build:
+    runs-on: ubuntu-latest
+    steps:
+
+  deploy1:
+    runs-on: ubuntu-latest
+		needs: build
+    steps:
+
+  deploy2:
+    runs-on: ubuntu-latest
+		needs: build
+    steps:
+```
+
+실행 순서 제어를 위해선 의존관계가 있는 작업에 `needs: build` 를 추가하여 
+위 예시에서는 build job이 수행된 이후 deploy1, deploy2 job이 수행되게 처리할 수 있다.
+
+여기까지 수행하고 나소 Github Action 을 통해 CI/CD를 완전히 옮겼다고 생각했는데
+
+막상 Action이 수행되고 나니 에러가 발생했다.
+
+에러인 즉슨 이전에는 동일한 job내에서 step 이 처리되다 보니 
+아래에서 생성된 deploy.zip 파일이 이후 step에서 사용가능하였지만
+
+병렬처리를 위해 job을 구분하다보니 A job의 output을  B job에서 사용할수가 없었다.
+
+```yaml
+- name: Generate Deployment Package
+        run: zip -r deploy.zip *
+```
+
+마찬가지로 job과 job 사이에서 output을 공유하는 방법을 찾았다.
+
+## TOBE - step3
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      replaced: ${{ steps.format-time.outputs.replaced }}
+    steps:
+
+			- name: Generate Deployment Package
+			        run: zip -r deploy.zip *
+
+      - name: Upload Deployment Package
+        uses: actions/upload-artifact@v3
+        with:
+          name: deploy
+          path: deploy.zip
+
+	deploy:
+	    runs-on: ubuntu-latest
+	    needs: build
+	    steps:
+	      - name: Download Deployment Package
+	        uses: actions/download-artifact@v3
+	        with:
+	          name: deploy
+	          path: ./
+	
+	      - name: Deploy to EB
+	        uses: einaregilsson/beanstalk-deploy@v20
+					with:
+	          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+	          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+	          application_name: django-app-dev
+	          environment_name: djangoapp
+	          version_label: "github-action-${{ github.run_id }}-${{ needs.build.outputs.replaced }}"
+```
+
+step 단위의 output을 job의 output으로 선언해 다른 job 에서 사용가능하다
+
+위 TOBE - step3 에서는 `outputs:replaced: ${{ steps.format-time.outputs.replaced }}`
+
+를 통해 format-time 이라는 id의 step의 replaced output을 build job의 replaced outputs로 보낼수 있다.
+
+이걸 deploy job 에선 `${{ needs.build.outputs.replaced }}` 이와 같이 호출해서 사용할 수 있다.
+
+그리고 한가지더 build job 에서 최종으로 생성된 deploy.zip 파일을 
+
+actions/upload-artifact@v3 Action을 통해 upload 하고
+
+deploy job 에서는 download하여 파일을 공유할 수 있었다.
+
+이렇게 해서 2개의 웹서버에 무사히 배포되는 것을 확인하였고 
+
+Travis CI에서 Github Action으로 CI/CD를 옮기는 작업을 마무리하였다.
+
+> 참고링크
+> 
+
+[https://www.daleseo.com/github-actions-jobs/](https://www.daleseo.com/github-actions-jobs/)
+
+[https://stackoverflow.com/questions/59175332/using-output-from-a-previous-job-in-a-new-one-in-a-github-action](https://stackoverflow.com/questions/59175332/using-output-from-a-previous-job-in-a-new-one-in-a-github-action)
 
