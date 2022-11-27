@@ -544,11 +544,11 @@ jobs:
 
 step 단위의 output을 job의 output으로 선언해 다른 job 에서 사용가능하다
 
-위 TOBE - step3 에서는 outputs:replaced: `{{ steps.format-time.outputs.replaced }}`
+위 TOBE - step3 에서는 outputs:replaced: {{ steps.format-time.outputs.replaced }}
 
 를 통해 format-time 이라는 id의 step의 replaced output을 build job의 replaced outputs로 보낼수 있다.
 
-이걸 deploy job 에선 `{{ needs.build.outputs.replaced }}` 이와 같이 호출해서 사용할 수 있다.
+이걸 deploy job 에선 {{ needs.build.outputs.replaced }} 이와 같이 호출해서 사용할 수 있다.
 
 그리고 한가지더 build job 에서 최종으로 생성된 deploy.zip 파일을 
 
