@@ -116,5 +116,6 @@ DynamoDB와의 상호작용은 HTTPS 요청 및 응답을 사용하여 이루어
 
 ## 참고자료
 
-[https://cloud.google.com/learn/what-is-a-relational-database?hl=ko](https://cloud.google.com/learn/what-is-a-relational-database?hl=ko)
-[https://www.integrate.io/ko/blog/which-modern-database-is-right-for-you-ko/](https://www.integrate.io/ko/blog/which-modern-database-is-right-for-you-ko/)
+[관계형데이터베이스](https://cloud.google.com/learn/what-is-a-relational-database?hl=ko)
+
+[사용 사례에 적합한 데이터베이스는 무엇일까요?](https://www.integrate.io/ko/blog/which-modern-database-is-right-for-you-ko/)
