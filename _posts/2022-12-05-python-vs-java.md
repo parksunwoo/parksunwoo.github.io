@@ -1,5 +1,5 @@
 ---
-title: Python에서 온 개발자P, Java에서 온 개발자J
+title: Python vs Java
 categories:
   - Dev
 tags:
@@ -11,7 +11,7 @@ tags:
 last_modified_at: 2022-12-05T23:00:00-00:00
 ---
 
-## Python vs Java : 전쟁의 서막
+## Python에서 온 개발자P, Java에서 온 개발자J
 
 ---
 

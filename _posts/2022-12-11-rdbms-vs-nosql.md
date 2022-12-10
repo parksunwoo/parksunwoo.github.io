@@ -14,6 +14,9 @@ last_modified_at: 2022-12-11T08:00:00-00:00
 
 ---
 
+![SQL Database and NoSQL Databases](https://www.scylladb.com/wp-content/uploads/differences-between-sql-databases-and-nosql-databases.png)
+
+
 # RDBMS란 무엇인가?
 
 - 관계형 데이터베이스(RDB)는 테이블, 행, 열의 정보를 구조화하는 방식. RDB에는 테이블을 조인하여 정보 간 관계 또는 링크를 설정할 수 있는 기능이 있어, 여러 데이터 포인트 간의 관계를 쉽게 이해하고 정보를 얻을 수 있다.
