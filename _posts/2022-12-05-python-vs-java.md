@@ -7,7 +7,7 @@ tags:
   - java
   - interpreter
   - compiler
-  - tech stack
+  - backend interviews
 last_modified_at: 2022-12-05T23:00:00-00:00
 ---
 
