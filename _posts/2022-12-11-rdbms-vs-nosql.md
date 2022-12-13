@@ -10,11 +10,11 @@ tags:
 last_modified_at: 2022-12-11T08:00:00-00:00
 ---
 
+
+
 ## RDBMS vs NoSQL 의 비교되는 특징과 데이터베스 선택시 어떤 점을 고려해야할지 정리해보았습니다.
 
 ---
-
-![SQL Database and NoSQL Databases](https://www.scylladb.com/wp-content/uploads/differences-between-sql-databases-and-nosql-databases.png)
 
 
 # RDBMS란 무엇인가?
