@@ -2,28 +2,39 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Sunwoo Park",
-    "label": "모두의연구소 AIFFEL Back End Developer",
-    "image": "",
-    "email": "psw261@naver.com",
+    "label": "세상을 읽고 코드를 쓰는 개발자",
+    "picture": "https://avatars.githubusercontent.com/u/12166322?s=400&u=b2f6053c7dfd0b04e7d67c3d5a97d4c3689eabdb&v=4",
+    "email": "psw261@gmail.com",
     "phone": "",
-    "url": "https://github.com/parksunwoo",
-    "summary": "Professional Backend Engineer with 8 yrs experiences in: \n\n•Web Back-end 개발자로서 서비스/제품 출시 및 운영 경험 (교육/금융/화학 다양한 도메인)\n•Cloud(AWS), 인프라 형상관리(Terraform), 컨테이너 기반 가상화(Docker) 사용 경험\n•Junior 훈련과 성장을 해본 경험\n•나에게 맡겨진 일을 잘 해내겠다는 자세도 좋지만, 무엇보다 팀의 목표에 필요한 일은 뭐든지 하겠다는 마음가짐",
+    "website": "https://github.com/parksunwoo",
+    "summary": "8년차 백엔드 개발자로 대기업과 스타트업에서 웹 서비스를 개발/배포/운영하였습니다. 웹 서비스 개발을 담당했으며 필요에 따라 개발팀 매니저 역할을 겸하였습니다. 작은 규모의 팀에 첫 번째 개발자로 입사하여 70억 투자를 유치하고, 주니어 개발자가 팀에 자연스럽게 적응할 때가지 온보딩과 멘토링을 맡았던 경험이 있습니다.\n\nMVP로 빠르게 개발한 프로토타입을 서비스로 런칭한 경험을 갖고있습니다. 빠르게 개발하고 배포하는 역량과 다양한 직무의 팀 구성원들과 적극적으로 커뮤니케이션하며 협업해왔습니다.\n\n반복되는 일을 자동화하고 비효율적인 프로세스를 개선하는 일을 좋아합니다. 이로 인해 새로운 툴을 검토하고 팀 구성원에게 가이드한 경험이 있습니다.\n\n",
     "location": {
+      "city": "Seoul",
       "countryCode": "KR",
       "address": ""
     },
     "profiles": [
       {
+        "network": "Medium",
+        "username": "sunwoopark",
+        "url": "https://medium.com/@sunwoopark"
+      },      
+      {
         "network": "LinkedIn",
-        "username": "sunwoo-park-a613aa131",
+        "username": "Sunwoo Park",
         "url": "https://www.linkedin.com/in/sunwoo-park-a613aa131/"
+      },
+      {
+        "network": "Github",
+        "username": "parksunwoo",
+        "url": "https://github.com/parksunwoo"
       }
     ]
   },
   "work": [
     {
-      "name": "모두의연구소",
-      "position": "Lead Developer",
+      "company": "모두의연구소",
+      "position": "Backend Lead",
       "startDate": "2020-01-31",
       "endDate": "",
       "highlights": [],
