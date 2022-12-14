@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Sunwoo Park",
-    "label": "세상을 읽고 코드를 쓰는 개발자",
+    "label": "세상을 읽고 코드 쓰는 개발자",
     "picture": "https://avatars.githubusercontent.com/u/12166322?s=400&u=b2f6053c7dfd0b04e7d67c3d5a97d4c3689eabdb&v=4",
     "email": "psw261@gmail.com",
     "phone": "",
     "website": "https://github.com/parksunwoo",
-    "summary": "8년차 백엔드 개발자로 대기업과 스타트업에서 웹 서비스를 개발/배포/운영하였습니다. 웹 서비스 개발을 담당했으며 필요에 따라 개발팀 매니저 역할을 겸하였습니다. 작은 규모의 팀에 첫 번째 개발자로 입사하여 70억 투자를 유치하고, 주니어 개발자가 팀에 자연스럽게 적응할 때가지 온보딩과 멘토링을 맡았던 경험이 있습니다.\n\nMVP로 빠르게 개발한 프로토타입을 서비스로 런칭한 경험을 갖고있습니다. 빠르게 개발하고 배포하는 역량과 다양한 직무의 팀 구성원들과 적극적으로 커뮤니케이션하며 협업해왔습니다.\n\n반복되는 일을 자동화하고 비효율적인 프로세스를 개선하는 일을 좋아합니다. 이로 인해 새로운 툴을 검토하고 팀 구성원에게 가이드한 경험이 있습니다.\n\n",
+    "summary": "8년차 백엔드 개발자로 대기업과 스타트업에서 웹 서비스를 개발/배포/운영하였습니다. 주로 웹 서비스 개발을 담당했으며 필요에 따라 개발팀 매니저 역할을 겸하였습니다. 작은 규모의 팀에 첫 번째 개발자로 입사하여 70억 투자를 유치하고, 주니어 개발자가 팀에 자연스럽게 적응하는걸 돕기위해 온보딩과 멘토링을 맡았던 경험이 있습니다.\n\nMVP로 빠르게 개발한 프로토타입을 실제 서비스로 런칭한 경험을 갖고있습니다. 빠르게 개발하고 배포하는 역량과 다양한 직무의 팀 구성원들과 적극적으로 커뮤니케이션하며 협업해왔습니다. 반복되는 일을 자동화하고 비효율적인 프로세스를 개선하는 일을 좋아합니다. 이로 인해 새로운 툴을 검토하고 성공적으로 도입하기 위해 팀 구성원에게 가이드한 경험이 있습니다.\n\n",
     "location": {
       "city": "Seoul",
       "countryCode": "KR",
@@ -35,12 +35,21 @@
     {
       "company": "모두의연구소",
       "position": "Backend Lead",
-      "startDate": "2020-01-31",
+      "website": "https://modulabs.co.kr/",
+      "startDate": "2020-01-01",
       "endDate": "",
-      "highlights": [],
-      "summary": "Architecture Design and develop an online AI learning platform(AIFFEL) that can be coded in real time\n- When students learn AI, setting a deep learning environment as an entry barrier and\nSimple python code can be performed in a web browser, but deep learning code cannot be performed\n- Rapid prototyping with direct link between GPU laptop local server and LMS browser using open source Thebe\n- While training the deep learning model for a long time, we find that the LMS browser slows and stops, and we make improvements to replace Thebe to Jupyter API with Python, Django, Docker.\nUsers learn AI contents by accessing the container environment required packages are set up and individual storage \n- Develop Forums, Payment and Admin\n- AIFFEL became the company's main sales source and contributed to the company's Series A investment",
-      "url": "https://www.linkedin.com/school/modulabs/",
-      "location": "대한민국 서울 강남구"
+      "summary": "국내 최초의 AI 커뮤니티 기반의 스타트업으로 KB인베스트먼트, 대교인베스트먼트 등으로부터 70억 투자 유치",
+      "highlights": [
+        "AIFFEL팀 첫 번째 개발자로 입사하여 혼자서 2 년 동안 AIFFEL 백엔드 시스템 개발/배포/운영",
+        "혼자서 2개월 동안 기술스택 검토 및 시스템 아키텍쳐 설계 후 웹브라우저에서 딥러닝 코드수행되는 poc 진행완료",
+        "Django Wagtail 활용하여 학습관리시스템에 필요한 콘텐츠관리 기능 개발, 콘텐츠 팀의 생산성 향상",
+        "안정적인 인프라 환경을 위해 클라우드 플랫폼을 Digital Ocean에서 Azure로 다시 AWS로 이전경험",
+        "학습관리/포럼/결제/어드민/컨테이너/출결관리 등 백엔드 시스템 아키텍쳐 설계 및 CI/CD 자동화",
+        "디자인/프론트/백엔드 포함 7명 팀원 매니저 경험, 개발팀 채용/면접/온보딩 프로세스 정립 및 가이드 문서 작성",
+        "효율적인 협업과 커뮤니케이션을 위해 업무 요청 프로세스를 정립 및 협업/협업툴 가이드 문서 작성, 사내 교육 진행",
+        "미디엄 <맨땅에서 AI학습플랫폼을 만들기까지> 글 포함 사내 기술블로그 다수 글 연재",
+        "사내 <글로 배우는 스타트업> 프로그램 기획 및 운영"
+      ]
     },
     {
       "name": "Samsung SDS",
@@ -89,10 +98,22 @@
   ],
   "awards": [
     {
-      "title": "제9회 전국 대학생 증권. 파생상품 경시대회 장려상",
-      "date": "2014-02-28",
-      "awarder": "한국거래소",
-      "summary": "- ‘ELS · DLS 상장과 성공적 도입을 위한 제안 ‘ 주제로 논문작성. 장려상 수상\nhttp://univ.krx.co.kr/"
+      "title": "<개발자 인터뷰>",
+      "date": "2022-11-16",
+      "awarder": "",
+      "summary": "학습관리 플랫폼 개발자의 하루일과 대공개!\nhttps://www.jumpit.co.kr/job-interview/342"
+    },    
+    {
+      "title": "MODUCON 2021",
+      "date": "2021-12-04",
+      "awarder": "",
+      "summary": "Django React로 어디까지 개발해봤니?\nhttps://www.youtube.com/watch?v=XdOCV1bzaCw&list=PLv6H9ngYdJbLS2OdGLlL0IslWlhJHgg_L&index=28"
+    },    
+    {
+      "title": "파이콘 한국 2021",
+      "date": "2021-10-03",
+      "awarder": "",
+      "summary": "맨땅에서 AI학습플랫폼을 만들기까지\nhttps://www.youtube.com/watch?v=vzD8ESj8rQk"
     }
   ],
   "certificates": [
@@ -120,84 +141,24 @@
   ],
   "skills": [
     {
-      "name": "Django",
+      "name": "Back-End",
       "level": "",
-      "keywords": []
+      "keywords": ["Python", "Django", "Java", "AWS(EC2, RDS, S3, Elastic Beanstalk, WAF, Cloud Watch 등)"]
     },
     {
-      "name": "Python",
+      "name": "DevOps",
       "level": "",
-      "keywords": []
+      "keywords": ["Docker", "Github Action", "Travis CI",  "Terraform"]
     },
     {
-      "name": "Docker",
+      "name": "Database",
       "level": "",
-      "keywords": []
+      "keywords": ["PostgreSQL", "Oracle", "Mysql"]
     },
     {
-      "name": "aws",
+      "name": "Data",
       "level": "",
-      "keywords": []
-    },
-    {
-      "name": "자바",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "자바스크립트",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "spring",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "ASP",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Data Analysis",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Machine Learning",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Software Development",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Web Development",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SQL",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "jQuery",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "pytorch",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "oracle",
-      "level": "",
-      "keywords": []
+      "keywords": ["SQL", "Google Analytics"]
     }
   ],
   "languages": [
