@@ -52,48 +52,73 @@
       ]
     },
     {
-      "name": "Samsung SDS",
+      "company": "Samsung SDS 삼성카드CI",
       "position": "Software Engineer",
-      "startDate": "2015-03-31",
+      "website": "https://www.samsungcard.com/personal/main/UHPPCO0101M0.jsp",      
+      "startDate": "2017-01-01",
       "endDate": "2019-12-31",
-      "highlights": [],
-      "summary": "2017.01 ~ 2019.12\nSamsung Card's Homepage especially statements, finance, point sector maintenance and development\nI mainly developed Java, Spring, javascript\n- 26 Million MAU 410,000 monthly financial transactions 700 billion monthly transaction amount site\n- Optimize card statement system performance\nStabilize the system by finding memory leaks that occur when integrating with external reporting modules through historical memory usage data analysis and removing external module sharing variables, reduce memory utilization by 20%\n\n2015.03 - 2016.12\nMaintenance and develop fine chemical entrance system and homepage\nI mainly developed Java, javascript, Asp\n- Operation / improvement of in-company entrance system for visitor and construction personnel, asset management\n- Homepage, IR System\n  DB system for investment agencies and external persons related to IR business",
-      "url": "https://www.linkedin.com/company/samsung-sds/",
-      "location": "대한민국 서울 중구"
+      "summary": "MAU 2,600만, 월 금융거래 41만건의 카드 서비스",
+      "highlights": [
+        "Java, Spring Framework에 MyBatis, Oracle 를 사용하여 명세서 / 포인트 / 금융서비스 제공에 필요한 데이터 모델링 및 기능 개발",
+        "결제일에 트래픽이 집중되고 개인정보가 중요한 카드 사이트의 운영을 통해 대규모 트래픽 하에서의 서비스 운영과 방어적 코딩 중요성을 습득함",
+        "외부 레포팅 모듈을 사용하여 구현되어 있던 명세서 인쇄화면 기능을 이전 메모리 사용량 데이터 분석 및 공유변수 사용부분 로직 변경으로 성능개선 및 메모리 누수현상을 해결",
+        "RESTful API를 이용한 삼성카드 포인트의 네이버 페이 전환 서비스 통신 설계 및 개발"
+      ]
     },
     {
-      "name": "Samsung SDS",
-      "position": "Trainee",
-      "startDate": "2014-06-30",
-      "endDate": "2014-12-31",
-      "highlights": [],
-      "summary": "Samsung Convergence Software Academy Trainee\n\nSCSA is software training program for Humanities degree in Samsung.\nMy course is Web-based SW development and I learned about\n- Operating System\n- Data structure and Algorithm\n- Basic programming language\n- Latest Web Technologies\n- Database Analysis and Modeling\n- Team based Project plan and conduct",
-      "url": "https://www.linkedin.com/company/samsung-sds/",
-      "location": "Yeoksam, Seoul"
-    }
+      "company": "Samsung SDS 삼성정밀화학CI",
+      "position": "Software Engineer",
+      "website": "https://www.lottefinechem.com/",      
+      "startDate": "2015-03-03",
+      "endDate": "2016-12-31",
+      "summary": "그룹 화학 계열사, 롯데그룹으로 인수되면서 롯데정밀화학으로 상호명 변경",
+      "highlights": [
+        "Java, Spring Framework 환경에서 외부 관계자의 출입/자산관리 웹사이트의 운영을 담당",
+        "ASP, MS-SQL, IIS 환경에서 내외부 관계자의 IR자료를 관리하는 웹사이트의 운영을 담당"
+      ]
+    },
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "Deep Learning College",
-      "area": "NLP",
+      "institution": "패스트캠퍼스",
+      "area": "한 번에 끝내는 AWS 기반 아키텍처 설계와 DevOps",
       "studyType": "",
-      "startDate": "2018-12-31",
-      "endDate": "2019-12-31",
+      "startDate": "2021-12-01",
+      "endDate": "2022-02-28",
       "score": "",
       "courses": [
-        "null - Natural Language Processing",
-        "null - Deep Learning Basics"
+        "AWS 기반 대규모 아키텍트 설계",
+        "코드를 통한 인프라 관리",
+        "CI/CD 구현",
+        "모니터링 서비스 구축 및 운영"
+      ]
+    },    
+    {
+      "institution": "Samsung Convergence Software Academy",
+      "area": "웹기반 SW 개발과정",
+      "studyType": "Trainee",
+      "startDate": "2014-06-31",
+      "endDate": "2014-12-31",
+      "score": "",
+      "courses": [
+        "기초 프로그래밍 언어",
+        "최신 WEB 기술",
+        "DB분석 및 개발 모델링",
+        "팀 단위 프로젝트 기획 및 수행"
       ]
     },
     {
-      "institution": "",
-      "area": "Accounting",
-      "studyType": "Bachelor's degree",
-      "startDate": "2008-12-31",
-      "endDate": "2014-12-31",
-      "score": "",
-      "courses": []
+      "institution": "부산대학교",
+      "area": "회계학",
+      "studyType": "Bachelor",
+      "startDate": "2008-03-03",
+      "endDate": "2014-08-31",
+      "score": "3.94",
+      "courses": [
+        "경영학원론/경제학원론/통계학/상법/재무관리/생산관리",
+        "회계학원리/원가회계/중급회계/관리회계/세법/세무회계"
+      ]
     }
   ],
   "awards": [
@@ -143,22 +168,22 @@
     {
       "name": "Back-End",
       "level": "",
-      "keywords": ["Python", "Django", "Java", "AWS(EC2, RDS, S3, Elastic Beanstalk, WAF 등)"]
+      "keywords": ["Python", "Django", "AWS", "Java", "nginx", "Apache"]
     },
+    {
+      "name": "Database",
+      "level": "",
+      "keywords": ["PostgreSQL", "Oracle", "Mysql"]
+    },    
     {
       "name": "DevOps",
       "level": "",
       "keywords": ["Docker", "Github Action", "Travis CI",  "Terraform"]
     },
     {
-      "name": "Database",
+      "name": "etc",
       "level": "",
-      "keywords": ["PostgreSQL", "Oracle", "Mysql"]
-    },
-    {
-      "name": "Data",
-      "level": "",
-      "keywords": ["SQL", "Google Analytics"]
+      "keywords": ["Jira", "Agile", "Confluence", "Git/Github"]
     }
   ],
   "languages": [
@@ -167,8 +192,8 @@
       "fluency": "Native Speaker"
     },
     {
-      "fluency": "Limited Working",
-      "language": "영어"
+      "language": "영어",      
+      "fluency": "Limited Working"
     }
   ],
   "interests": [],
