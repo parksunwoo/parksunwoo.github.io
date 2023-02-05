@@ -404,6 +404,36 @@ The maximum number of **[tokens](https://beta.openai.com/tokenizer)** to gener
 
 The token count of your prompt plus **`max_tokens`** cannot exceed the model's context length. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
 
+
+ps1. 너무나도 당연하지만 쉽게 간과하는 open AI 와 슬랙봇 API Key는 환경설정파일로 따로 분리해서
+
+코드상에 노출되지않게 하는게 중요하다. public 한 repo에 공개되면 바로 노출되었다는 알림메일과 함께 해당 API key 값들이 비활성화처리된다.
+
+ps2.
+
+![slack-event-api-retry](/assets/images/openai11.png)
+
+GPT봇의 응답이 서로 다른 답변이긴 하지만 3번 반복되는 것을 확인해서 원인이 무엇일지 찾기시작했다.
+
+[https://api.slack.com/apis/connections/events-api#retries](https://api.slack.com/apis/connections/events-api#retries)
+
+슬랙 Events API 에서는 요청이 실패할 것에 대비해 즉시, 1분후, 5분후 retry 요청을 보낸다
+
+API Documentation 에서는 응답하는 HTTP Header 에 
+
+X-Slack-No-Retry: 1  을 넣어서 보내고 200 OK가 아닌 응답을 보내라고 적혀있다.
+
+몇번 시도해보았는데 해당 설정이 안되어서
+
+retry requet에는 X-Slack-Retry-Num 헤더가 실려오는 것을 확인하고
+
+헤더에 X-Slack-Retry-Num: 1,2,3  값이 있는지 여부로 체크해서 event API가 반복해서 call 되는 것을 막았다.
+
+봇처럼 느껴지는 부분을 약간의 트릭을 사용해서 해결하고 적당한 이름을 받아 슬랙에 연동을 완료하였다.
+
+![gpt3-response-bookmark](/assets/images/openai12.png)
+
+
 슬랙 메신저안으로 들어온 GPT3는 우리가 사용하기에 조금더 편리해지고 접근성도 낮아졌다.
 
 아직 조금 부족한 부분이 있지만 그래도 처음시작하기 막막한 작업을 진행할때 가이드라인을 잡을수 있는 것 같아 훌륭하다
