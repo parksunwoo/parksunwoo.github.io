@@ -97,20 +97,23 @@ Moz: 검색 엔진 최적화(SEO)를 위한 도구와 리소스를 제공하는 
 Elasticsearch: 엔터프라이즈 검색에 일반적으로 사용되는 검색 및 분석 엔진입니다.
 [https://www.elastic.co/kr/elasticsearch/](https://www.elastic.co/kr/elasticsearch/)
 
-**기초부터 다지는 ElasticSearch 운영 노하우**
-- 기본 개념부터 클러스터 구축, 실무 활용 시나리오까지
-[기초부터 다지는 ElasticSearch 운영 노하우](http://www.yes24.com/Product/Goods/96520155)
-
-****ElasticSearch Essential****
-[인프런 강의-ElasticSearch Essential](https://www.inflearn.com/course/elasticsearch-essential#curriculum)
-
-**엘라스틱서치 실무 가이드
-한글 검색 시스템 구축부터 대용량 클러스터 운영까지**
-[http://www.yes24.com/Product/Goods/71893929](http://www.yes24.com/Product/Goods/71893929)
-
 Solr: 검색 애플리케이션 구축에 자주 사용되는 오픈 소스 검색 플랫폼입니다.
 [https://solr.apache.org/](https://solr.apache.org/)
 
 이는 검색 기술에 대해 배우는 데 사용할 수 있는 많은 리소스 중 몇 가지 예에 불과합니다. 이러한 리소스를 탐색하고 다양한 검색 기술을 실험해 봄으로써 검색의 작동 방식과 사용자에게 가치를 제공하는 데 검색을 어떻게 활용할 수 있는지에 대해 더 깊이 이해할 수 있습니다.
 
-[검색의-시대-지고-추천의-시대-뜬다](https://news.samsung.com/kr/%EA%B2%80%EC%83%89%EC%9D%98-%EC%8B%9C%EB%8C%80-%EC%A7%80%EA%B3%A0-%EC%B6%94%EC%B2%9C%EC%9D%98-%EC%8B%9C%EB%8C%80-%EB%9C%AC%EB%8B%A4)
+
+> 추가 자료 
+
+> **기초부터 다지는 ElasticSearch 운영 노하우** 기본 개념부터 클러스터 구축, 실무 활용 시나리오까지
+> [도서-기초부터 다지는 ElasticSearch 운영 노하우](http://www.yes24.com/Product/Goods/96520155)
+
+> **ElasticSearch Essential**
+> [강의-ElasticSearch Essential](https://www.inflearn.com/course/elasticsearch-essential#curriculum)
+
+> **엘라스틱서치 실무 가이드** 한글 검색 시스템 구축부터 대용량 클러스터 운영까지
+> [도서-엘라스틱서치 실무 가이드](http://www.yes24.com/Product/Goods/71893929)
+
+> [블로그-검색의-시대-지고-추천의-시대-뜬다](https://news.samsung.com/kr/%EA%B2%80%EC%83%89%EC%9D%98-%EC%8B%9C%EB%8C%80-%EC%A7%80%EA%B3%A0-%EC%B6%94%EC%B2%9C%EC%9D%98-%EC%8B%9C%EB%8C%80-%EB%9C%AC%EB%8B%A4)
+
+> [블로그-검색어 분석을 통한 상품 정렬 개선](https://medium.com/musinsa-tech/%EA%B2%80%EC%83%89%EC%96%B4-%EB%B6%84%EC%84%9D%EC%9D%84-%ED%86%B5%ED%95%9C-%EC%83%81%ED%92%88-%EC%A0%95%EB%A0%AC-%EA%B0%9C%EC%84%A0-b92ded2923c3)
