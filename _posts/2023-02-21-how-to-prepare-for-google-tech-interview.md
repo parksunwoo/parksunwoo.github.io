@@ -6,6 +6,7 @@ tags:
   - google
   - tech
   - interview
+  - chatgpt
 last_modified_at: 2023-02-21T23:10:00-00:00
 ---
 
