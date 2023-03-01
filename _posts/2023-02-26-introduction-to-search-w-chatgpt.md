@@ -105,18 +105,14 @@ Solr: 검색 애플리케이션 구축에 자주 사용되는 오픈 소스 검�
 
 > 추가 자료 
 
-> **기초부터 다지는 ElasticSearch 운영 노하우** 기본 개념부터 클러스터 구축, 실무 활용 시나리오까지
->
-> 도서 : [기초부터 다지는 ElasticSearch 운영 노하우](http://www.yes24.com/Product/Goods/96520155)
+> 도서 - 기초부터 다지는 ElasticSearch 운영 노하우** 기본 개념부터 클러스터 구축, 실무 활용 시나리오까지
+> [기초부터 다지는 ElasticSearch 운영 노하우](http://www.yes24.com/Product/Goods/96520155)
 
-> **ElasticSearch Essential**
->
-> 강의 : [ElasticSearch Essential](https://www.inflearn.com/course/elasticsearch-essential#curriculum)
+> 강의 - ElasticSearch Essential
+> [ElasticSearch Essential](https://www.inflearn.com/course/elasticsearch-essential#curriculum)
 
-> **엘라스틱서치 실무 가이드** 한글 검색 시스템 구축부터 대용량 클러스터 운영까지
->
-> 도서 : [엘라스틱서치 실무 가이드](http://www.yes24.com/Product/Goods/71893929)
+> 도서 - 엘라스틱서치 실무 가이드, 한글 검색 시스템 구축부터 대용량 클러스터 운영까지
+> [엘라스틱서치 실무 가이드](http://www.yes24.com/Product/Goods/71893929)
 
-> 블로그 : [검색의-시대-지고-추천의-시대-뜬다](https://news.samsung.com/kr/%EA%B2%80%EC%83%89%EC%9D%98-%EC%8B%9C%EB%8C%80-%EC%A7%80%EA%B3%A0-%EC%B6%94%EC%B2%9C%EC%9D%98-%EC%8B%9C%EB%8C%80-%EB%9C%AC%EB%8B%A4)
->
-> 블로그 : [검색어 분석을 통한 상품 정렬 개선](https://medium.com/musinsa-tech/%EA%B2%80%EC%83%89%EC%96%B4-%EB%B6%84%EC%84%9D%EC%9D%84-%ED%86%B5%ED%95%9C-%EC%83%81%ED%92%88-%EC%A0%95%EB%A0%AC-%EA%B0%9C%EC%84%A0-b92ded2923c3)
+> 블로그 - [검색의-시대-지고-추천의-시대-뜬다](https://news.samsung.com/kr/%EA%B2%80%EC%83%89%EC%9D%98-%EC%8B%9C%EB%8C%80-%EC%A7%80%EA%B3%A0-%EC%B6%94%EC%B2%9C%EC%9D%98-%EC%8B%9C%EB%8C%80-%EB%9C%AC%EB%8B%A4)
+> 블로그 - [검색어 분석을 통한 상품 정렬 개선](https://medium.com/musinsa-tech/%EA%B2%80%EC%83%89%EC%96%B4-%EB%B6%84%EC%84%9D%EC%9D%84-%ED%86%B5%ED%95%9C-%EC%83%81%ED%92%88-%EC%A0%95%EB%A0%AC-%EA%B0%9C%EC%84%A0-b92ded2923c3)
