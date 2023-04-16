@@ -15,7 +15,7 @@ last_modified_at: 2023-04-16T09:40:00-00:00
 ---
 실습해볼 쿠버네티스 환경의 구조는 아래 그림과 같다.
 
-[Kubernetes Architecture](https://www.dropbox.com/s/3ngnh2hcfye46wa/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%2012.47.31.png?dl=0)
+![Kubernetes Architecture](https://www.dropbox.com/s/3ngnh2hcfye46wa/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%2012.47.31.png?dl=0)
 
 ## GKE Cluster
 
@@ -23,13 +23,13 @@ GKE에서 클러스터를 세팅을 시작해보자
 
 Kubernetes Engine 메뉴에서 상단의 만들기를 선택한다.
 
-[Kubernetes Engine](https://www.dropbox.com/s/9onka81w4ezw0x7/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.48.50.png?dl=0)
+![Kubernetes Engine](https://www.dropbox.com/s/9onka81w4ezw0x7/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.48.50.png?dl=0)
 
 그럼 아래와 같은 팝업이 나오는데 여기서는 **Standard 구성 을 선택한다**
 
 Autopilot 모드는 핸드오프 환경을 제공하는 최적화된 kubernetes 클러스터로 즉시 사용할 수 있는 간소화된 구성, Google에서 노드를 관리하고 구성한다.
 
-[클러스터 만들기](https://www.dropbox.com/s/6hx9blragd9l9ik/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.50.46.png?dl=0)
+![클러스터 만들기](https://www.dropbox.com/s/6hx9blragd9l9ik/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.50.46.png?dl=0)
 
 반면 표준 모드는 모든 옵션 구성이 가능하며 노드를 직접 관리하고 구성한다.
 
@@ -44,7 +44,7 @@ Autopilot 모드는 핸드오프 환경을 제공하는 최적화된 kubernetes 
 노드 풀 업그레이드 전략에서는 일시 급증 업그레이드를 선택 후 
 최대 일시 급증 개수는 2개 최대 사용불가는 0개로 지정했다.
 
-[클러스터 만들기2](https://www.dropbox.com/s/s0wvnimoz485jbr/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.54.27.png?dl=0)
+![클러스터 만들기2](https://www.dropbox.com/s/s0wvnimoz485jbr/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2010.54.27.png?dl=0)
 
 왼쪽에 사이드 메뉴로 노드/네트워킹/보안/메타데이터를 확인할 수 있다.
 노드 > 노드 설정 구성에서 머신 구성은 e2-standard-2 (2 vGPU, 8GiB memory)를 선택했다.
@@ -61,11 +61,11 @@ Autopilot 모드는 핸드오프 환경을 제공하는 최적화된 kubernetes 
 
 일시 급증 업그레이드 선택후 최대 일시 급증 개수는 1, 최대 사용 불가는 0 으로 지정했고,
 
-[노드 풀 세부정보](https://www.dropbox.com/s/9zdh27rxa3gb1n4/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.02.37.png?dl=0)
+![노드 풀 세부정보](https://www.dropbox.com/s/9zdh27rxa3gb1n4/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.02.37.png?dl=0)
 
 노드 설정 구성에서 머신 구성은 NVIDIA T4 GPU 1개로 지정했다.
 
-[노드 설정 구성](https://www.dropbox.com/s/o4yxqtfs0axyzy3/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.03.11.png?dl=0)
+![노드 설정 구성](https://www.dropbox.com/s/o4yxqtfs0axyzy3/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.03.11.png?dl=0)
 
 GPU 노드를 대량으로 사용한다면 클러스터를 생성할때 지정하는 리전을 고려해야한다.
 
@@ -73,21 +73,21 @@ GPU 노드를 대량으로 사용한다면 클러스터를 생성할때 지정�
 
 NVIDIA RTX 가상 워크스테이션을 확인할 수 있다.
 
-[GCP GPU 리전 및 영역](https://cloud.google.com/compute/docs/gpus/gpu-regions-zones?hl=ko#gpu_regions_and_zones)
+![GCP GPU 리전 및 영역](https://cloud.google.com/compute/docs/gpus/gpu-regions-zones?hl=ko#gpu_regions_and_zones)
 
 클러스터 생성 이후에는 지역을 변경하기가 어려워서 사용하는 GPU 확보가 용이한 지역을 먼저 확인후 지정하는 것이 좋다.
 
 아래와 같이 특정 머신 유형은 정해진 리전 및 영역에서만 사용할수 있고
 
-[리전 및 영역 제한사항 안내](https://www.dropbox.com/s/ezzb7fasabd2z40/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.09.08.png?dl=0)
+![리전 및 영역 제한사항 안내](https://www.dropbox.com/s/ezzb7fasabd2z40/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.09.08.png?dl=0)
 
 같은 서울 지역이라도 b와 c에 따라 사용할수 있는 GPU 종류가 다르다.
 
-[asia-northeast3-b, c](https://www.dropbox.com/s/upuc94izc07i3g2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.09.21.png?dl=0)
+![asia-northeast3-b, c](https://www.dropbox.com/s/upuc94izc07i3g2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.09.21.png?dl=0)
 
 관련된 이야기가 나왔기에 조금더 이야기해보면 T4 GPU를 사용할 수 있는 리전과 영역을 지정해서 클러스터를 세팅했다 하더라도 할당량이 중요하다. 무슨 이야기냐하면 GCP의 경우 할당량 (All Quotas) 메뉴에 접속하면 아래 화면이 나온다.
 
-[프로젝트 할당량](https://www.dropbox.com/s/wbrz7ehg16znqp9/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.14.32.png?dl=0)
+![프로젝트 할당량](https://www.dropbox.com/s/wbrz7ehg16znqp9/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.14.32.png?dl=0)
 
 가장 위에 있는 asia-east1 위치라면 생성할 수 있는 NVIDIA T4 GPU가 최대 16개이며
 
@@ -97,7 +97,7 @@ asia-south2 위치라면 1개이다. 이 한도는 요청할 수 있다는 것�
 
 만약에 한도가 부족하다면 현재 보는 할당량 우측 탭이 상향 요청이고 여기서 한도추가 요청을 할 수 있다.
 
-[한도 상향 요청](https://www.dropbox.com/s/e34fb6jth67dsti/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.18.12.png?dl=0)
+![한도 상향 요청](https://www.dropbox.com/s/e34fb6jth67dsti/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.18.12.png?dl=0)
 
 위 화면을 보면 가장 오른쪽 상태에서 승인이 된 것도 있지만 요청된 한도만큼 승인되지않고 일부만 승인된 것도 확인할 수 있다. 원하는 한도를 확보해야한다면 회신이 오기까지 기다릴수도 있지만
 
@@ -107,15 +107,15 @@ asia-south2 위치라면 1개이다. 이 한도는 요청할 수 있다는 것�
 
 여기서는 테스트 중이라 system-pool 노드풀의 노드 수를 2개로 지정했다.
 
-[클러스터 조회](https://www.dropbox.com/s/7eivcssa7drptl4/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.22.00.png?dl=0)
+![클러스터 조회](https://www.dropbox.com/s/7eivcssa7drptl4/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.22.00.png?dl=0)
 
-[클러스터에 연결](https://www.dropbox.com/s/esascnxaceztnvi/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.23.05.png?dl=0)
+![클러스터에 연결](https://www.dropbox.com/s/esascnxaceztnvi/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.23.05.png?dl=0)
 
 명령줄 액세스를 복사한후 CLOUD SHELL에서 실행을 클릭하면 아래 Cloud Shell 승인화면이 나온다.
 
 승인을 누르면 클러스터에 연결되어 기본적인 동작을 수행할 수 있다.
 
-[Cloud shell 승인](https://www.dropbox.com/s/4r2oupciodlwjbu/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.24.50.png?dl=0)
+![Cloud shell 승인](https://www.dropbox.com/s/4r2oupciodlwjbu/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-15%20%EC%98%A4%ED%9B%84%2011.24.50.png?dl=0)
 
 gcloud 관련 설정이 되어있지않다면 아래와 같은 에러메시지를 확인할 수 있다.
 
@@ -235,11 +235,11 @@ $ kubectl get pods -A
 별도로 띄워둔 worker부터 시작해 cert-manager, istio-system, kube-system, shared-storage 가 확인된다.
 
 
-[kubectl get pods](https://www.dropbox.com/s/r2hyaoodz5uju75/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%208.16.38.png?dl=0)
+![kubectl get pods](https://www.dropbox.com/s/r2hyaoodz5uju75/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%208.16.38.png?dl=0)
 
 
 Cloud Run을 통해 띄운 test-server 도 swagger 페이지가 조회되고 토큰값을 입력해 authorize하면
 api들을 call 할 수 있다.
 
-[api server docs](https://www.dropbox.com/s/baxuhzck0wkkypb/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%209.37.27.png?dl=0)
+![api server docs](https://www.dropbox.com/s/baxuhzck0wkkypb/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%209.37.27.png?dl=0)
 
