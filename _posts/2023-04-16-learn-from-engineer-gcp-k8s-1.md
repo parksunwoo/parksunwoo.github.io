@@ -28,7 +28,7 @@ k8s 시스템 엔지니어로부터 직접 차근차근 설명받으면서 배�
 
 ---
 
-[실습환경에서 전체 시스템 구조](https://www.dropbox.com/s/7p1s9tam1ne1jj2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%2012.46.27.png?dl=0)
+![실습환경에서 전체 시스템 구조](https://www.dropbox.com/s/7p1s9tam1ne1jj2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-16%20%EC%98%A4%EC%A0%84%2012.46.27.png?dl=0)
 
 현재 구동중인 백엔드 시스템이 있고 해당 시스템에서 유저의 특정 이벤트 발생시 유저에게 필요한 컨테이너 생성요청이 발생한다.
 
@@ -68,7 +68,7 @@ Firebase Console에서 데이터베이스 또는 스토리지 인스턴스를 �
 
 Firebase Admin SDK용 SA파일이 생성되는데 이 파일은 이후 Cloud Run에서 사용될 예정이다.
 
-[Firebase Admin SDK용 SA파일생성](https://www.dropbox.com/s/yrjnu1e7uaycbby/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.26.48.png?dl=0)
+![Firebase Admin SDK용 SA파일생성](https://www.dropbox.com/s/yrjnu1e7uaycbby/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.26.48.png?dl=0)
 
 이후에는 실시간 데이터베이스에서 데이터 탭을 클릭해 실제 서비스에서 사용할 테이블을 세팅한다
 
@@ -83,7 +83,7 @@ Firebase 와 Goolge Cloud는 연결되어있다. 두 플랫폼을 함께 사용�
 
 처음 사용하는 제품들의 경우 아래와 같은 화면이 나오고 사용버튼을 클릭해야 활성화 후 제품을 사용할 수 있다.
 
-[제품 활성화](https://www.dropbox.com/s/5qefdh2c0khxrvw/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.41.39.png?dl=0)
+![GCP 제품 활성화](https://www.dropbox.com/s/5qefdh2c0khxrvw/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.41.39.png?dl=0)
 
 ### IAM
 
@@ -91,11 +91,11 @@ IAM 메뉴에서는 사용자를 권한에 따라 추가할수 있고 서비스 
 
 외부 관계자를 프로젝트에 초대할 경우가 발생할 수 있는데 이 때는 조건을 추가해 만료되는 시간을 지정해서 관리할 수 있다. 시간 또는 리소스 유형을 지정해 관리할 수 있다.
 
-[IAM 액세스 권한부여](https://www.dropbox.com/s/i8zmth8eexesnya/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.45.34.png?dl=0)
+![IAM 액세스 권한부여](https://www.dropbox.com/s/i8zmth8eexesnya/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.45.34.png?dl=0)
 
 위 화면에서 + IAM 조건추가를 클릭하면 아래와 같은 탭이 나온다.
 
-[IAM 조건 추가](https://www.dropbox.com/s/ehxmtcdpwames0i/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.46.08.png?dl=0)
+![IAM 조건 추가](https://www.dropbox.com/s/ehxmtcdpwames0i/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%EC%A0%84%2011.46.08.png?dl=0)
 
 IAM 메뉴에서 필요로 하는 실제 사용자 이메일주소로 액세스 권한을 부여해보았고
 
@@ -117,13 +117,13 @@ CI/CD 구축을 쉽게할 수 있는데
 
 소스저장소를 선택 및 authenicate 설정을 할 수 있다.
 
-[Cloud Run 서비스 만들기](https://www.dropbox.com/s/ln2yfmqrvbgurxa/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.11.png?dl=0)
+![Cloud Run 서비스 만들기](https://www.dropbox.com/s/ln2yfmqrvbgurxa/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.11.png?dl=0)
 
-[Cloud Build 소스저장소](https://www.dropbox.com/s/53tfckpeuife3gj/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.39.png?dl=0)
+![Cloud Build 소스저장소](https://www.dropbox.com/s/53tfckpeuife3gj/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.39.png?dl=0)
 
 authenicate 설정을 완료했다면 연결된 저장소 관리에 연동한 저장소가 조회되고 저장소를 선택하고 다음을 누르면 브랜치와 Dockerfile을 지정할 수 있다.
 
-[Cloud Build 빌드구성](https://www.dropbox.com/s/vfgmevo1anbd2n1/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.57.png?dl=0)
+![Cloud Build 빌드구성](https://www.dropbox.com/s/vfgmevo1anbd2n1/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.05.57.png?dl=0)
 
 이렇게만 세팅하면 지정한 소스저장소의 타겟 브랜치에 새로운 변경사항이 반영되면
 cloud run 이 트리거되어 변경사항이 동시에 반영된다.
@@ -150,7 +150,7 @@ cloud run 이 트리거되어 변경사항이 동시에 반영된다.
 등록한 환경변수는 바로 위에서 연결한 소스저장소 로직과 연관되어 있는 변수들이고
 본인이 사용해야할 다른 변수가 있다면 적절히 추가하면 되겠다.
 
-[Cloud Run 환경변수 입력](https://www.dropbox.com/s/y3ps8f7k9lola77/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.13.47.png?dl=0)[https://www.dropbox.com/s/y3ps8f7k9lola77/스크린샷 2023-04-13 오후 12.13.47.png?dl=0](https://www.dropbox.com/s/y3ps8f7k9lola77/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.13.47.png?dl=0)
+![Cloud Run 환경변수 입력](https://www.dropbox.com/s/y3ps8f7k9lola77/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.13.47.png?dl=0)[https://www.dropbox.com/s/y3ps8f7k9lola77/스크린샷 2023-04-13 오후 12.13.47.png?dl=0](https://www.dropbox.com/s/y3ps8f7k9lola77/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.13.47.png?dl=0)
 
 환경변수 등록까지 하고 만들기를 하면 Cloud Run에 새로운 서비스가 등록되고 build 가 바로 시작된다.
 
@@ -160,7 +160,7 @@ cloud build service account 설정에서 ([링크](https://console.cloud.google.
 
 Cloud Run 관리자와 서비스 계정 사용자를 “사용 설정” 으로 변경한다.
 
-[서비스 계정권한](https://www.dropbox.com/s/r06helrnednumzb/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.24.25.png?dl=0)
+![서비스 계정권한](https://www.dropbox.com/s/r06helrnednumzb/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.24.25.png?dl=0)
 
 ### Cloud tasks
 
@@ -174,7 +174,7 @@ Cloud Tasks는 App Engine 또는 임의의 HTTP 엔드포인트에서 실행할 
 
 지역은 이전 단계 Cloud Run과 일치되는 us-central1 로 지정하겠다.
 
-[Cloud Tasks push큐 만들기](https://www.dropbox.com/s/9sl479r9czaoeea/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.41.41.png?dl=0)
+![Cloud Tasks push큐 만들기](https://www.dropbox.com/s/9sl479r9czaoeea/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.41.41.png?dl=0)
 
 여러 설정값들이 나오는데
 
@@ -194,7 +194,7 @@ GCP Cloud DNS에 접속해 새 DNS 영역을 만들어보겠다.
 
 여기서는 AWS Route53에 등록하는 것까지 해보겠다.
 
-[DNS 영역 만들기](https://www.dropbox.com/s/wr5uswqlf8qn3ua/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.48.11.png?dl=0)
+![DNS 영역 만들기](https://www.dropbox.com/s/wr5uswqlf8qn3ua/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.48.11.png?dl=0)
 
 DNS 영역 생성이후 NS 유형의 리소스 레코드 세트 세부정보를 확인하면
 
@@ -210,7 +210,7 @@ Filestore는 스토리지이고 이번 실습에서는 개별 컨테이너가 �
 
 아래에서는 인스턴스 ID를 test로 인스턴스 유형은 기본, 스토리지 유형은 HDD, 용량은 1TiB 로 설정하였다.
 
-[Filestore 인스턴스 만들기](https://www.dropbox.com/s/zwbie1pvyvajc0f/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.57.05.png?dl=0)
+![Filestore 인스턴스 만들기](https://www.dropbox.com/s/zwbie1pvyvajc0f/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%2012.57.05.png?dl=0)
 
 만들기를 누르면 인스턴스가 생성되고
 
@@ -218,4 +218,4 @@ Filestore는 스토리지이고 이번 실습에서는 개별 컨테이너가 �
 
 이 IP주소를 가지고 이후 클러스터 세팅시 사용할 것이다.
 
-[Filestore 인스턴스 조회](https://www.dropbox.com/s/d3wtycg7c0o9gls/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%202.26.57.png?dl=0)
+![Filestore 인스턴스 조회](https://www.dropbox.com/s/d3wtycg7c0o9gls/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-13%20%EC%98%A4%ED%9B%84%202.26.57.png?dl=0)
