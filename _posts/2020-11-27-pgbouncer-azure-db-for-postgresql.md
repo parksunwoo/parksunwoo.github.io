@@ -9,7 +9,7 @@ tags:
 last_modified_at: 2020-11-27T00:53:00-00:00
 ---
 
-https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/steps-to-install-and-setup-pgbouncer-connection-pooling-proxy/ba-p/730555
+[steps-to-install-and-setup-pgbouncer-connection-pooling-proxy](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/steps-to-install-and-setup-pgbouncer-connection-pooling-proxy/ba-p/730555)
 
 위 블로그 내용을 번역해 해당 포스트를 작성했음을  알립니다.
 
@@ -54,99 +54,99 @@ Ubuntu VM에서 PgBouncer를 설정하는 단계
     
 3. 중요 참고: 위의 명령은 VM에 대한 NSG를 생성하고 VM에서 포트 5432를 모든 소스 IP에 대해 엽니다. 이는 보안 관점에서 권장되지 않습니다. 이상적으로는 VM이 VNet에 구성되어야 하며, 클라이언트 애플리케이션 VM으로만 PgBouncer VM에 대한 액세스를 제한하기 위해 az network nsg를 사용하여 NSG에서 소스 IP 범위를 정의하고 화이트리스트에 추가해야 합니다.
 
-```bash
-ssh pgadminuser@<PublicIPEndpoint>
+    ```bash
+    ssh pgadminuser@<PublicIPEndpoint>
 
-sudo apt-get update
-sudo apt-get install -y pgbouncer
-```
+    sudo apt-get update
+    sudo apt-get install -y pgbouncer
+    ```
 
 4. 인증 기관에서 인증서 파일을 다운로드하여 SSL 연결을 사용하여 PostgreSQL용 Azure DB에 연결합니다.
 
-```bash
-sudo wget https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt
+    ```bash
+    sudo wget https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt
 
-sudo openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out /etc/root.crt
-```
+    sudo openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out /etc/root.crt
+    ```
 
 5. etc/pgbouncer/pgBouncer.ini에 있는 Pgbouncer.ini 구성 파일을 다음 설정을 사용하여 수정합니다.
 
-```bash
-[databases]
+    ```bash
+    [databases]
 
- * = host=<servername>.postgres.database.azure.com  port=5432
+    * = host=<servername>.postgres.database.azure.com  port=5432
 
-[pgbouncer]
+    [pgbouncer]
 
- # Do not change these settings:
+    # Do not change these settings:
 
- listen_addr = 0.0.0.0
+    listen_addr = 0.0.0.0
 
- auth_file = /etc/pgbouncer/userlist.txt
+    auth_file = /etc/pgbouncer/userlist.txt
 
- auth_type = trust
+    auth_type = trust
 
- server_tls_sslmode = verify-ca
+    server_tls_sslmode = verify-ca
 
- server_tls_ca_file = /etc/root.crt
+    server_tls_ca_file = /etc/root.crt
 
- # These are defaults and can be configured
+    # These are defaults and can be configured
 
- # please leave them as defaults if you are
+    # please leave them as defaults if you are
 
- # uncertain.
+    # uncertain.
 
- listen_port = 5432
+    listen_port = 5432
 
- unix_socket_dir =
+    unix_socket_dir =
 
- user = postgres
+    user = postgres
 
- pool_mode = session
+    pool_mode = session
 
- max_client_conn = 100
+    max_client_conn = 100
 
- ignore_startup_parameters = extra_float_digits
+    ignore_startup_parameters = extra_float_digits
 
- admin_users = postgres
-```
+    admin_users = postgres
+    ```
 
 6. etc/pgbouncer/userlist.txt에 있는 인증 파일을 수정하여 클라이언트가 PgBouncer 서비스에 액세스하는 데 사용할 수 있는 사용자 이름/비밀번호 쌍을 지정합니다. 각 줄은 아래 형식이어야 합니다.
 
-```
-"username@hostname" "password"
+    ```
+    "username@hostname" "password"
 
- Each entry is simply new line separated for example:
+    Each entry is simply new line separated for example:
 
- "sa@mypgserver" "P@ssword1234"
+    "sa@mypgserver" "P@ssword1234"
 
- "test@mypgserver" "Test@#1234"
-```
+    "test@mypgserver" "Test@#1234"
+    ```
 
 참고: PostgreSQL용 Azure 데이터베이스 사용자 이름은 항상 사용자 이름@호스트 이름 형식입니다.
 
 7. PgBouncer 서비스를 시작하고 로그에 오류가 없는지 확인합니다.
 
-```bash
-sudo service pgbouncer start
+    ```bash
+    sudo service pgbouncer start
 
-more /var/log/postgresql/pgbouncer.log
-```
+    more /var/log/postgresql/pgbouncer.log
+    ```
 
 8. 가상 머신에 postgresql-client가 설치되어 있지 않은 경우, postgresql-client를 설치하고 psql을 사용하여 PgBouncer 서비스에 대한 연결의 유효성을 검사한 다음, PostgreSQL 서비스용 백엔드 Azure DB에 연결합니다.
 
-```bash
-sudo apt-get update
+    ```bash
+    sudo apt-get update
 
-sudo apt-get install postgresql-client
+    sudo apt-get install postgresql-client
 
-psql -h 127.0.0.1 -p 5432 -U sa@mypgserver -d postgres
-```
+    psql -h 127.0.0.1 -p 5432 -U sa@mypgserver -d postgres
+    ```
 
 9. 외부 애플리케이션 VM 또는 워크스테이션에서 PgBouncer 서비스에 연결하여 연결이 성공했는지 확인합니다.
 
-```
-psql -h <PublicIPEndpoint> -p 5432 -U sa@mypgserver -d postgres
-```
+    ```
+    psql -h <PublicIPEndpoint> -p 5432 -U sa@mypgserver -d postgres
+    ```
 
 이제 PgBouncer 연결 풀링 프록시를 활용하여 PostgreSQL용 Azure DB 서비스에 연결하도록 모든 설정이 완료되었습니다.
