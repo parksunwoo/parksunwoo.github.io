@@ -46,13 +46,13 @@ Ubuntu VM에서 PgBouncer를 설정하는 단계
     ```
     
 
-1. 우분투 VM의 NSG(네트워크 보안 그룹)에서 포트 5432를 열어 PgBouncer가 해당 포트에서 애플리케이션에서 들어오는 연결을 수신 대기할 수 있도록 합니다.
+2. 우분투 VM의 NSG(네트워크 보안 그룹)에서 포트 5432를 열어 PgBouncer가 해당 포트에서 애플리케이션에서 들어오는 연결을 수신 대기할 수 있도록 합니다.
     
     ```bash
     az vm open-port --port 5432 --resource-group myResourceGroup -name PgBouncerPoolVM
     ```
     
-2. 중요 참고: 위의 명령은 VM에 대한 NSG를 생성하고 VM에서 포트 5432를 모든 소스 IP에 대해 엽니다. 이는 보안 관점에서 권장되지 않습니다. 이상적으로는 VM이 VNet에 구성되어야 하며, 클라이언트 애플리케이션 VM으로만 PgBouncer VM에 대한 액세스를 제한하기 위해 az network nsg를 사용하여 NSG에서 소스 IP 범위를 정의하고 화이트리스트에 추가해야 합니다.
+3. 중요 참고: 위의 명령은 VM에 대한 NSG를 생성하고 VM에서 포트 5432를 모든 소스 IP에 대해 엽니다. 이는 보안 관점에서 권장되지 않습니다. 이상적으로는 VM이 VNet에 구성되어야 하며, 클라이언트 애플리케이션 VM으로만 PgBouncer VM에 대한 액세스를 제한하기 위해 az network nsg를 사용하여 NSG에서 소스 IP 범위를 정의하고 화이트리스트에 추가해야 합니다.
 
 ```bash
 ssh pgadminuser@<PublicIPEndpoint>
@@ -61,7 +61,7 @@ sudo apt-get update
 sudo apt-get install -y pgbouncer
 ```
 
-1. 인증 기관에서 인증서 파일을 다운로드하여 SSL 연결을 사용하여 PostgreSQL용 Azure DB에 연결합니다.
+4. 인증 기관에서 인증서 파일을 다운로드하여 SSL 연결을 사용하여 PostgreSQL용 Azure DB에 연결합니다.
 
 ```bash
 sudo wget https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt
@@ -69,7 +69,7 @@ sudo wget https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt
 sudo openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out /etc/root.crt
 ```
 
-1. etc/pgbouncer/pgBouncer.ini에 있는 Pgbouncer.ini 구성 파일을 다음 설정을 사용하여 수정합니다.
+5. etc/pgbouncer/pgBouncer.ini에 있는 Pgbouncer.ini 구성 파일을 다음 설정을 사용하여 수정합니다.
 
 ```bash
 [databases]
@@ -111,7 +111,7 @@ sudo openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out /etc/ro
  admin_users = postgres
 ```
 
-1. etc/pgbouncer/userlist.txt에 있는 인증 파일을 수정하여 클라이언트가 PgBouncer 서비스에 액세스하는 데 사용할 수 있는 사용자 이름/비밀번호 쌍을 지정합니다. 각 줄은 아래 형식이어야 합니다.
+6. etc/pgbouncer/userlist.txt에 있는 인증 파일을 수정하여 클라이언트가 PgBouncer 서비스에 액세스하는 데 사용할 수 있는 사용자 이름/비밀번호 쌍을 지정합니다. 각 줄은 아래 형식이어야 합니다.
 
 ```
 "username@hostname" "password"
@@ -125,7 +125,7 @@ sudo openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out /etc/ro
 
 참고: PostgreSQL용 Azure 데이터베이스 사용자 이름은 항상 사용자 이름@호스트 이름 형식입니다.
 
-1. PgBouncer 서비스를 시작하고 로그에 오류가 없는지 확인합니다.
+7. PgBouncer 서비스를 시작하고 로그에 오류가 없는지 확인합니다.
 
 ```bash
 sudo service pgbouncer start
@@ -133,7 +133,7 @@ sudo service pgbouncer start
 more /var/log/postgresql/pgbouncer.log
 ```
 
-1. 가상 머신에 postgresql-client가 설치되어 있지 않은 경우, postgresql-client를 설치하고 psql을 사용하여 PgBouncer 서비스에 대한 연결의 유효성을 검사한 다음, PostgreSQL 서비스용 백엔드 Azure DB에 연결합니다.
+8. 가상 머신에 postgresql-client가 설치되어 있지 않은 경우, postgresql-client를 설치하고 psql을 사용하여 PgBouncer 서비스에 대한 연결의 유효성을 검사한 다음, PostgreSQL 서비스용 백엔드 Azure DB에 연결합니다.
 
 ```bash
 sudo apt-get update
@@ -143,7 +143,7 @@ sudo apt-get install postgresql-client
 psql -h 127.0.0.1 -p 5432 -U sa@mypgserver -d postgres
 ```
 
-1. 외부 애플리케이션 VM 또는 워크스테이션에서 PgBouncer 서비스에 연결하여 연결이 성공했는지 확인합니다.
+9. 외부 애플리케이션 VM 또는 워크스테이션에서 PgBouncer 서비스에 연결하여 연결이 성공했는지 확인합니다.
 
 ```
 psql -h <PublicIPEndpoint> -p 5432 -U sa@mypgserver -d postgres
