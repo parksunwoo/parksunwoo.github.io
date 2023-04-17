@@ -122,8 +122,7 @@ Ubuntu VM에서 PgBouncer를 설정하는 단계
 
     "test@mypgserver" "Test@#1234"
     ```
-
-참고: PostgreSQL용 Azure 데이터베이스 사용자 이름은 항상 사용자 이름@호스트 이름 형식입니다.
+  참고: PostgreSQL용 Azure 데이터베이스 사용자 이름은 항상 사용자 이름@호스트 이름 형식입니다.
 
 7. PgBouncer 서비스를 시작하고 로그에 오류가 없는지 확인합니다.
 
