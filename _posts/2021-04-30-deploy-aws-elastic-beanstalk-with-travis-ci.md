@@ -81,7 +81,7 @@ deploy:
 }
 ```
 
-4. Docker 컴포즈 파일 변환 및 생성하기
+## 4. Docker 컴포즈 파일 변환 및 생성하기
 
 여러 서비스(예: 웹 서버, 데이터베이스)와 함께 애플리케이션을 실행하려면 **`docker-compose.yml`** 파일을 사용할 수 있습니다. 
 기존 **`Dockerfile``을 **`docker-compose.yml`** 파일로 변환하거나 처음부터 새로 생성하세요. 다음은 예제입니다:
@@ -100,11 +100,11 @@ services:
       POSTGRES_PASSWORD: mypassword
 ```
 
-5. PostgreSQL 설정
+## 5. PostgreSQL 설정
 
 **`docker-compose.yml`** 파일에서 `db` 서비스가 Docker Hub의 PostgreSQL 이미지를 사용하도록 구성합니다. 데이터베이스 사용자 및 비밀번호 등 필요한 환경 변수를 입력합니다.
 
-6. Elastic Beanstalk 구성
+## 6. Elastic Beanstalk 구성
 
 애플리케이션을 위한 Elastic Beanstalk 환경을 생성합니다:
 
@@ -120,7 +120,7 @@ services:
 
 [Elastic Beanstalk Docker 환경 구성](https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/create_deploy_docker.container.console.html)
 
-7. HTTPS 설정
+## 7. HTTPS 설정
 
 HTTPS로 애플리케이션을 보호하려면 SSL 인증서를 획득하고 이를 사용하도록 Elastic Beanstalk 환경을 구성해야 합니다.
 
