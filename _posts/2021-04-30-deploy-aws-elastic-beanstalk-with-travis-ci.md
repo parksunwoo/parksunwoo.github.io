@@ -18,13 +18,13 @@ last_modified_at: 2021-04-30T22:52:00-00:00
 
 목차
 
-1. Travis CI에 연결하기
-2. .travis.yml 파일 작성하기
-3. Dockerrun.aws.json 파일 생성하기
-4. Docker 컴포즈 파일 변환 및 생성하기
-5. PostgreSQL 설정
-6. Elastic Beanstalk 구성하기
-7. HTTPS 설정
+1) Travis CI에 연결하기
+2) .travis.yml 파일 작성하기
+3) Dockerrun.aws.json 파일 생성하기
+4) Docker 컴포즈 파일 변환 및 생성하기
+5) PostgreSQL 설정
+6) Elastic Beanstalk 구성하기
+7) HTTPS 설정
 
 
 1. Travis CI는 애플리케이션을 빌드, 테스트 및 배포하는 프로세스를 자동화하는 지속적 통합 서비스입니다. GitHub 리포지토리를 Travis CI에 연결하려면 다음 단계를 따르세요:
