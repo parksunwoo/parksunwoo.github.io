@@ -16,24 +16,25 @@ last_modified_at: 2021-04-30T22:52:00-00:00
 
 ---
 
-목차
+## 목차
 
-1) Travis CI에 연결하기
-2) .travis.yml 파일 작성하기
-3) Dockerrun.aws.json 파일 생성하기
-4) Docker 컴포즈 파일 변환 및 생성하기
-5) PostgreSQL 설정
-6) Elastic Beanstalk 구성하기
-7) HTTPS 설정
+1. [Travis CI에 연결하기](#1.-Travis-CI에-연결하기)
+2. [.travis.yml 파일 작성하기](#2.-.travis.yml-파일-작성하기)
+3. [Dockerrun.aws.json 파일 생성하기](#3.-Dockerrun.aws.json-파일-생성하기)
+4. [Docker 컴포즈 파일 변환 및 생성하기](#4.-Docker-컴포즈-파일-변환-및-생성하기)
+5. [PostgreSQL 설정](#5.-PostgreSQL-설정)
+6. [Elastic Beanstalk 구성하기](#6.-Elastic-Beanstalk-구성)
+7. [HTTPS 설정](#7.-HTTPS-설정)
 
 
-1. Travis CI는 애플리케이션을 빌드, 테스트 및 배포하는 프로세스를 자동화하는 지속적 통합 서비스입니다. GitHub 리포지토리를 Travis CI에 연결하려면 다음 단계를 따르세요:
+## 1. Travis CI에 연결하기
+Travis CI는 애플리케이션을 빌드, 테스트 및 배포하는 프로세스를 자동화하는 지속적 통합 서비스입니다. GitHub 리포지토리를 Travis CI에 연결하려면 다음 단계를 따르세요:
 - 아직 가입하지 않은 경우 [Travis CI](https://www.travis-ci.com/) 계정에 가입하고 로그인합니다.
 - 계정 설정으로 이동하여 GitHub 계정을 연결합니다.
 - 리포지토리 이름 옆의 스위치를 토글하여 애플리케이션이 포함된 GitHub 리포지토리를 활성화합니다.
 
 
-2. .travis.yml 파일 작성
+## 2. .travis.yml 파일 작성하기
 프로젝트의 루트 디렉토리에 **`.travis.yml`** 파일을 생성합니다. 이 파일은 빌드 프로세스 중에 Travis CI에 수행할 작업을 알려줍니다. 다음은 예제입니다:
 
 ```yaml
@@ -61,7 +62,7 @@ deploy:
 
 예제의 값을 자신의 프로젝트 세부 정보로 바꿉니다.
 
-3. Dockerrun.aws.json 파일 생성하기
+## 3. Dockerrun.aws.json 파일 생성하기
 
 프로젝트의 루트 디렉터리에서 **`Dockerrun.aws.json`** 파일을 생성합니다. 이 파일은 Elastic Beanstalk에 Docker 컨테이너를 배포하고 실행하는 방법을 알려줍니다. 다음은 예제입니다:
 
