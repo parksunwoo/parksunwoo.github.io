@@ -1054,355 +1054,355 @@ Goal 2 에 대한 생성파일
 
 - autogpt 전문
 
-```
-메모리 유형 사용:  LocalCache
-브라우저 사용: 크롬
-생각:  로컬 환경에서 설정하는 방법을 배우기 위해 AutoGPT 설명서를 검색하는 것부터 시작하는 것이 좋습니다.
-이유: 문서를 찾아보면 로컬 환경에서 AutoGPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 AutoGPT 활용의 첫 번째 단계입니다.
-계획:
+    ```
+    메모리 유형 사용:  LocalCache
+    브라우저 사용: 크롬
+    생각:  로컬 환경에서 설정하는 방법을 배우기 위해 AutoGPT 설명서를 검색하는 것부터 시작하는 것이 좋습니다.
+    이유: 문서를 찾아보면 로컬 환경에서 AutoGPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 AutoGPT 활용의 첫 번째 단계입니다.
+    계획:
 
-- AutoGPT 설명서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
-- AutoGPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 AutoGPT에 대해 철저히 조사하고 이해해야 합니다.
-의견: AutoGPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 배우는 것부터 시작하는 것이 좋습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/autogpt/autogpt](https://github.com/autogpt/autogpt)', 'question': '로컬 환경에서 AutoGPT를 설정하는 방법'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-[WDM] - 다운로드 중: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 8.79M/8.79M [00:00<00:00, 12.4MB/s]
-시스템: browse_website 명령이 반환되었습니다: 오류: 메시지: 해당 창 없음: 알 수 없는 오류로 인해 대상 창이 이미 닫힘: 웹 보기를 찾을 수 없음(세션 정보: 크롬=112.0.5615. 49) 스택 추적: 0 크롬드라이버 0x00000001030e1ae8 크롬드라이버 + 4958952 1 크롬드라이버 0x00000001030d97b3 크롬드라이버 + 4925363 2 크롬드라이버 0x0000000102c9b1d6 크롬드라이버 + 475606 3 크롬드라이버 0x0000000102c70cec 크롬드라이버 + 302316 4 크롬드라이버 0x0000000102D09F2F 크로메드라이버 + 929583 5 크로메드라이버 0x0000000102D1F926 크로메드라이버 + 1018150 6 크로메드라이버 0x0000000102D049E3 크로메드라이버 + 907747 7 크로메드라이버 0x0000000102CCEAEF 크로메드라이버 + 686831 8 크로메드라이버 0x0000000102CD000E 크로메드라이버 + 692238 9 크로메드라이버 0x000000010309d9ad 크로메드라이버 + 4680109 10 크로메드라이버 0x00000001030a2c12 크로메드라이버 + 4701202 11 크로메드라이버 0x00000001030a979f 크로메드라이버 + 4728735 12 크로메드라이버 0x00000001030a3b7a 크로메드라이버 + 4705146 13 크롬드라이버 0x000000010307627E 크롬드라이버 + 4518526 14 크롬드라이버 0x00000001030C3908 크롬드라이버 + 4835592 15 크롬드라이버 0x00000001030C3A87 크롬드라이버 + 4835975 16 크롬드라이버 0x00000001030D300F 크롬드라이버 + 4898831 17 libsystem_pthread. dylib 0x00007ff80501d4e1 _pthread_start + 125 18 libsystem_pthread.dylib 0x00007ff805018f6b thread_start + 15
-생각: 이전 명령에 오류가 있었던 것 같습니다. 로컬 환경에서 설정하는 방법을 알아보기 위해 AutoGPT 설명서를 다시 찾아보겠습니다.
-이유: 문서를 찾아보면 로컬 환경에서 AutoGPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 AutoGPT 활용의 첫 번째 단계입니다.
-계획:
-- AutoGPT 설명서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
-- AutoGPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 AutoGPT에 대해 철저히 조사하고 이해해야 합니다.
-말하기: 이전 명령에 오류가 있었던 것 같습니다. 로컬 환경에서 설정하는 방법을 배우기 위해 AutoGPT 설명서를 다시 찾아보겠습니다.
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/autogpt/autogpt](https://github.com/autogpt/autogpt)', 'question': '로컬 환경에서 AutoGPT를 설정하는 방법'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...에 대해...
-입력:URL 변경 [https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)
-시스템: 사람 피드백: URL 변경 [https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)
-생각: 자동-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
-이유: 문서를 찾아보면 로컬 환경에서 자동-GPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 자동-GPT 활용의 첫 번째 단계입니다.
-계획:
-- Auto-GPT 문서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
-- Auto-GPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 자동-GPT에 대해 철저히 조사하고 이해해야 합니다.
-말하기: Auto-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '
-- AutoGPT를 활용하는 방법의 예시를 찾아보세요.
-- 가장 흥미로운 사례를 요약합니다.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
-말하기: 이제 로컬 환경에서 AutoGPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = google ARGUMENTS = {'input': '예제 AutoGPT 활용 방법'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 구글 명령이 반환되었습니다: ['[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://medium.com/generative-ai/complete-guide-to-setup-autogpt-revolutionize-your-task-automation-with-gpt-4-39eda5a85821](https://medium.com/generative-ai/complete-guide-to-setup-autogpt-revolutionize-your-task-automation-with-gpt-4-39eda5a85821)', '[https://www.kdnuggets.com/2023/04/autogpt-everything-need-know.html](https://www.kdnuggets.com/2023/04/autogpt-everything-need-know.html)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)', '[https://jin'
-생각: 우리가 찾은 몇 가지 웹 사이트를 탐색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
-추론: 웹사이트를 둘러보면 AutoGPT가 활용될 수 있는 다양한 방법과 다양한 문제를 해결하는 데 어떻게 사용될 수 있는지 더 잘 이해할 수 있습니다.
-계획:
-- 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아본다.
-- 가장 흥미로운 사례 요약하기
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 한다.
-말하기: 우리가 찾은 몇 가지 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', 'question': 'AutoGPT를 어떻게 활용할 수 있나요?'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-텍스트 길이: 17862자
-메모리에 청크 1/3 추가
-청크 1 / 3 요약
-메모리에 청크 1 요약 추가
-메모리에 청크 2/3 추가
-청크 2/3 요약 중
-메모리에 청크 2 요약 추가
-메모리에 청크 3 / 3 추가
-청크 3 / 3 요약
-메모리에 청크 3 요약 추가
-청크 3을 요약했습니다.
-SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 GPT-4 언어 모델을 사용하여 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 비즈니스를 자율적으로 개발 및 관리하는 오픈 소스 애플리케이션입니다. 또한 자동 텍스트 생성, 콘텐츠 제작, 요약, 의역, 재작성 등에도 사용할 수 있습니다. AutoGPT는 다양한 용도로 사용할 수 있는 강력하고 다재다능한 도구이지만, 자율 AI 에이전트의 의미에 대한 윤리적, 사회적 의문을 제기합니다. \n \n 링크: ['Leadergamer ([https://leadergamer.com.tr](https://leadergamer.com.tr/))', 'Leadergamer ([https://en.leadergamer.com.tr](https://en.leadergamer.com.tr/)', 'tır oyunları ([https://leadergamer.com.tr/en-iyi-tir-oyunlari](https://leadergamer.com.tr/en-iyi-tir-oyunlari)', 'gta 5 hileleri ([https://leadergamer.com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk](https://leadergamer. com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk))', 'pubg şekilli nick ([https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri](https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="5532558d69e86a81951d0d7de4a0bebc")>))
-생각: 로컬 환경에서 설정하는 방법을 알아보기 위해 자동-GPT 설명서를 찾아보겠습니다.
-이유: 문서를 찾아보면 로컬 환경에서 자동-GPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 첫 번째 단계입니다. 
-- 로컬 환경에서 설정하는 방법을 알아보려면 자동-GPT 설명서를 찾아보세요.
-- Auto-GPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 자동-GPT에 대해 철저히 조사하고 이해해야 합니다.
-말하기: Auto-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)', 'question': '로컬 환경에서 자동-GPT를 설정하는 방법'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y -3
-사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 명령
-텍스트 길이: 26900자
-메모리에 청크 1/4 추가
-청크 1 / 4 요약
-메모리에 청크 1 요약 추가
-메모리에 청크 2 / 4 추가
-청크 2 / 4 요약 중
-메모리에 청크 2 요약 추가
-메모리에 청크 3 / 4 추가
-청크 3 / 4 요약
-메모리에 청크 3 요약 추가
-메모리에 청크 4 / 4 추가
-청크 4 / 4 요약
-메모리에 청크 4 요약 추가
-청크 4를 요약했습니다.
-SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: 로컬 환경에서 Auto-GPT를 설정하려면 Python 3.8 이상, OpenAI API 키, 그리고 선택적으로 Redis, Pinecone 또는 Milvus와 같은 메모리 백엔드가 있어야 합니다. 설치 단계는 GitHub 리포지토리에서 최신 안정 릴리스를 다운로드하고 모든 요구 사항이 충족되는지 확인하는 것입니다. 이 프로그램은 명령줄 인수를 사용하거나 음성 모드로 실행할 수 있으며, 인터넷 액세스, 장기 및 단기 메모리 관리, GPT-3.5를 사용한 파일 저장 및 요약 등의 기능을 갖추고 있습니다. 텍스트는 각 단계에 대한 자세한 지침을 제공합니다. 또한 Google API 키를 설정하고, 다른 메모리 백엔드로 전환하고, 메모리 저장을 위해 Redis 또는 Pinecone을 구성할 수 있습니다. 또한 테스트 및 린터를 실행하는 방법에 대한 정보와 이 소프트웨어의 출력에 기반한 모든 조치 또는 결정은 모든 관련 법률, 규정 및 윤리 표준을 준수해야 한다는 면책 조항을 제공합니다. \n \n 링크: ['콘텐츠로 건너뛰기 ([https://github.com/Significant-Gravitas/Auto-GPT/tree/stable#start-of-content](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable#start-of-content))', '\\n\\n\\n\\n ([https://github.com/](https://github.com/))', '\\n Sign\\xa0up\\n ([https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F<user-name>%2F<repo-name>%2Ffiles%2Fdisambiguate&source=header-repo](https://github.com/signup? ref_cta=Sign-up&ref_loc=header+logged-out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo))', '\\n\\n\\n\\n\\nActions\\n 모든 워크플로 자동화\\n \\n ([https://github.com/features/actions](https://github. com/features/actions))', '\\n\\n\\n\\n패키지\\n 패키지 호스팅 및 관리\\n \\n ([https://github.com/features/packages](https://github.com/features/packages)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="292ac9ec1371299233a7437f281201b9")>))
-생각: 이제 로컬 환경에서 자동-GPT를 설정하는 방법을 배웠으므로 이제 이를 활용할 수 있는 몇 가지 놀라운 예를 살펴봅시다.
-이유: Auto-GPT를 활용할 수 있는 다양한 방법을 알아봄으로써 그 잠재력을 최대한 이해하고 다양한 문제를 해결하는 데 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
-계획: 
+    - AutoGPT 설명서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
+    - AutoGPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 AutoGPT에 대해 철저히 조사하고 이해해야 합니다.
+    의견: AutoGPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 배우는 것부터 시작하는 것이 좋습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/autogpt/autogpt](https://github.com/autogpt/autogpt)', 'question': '로컬 환경에서 AutoGPT를 설정하는 방법'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    [WDM] - 다운로드 중: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 8.79M/8.79M [00:00<00:00, 12.4MB/s]
+    시스템: browse_website 명령이 반환되었습니다: 오류: 메시지: 해당 창 없음: 알 수 없는 오류로 인해 대상 창이 이미 닫힘: 웹 보기를 찾을 수 없음(세션 정보: 크롬=112.0.5615. 49) 스택 추적: 0 크롬드라이버 0x00000001030e1ae8 크롬드라이버 + 4958952 1 크롬드라이버 0x00000001030d97b3 크롬드라이버 + 4925363 2 크롬드라이버 0x0000000102c9b1d6 크롬드라이버 + 475606 3 크롬드라이버 0x0000000102c70cec 크롬드라이버 + 302316 4 크롬드라이버 0x0000000102D09F2F 크로메드라이버 + 929583 5 크로메드라이버 0x0000000102D1F926 크로메드라이버 + 1018150 6 크로메드라이버 0x0000000102D049E3 크로메드라이버 + 907747 7 크로메드라이버 0x0000000102CCEAEF 크로메드라이버 + 686831 8 크로메드라이버 0x0000000102CD000E 크로메드라이버 + 692238 9 크로메드라이버 0x000000010309d9ad 크로메드라이버 + 4680109 10 크로메드라이버 0x00000001030a2c12 크로메드라이버 + 4701202 11 크로메드라이버 0x00000001030a979f 크로메드라이버 + 4728735 12 크로메드라이버 0x00000001030a3b7a 크로메드라이버 + 4705146 13 크롬드라이버 0x000000010307627E 크롬드라이버 + 4518526 14 크롬드라이버 0x00000001030C3908 크롬드라이버 + 4835592 15 크롬드라이버 0x00000001030C3A87 크롬드라이버 + 4835975 16 크롬드라이버 0x00000001030D300F 크롬드라이버 + 4898831 17 libsystem_pthread. dylib 0x00007ff80501d4e1 _pthread_start + 125 18 libsystem_pthread.dylib 0x00007ff805018f6b thread_start + 15
+    생각: 이전 명령에 오류가 있었던 것 같습니다. 로컬 환경에서 설정하는 방법을 알아보기 위해 AutoGPT 설명서를 다시 찾아보겠습니다.
+    이유: 문서를 찾아보면 로컬 환경에서 AutoGPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 AutoGPT 활용의 첫 번째 단계입니다.
+    계획:
+    - AutoGPT 설명서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
+    - AutoGPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 AutoGPT에 대해 철저히 조사하고 이해해야 합니다.
+    말하기: 이전 명령에 오류가 있었던 것 같습니다. 로컬 환경에서 설정하는 방법을 배우기 위해 AutoGPT 설명서를 다시 찾아보겠습니다.
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/autogpt/autogpt](https://github.com/autogpt/autogpt)', 'question': '로컬 환경에서 AutoGPT를 설정하는 방법'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...에 대해...
+    입력:URL 변경 [https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)
+    시스템: 사람 피드백: URL 변경 [https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)
+    생각: 자동-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
+    이유: 문서를 찾아보면 로컬 환경에서 자동-GPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 자동-GPT 활용의 첫 번째 단계입니다.
+    계획:
+    - Auto-GPT 문서를 찾아 로컬 환경에서 설정하는 방법을 알아본다.
+    - Auto-GPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 자동-GPT에 대해 철저히 조사하고 이해해야 합니다.
+    말하기: Auto-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '
+    - AutoGPT를 활용하는 방법의 예시를 찾아보세요.
+    - 가장 흥미로운 사례를 요약합니다.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
+    말하기: 이제 로컬 환경에서 AutoGPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = google ARGUMENTS = {'input': '예제 AutoGPT 활용 방법'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 구글 명령이 반환되었습니다: ['[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://medium.com/generative-ai/complete-guide-to-setup-autogpt-revolutionize-your-task-automation-with-gpt-4-39eda5a85821](https://medium.com/generative-ai/complete-guide-to-setup-autogpt-revolutionize-your-task-automation-with-gpt-4-39eda5a85821)', '[https://www.kdnuggets.com/2023/04/autogpt-everything-need-know.html](https://www.kdnuggets.com/2023/04/autogpt-everything-need-know.html)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)', '[https://jin'
+    생각: 우리가 찾은 몇 가지 웹 사이트를 탐색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
+    추론: 웹사이트를 둘러보면 AutoGPT가 활용될 수 있는 다양한 방법과 다양한 문제를 해결하는 데 어떻게 사용될 수 있는지 더 잘 이해할 수 있습니다.
+    계획:
+    - 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아본다.
+    - 가장 흥미로운 사례 요약하기
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 한다.
+    말하기: 우리가 찾은 몇 가지 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', 'question': 'AutoGPT를 어떻게 활용할 수 있나요?'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    텍스트 길이: 17862자
+    메모리에 청크 1/3 추가
+    청크 1 / 3 요약
+    메모리에 청크 1 요약 추가
+    메모리에 청크 2/3 추가
+    청크 2/3 요약 중
+    메모리에 청크 2 요약 추가
+    메모리에 청크 3 / 3 추가
+    청크 3 / 3 요약
+    메모리에 청크 3 요약 추가
+    청크 3을 요약했습니다.
+    SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 GPT-4 언어 모델을 사용하여 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 비즈니스를 자율적으로 개발 및 관리하는 오픈 소스 애플리케이션입니다. 또한 자동 텍스트 생성, 콘텐츠 제작, 요약, 의역, 재작성 등에도 사용할 수 있습니다. AutoGPT는 다양한 용도로 사용할 수 있는 강력하고 다재다능한 도구이지만, 자율 AI 에이전트의 의미에 대한 윤리적, 사회적 의문을 제기합니다. \n \n 링크: ['Leadergamer ([https://leadergamer.com.tr](https://leadergamer.com.tr/))', 'Leadergamer ([https://en.leadergamer.com.tr](https://en.leadergamer.com.tr/)', 'tır oyunları ([https://leadergamer.com.tr/en-iyi-tir-oyunlari](https://leadergamer.com.tr/en-iyi-tir-oyunlari)', 'gta 5 hileleri ([https://leadergamer.com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk](https://leadergamer. com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk))', 'pubg şekilli nick ([https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri](https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="5532558d69e86a81951d0d7de4a0bebc")>))
+    생각: 로컬 환경에서 설정하는 방법을 알아보기 위해 자동-GPT 설명서를 찾아보겠습니다.
+    이유: 문서를 찾아보면 로컬 환경에서 자동-GPT를 설정하는 방법을 더 잘 이해할 수 있으며, 이는 첫 번째 단계입니다. 
+    - 로컬 환경에서 설정하는 방법을 알아보려면 자동-GPT 설명서를 찾아보세요.
+    - Auto-GPT를 활용할 수 있는 몇 가지 놀라운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 자동-GPT에 대해 철저히 조사하고 이해해야 합니다.
+    말하기: Auto-GPT 설명서를 찾아보고 로컬 환경에서 설정하는 방법을 알아봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://github.com/Significant-Gravitas/Auto-GPT/tree/stable](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable)', 'question': '로컬 환경에서 자동-GPT를 설정하는 방법'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y -3
+    사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 명령
+    텍스트 길이: 26900자
+    메모리에 청크 1/4 추가
+    청크 1 / 4 요약
+    메모리에 청크 1 요약 추가
+    메모리에 청크 2 / 4 추가
+    청크 2 / 4 요약 중
+    메모리에 청크 2 요약 추가
+    메모리에 청크 3 / 4 추가
+    청크 3 / 4 요약
+    메모리에 청크 3 요약 추가
+    메모리에 청크 4 / 4 추가
+    청크 4 / 4 요약
+    메모리에 청크 4 요약 추가
+    청크 4를 요약했습니다.
+    SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: 로컬 환경에서 Auto-GPT를 설정하려면 Python 3.8 이상, OpenAI API 키, 그리고 선택적으로 Redis, Pinecone 또는 Milvus와 같은 메모리 백엔드가 있어야 합니다. 설치 단계는 GitHub 리포지토리에서 최신 안정 릴리스를 다운로드하고 모든 요구 사항이 충족되는지 확인하는 것입니다. 이 프로그램은 명령줄 인수를 사용하거나 음성 모드로 실행할 수 있으며, 인터넷 액세스, 장기 및 단기 메모리 관리, GPT-3.5를 사용한 파일 저장 및 요약 등의 기능을 갖추고 있습니다. 텍스트는 각 단계에 대한 자세한 지침을 제공합니다. 또한 Google API 키를 설정하고, 다른 메모리 백엔드로 전환하고, 메모리 저장을 위해 Redis 또는 Pinecone을 구성할 수 있습니다. 또한 테스트 및 린터를 실행하는 방법에 대한 정보와 이 소프트웨어의 출력에 기반한 모든 조치 또는 결정은 모든 관련 법률, 규정 및 윤리 표준을 준수해야 한다는 면책 조항을 제공합니다. \n \n 링크: ['콘텐츠로 건너뛰기 ([https://github.com/Significant-Gravitas/Auto-GPT/tree/stable#start-of-content](https://github.com/Significant-Gravitas/Auto-GPT/tree/stable#start-of-content))', '\\n\\n\\n\\n ([https://github.com/](https://github.com/))', '\\n Sign\\xa0up\\n ([https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F<user-name>%2F<repo-name>%2Ffiles%2Fdisambiguate&source=header-repo](https://github.com/signup? ref_cta=Sign-up&ref_loc=header+logged-out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo))', '\\n\\n\\n\\n\\nActions\\n 모든 워크플로 자동화\\n \\n ([https://github.com/features/actions](https://github. com/features/actions))', '\\n\\n\\n\\n패키지\\n 패키지 호스팅 및 관리\\n \\n ([https://github.com/features/packages](https://github.com/features/packages)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="292ac9ec1371299233a7437f281201b9")>))
+    생각: 이제 로컬 환경에서 자동-GPT를 설정하는 방법을 배웠으므로 이제 이를 활용할 수 있는 몇 가지 놀라운 예를 살펴봅시다.
+    이유: Auto-GPT를 활용할 수 있는 다양한 방법을 알아봄으로써 그 잠재력을 최대한 이해하고 다양한 문제를 해결하는 데 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
+    계획: 
 
-- 자동-GPT를 활용하는 방법의 예시를 찾아보세요.
-- 가장 흥미로운 사례를 요약합니다.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
-말하기: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = google ARGUMENTS = {'input': '자동-GPT를 활용하는 방법의 예시'}
-SYSTEM: 명령 google이 반환했습니다: ['[https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/](https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://en.wikipedia.org/wiki/Auto-GPT](https://en.wikipedia.org/wiki/Auto-GPT)', '[https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/](https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/)', '[https://www.nextbigfuture.com/2023/04/auto-gpt-and-other-semi-autonomous-ai.html](https://www.nextbigfuture.com/2023/)'
-생각: 우리가 찾은 몇 가지 웹 사이트를 탐색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
-추론: 웹사이트를 둘러보면 AutoGPT가 활용될 수 있는 다양한 방법과 다양한 문제를 해결하는 데 어떻게 사용될 수 있는지 더 잘 이해할 수 있습니다.
-계획:
-- 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아본다.
-- 가장 흥미로운 사례 요약하기
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 한다.
-말하기: 우리가 찾은 몇 가지 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', 'question': 'AutoGPT를 어떻게 활용할 수 있나요?'}
-텍스트 길이: 17243자
-메모리에 청크 1/3 추가
-청크 1 / 3 요약
-메모리에 청크 1 요약 추가
-메모리에 청크 2/3 추가
-청크 2/3 요약 중
-메모리에 청크 2 요약 추가
-메모리에 청크 3 / 3 추가
-청크 3 / 3 요약
-메모리에 청크 3 요약 추가
-청크 3을 요약했습니다.
-SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 다양한 작업에 활용할 수 있습니다. 또한 콘텐츠 제작, 요약, 의역, 재작성을 위한 자동 텍스트 생성에도 사용할 수 있습니다. AutoGPT는 키워드 삽입 메커니즘과 다양성 증진 목표를 사용하여 적절한 키워드 사용을 보장하고 유창함과 일관성을 유지하면서 다양하고 참신한 텍스트를 생성합니다. 그러나 주어진 텍스트에는 그 활용도가 명시되어 있지 않습니다. \n \n 링크: ['Leadergamer ([https://leadergamer.com.tr](https://leadergamer.com.tr/))', 'Leadergamer ([https://en.leadergamer.com.tr](https://en.leadergamer.com.tr/)', 'tır oyunları ([https://leadergamer.com.tr/en-iyi-tir-oyunlari](https://leadergamer.com.tr/en-iyi-tir-oyunlari)', 'gta 5 hileleri ([https://leadergamer.com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk](https://leadergamer. com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk))', 'pubg şekilli nick ([https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri](https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="994671ace8a48fd4beb82de6a4713dfd")>))
-생각: 다른 웹사이트를 탐색하여 AutoGPT의 활용에 대한 자세한 정보를 수집해 봅시다.
-추론: 여러 웹 사이트를 검색하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법에 대해 더 포괄적으로 이해할 수 있습니다.
-계획: 
-- 다른 웹사이트를 검색하여 AutoGPT 활용에 대한 자세한 정보를 확인하세요.
-- 가장 흥미로운 사례 요약하기
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
-말하기: 다른 웹사이트를 찾아서 AutoGPT의 활용에 대한 더 많은 정보를 수집해 봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': 'AutoGPT를 활용할 수 있는 몇 가지 예는 무엇인가요?'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-텍스트 길이: 6536자
-메모리에 청크 1/1 추가
-청크 1 / 1 요약
-메모리에 청크 1 요약 추가
-청크 1을 요약했습니다.
-SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 연구 논문이나 기사 생성, 코딩, 스토리 분석 및 개선, 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 다양한 용도로 사용할 수 있습니다. 또한 학습 자료를 만들거나 시험 문제를 생성하는 등 교육 목적으로도 사용할 수 있습니다. \n \n 링크: ['\\n콘텐츠 바로가기 ([https://openaimaster.com/autogpt-examples/#content](https://openaimaster.com/autogpt-examples/#content))', '([https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '([https://twitter.com/openaimaster?s=11](https://twitter.com/openaimaster?s=11)', '([https://www.instagram.com/openaimaster/?igshid=YmMyMTA2M2Y=](https://www.instagram.com/openaimaster/?igshid=YmMyMTA2M2Y=))', '([https://openaimaster.com/](https://openaimaster.com/)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="0e346bcd89dc8362dc4f54f0fc1abd2a")>)
-생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
-추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
-계획:
-- 지금까지 수집한 AutoGPT의 활용에 관한 정보를 요약한다.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대한 조사 및 이해를 철저히 해야겠어.
-말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = do_nothing ARGUMENTS = {}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:찾아보기_웹사이트 URL은 [https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)
-시스템: 사람 피드백: browse_website url은 [https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)
-생각: 다른 웹사이트를 탐색하여 AutoGPT 활용에 대한 자세한 정보를 수집해 봅시다.
-추론: 여러 웹 사이트를 탐색하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법에 대해 더 포괄적으로 이해할 수 있습니다.
-계획: 
-- 다른 웹사이트를 검색하여 AutoGPT 활용에 대한 자세한 정보를 확인하세요.
-- 가장 흥미로운 사례 요약하기
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
-말하기: 다른 웹사이트를 찾아서 AutoGPT의 활용에 대한 더 많은 정보를 수집해 봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)', 'question': '트위터에서 AutoGPT의 놀라운 사용 사례는 무엇인가요?'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-텍스트 길이: 2454자
-메모리에 청크 1/1 추가
-청크 1 / 1 요약
-메모리에 청크 1 요약 추가
-청크 1을 요약했습니다.
-SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: 이 텍스트는 시장 조사 수행, 비즈니스의 얼굴 바꾸기, 팟캐스트 콘텐츠 준비, 항공편 예약 및 음식 주문, 파이토구이 및 웹스크래핑을 위한 루틴 만들기, 소셜 미디어, 재정 조언 및 고객 서비스에 AutoGPT 사용, 더 나은 기업가가 되는 방법 배우기 등 사람들이 이미 트위터에서 AutoGPT로 하고 있는 놀라운 일들의 목록을 제공합니다. \n \n 링크: ['([https://autogpt.net](https://autogpt.net/)', '홈 ([https://autogpt.net/](https://autogpt.net/))', 'AutoGPT ([https://autogpt.net/category/autogpt/](https://autogpt.net/category/autogpt/)', '모두 보기 ([https://autogpt.net/category/autogpt/](https://autogpt.net/category/autogpt/))', '\\n ([https://autogpt.net/auto-gpt-vs-chatgpt-how-do-they-differ-and-everything-you-need-to-know/](https://autogpt.net/auto-gpt-vs-chatgpt-how-do-they-differ-and-everything-you-need-to-know/)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="eab98cb48722c89be070c7bc8761ac46")>)
-생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
-추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
-계획: 
-- 지금까지 수집한 AutoGPT 활용에 관한 정보를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례를 철저히 조사하고 이해해야 합니다.
-말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = do_nothing ARGUMENTS = {}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
-입력:y
-사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 명령
-SYSTEM: 명령 do_nothing이 반환되었습니다: 수행된 작업이 없습니다.
-생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
-추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
-계획:
-- 지금까지 수집한 AutoGPT의 활용에 관한 정보를 요약한다.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대한 조사 및 이해를 철저히 해야겠어.
-말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = write_to_file ARGUMENTS = {'file': 'autogpt_utilization_summary.txt', 'text': 'AutoGPT는 GPT-4 언어 모델을 사용하여 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 비즈니스를 자율적으로 개발 및 관리하는 오픈 소스 애플리케이션입니다. 또한 콘텐츠 제작, 요약, 의역, 재작성을 위한 자동 텍스트 생성에도 사용할 수 있습니다. AutoGPT는 키워드 삽입 메커니즘과 다양성 증진 목표를 사용하여 적절한 키워드 사용을 보장하고 유창함과 일관성을 유지하면서 다양하고 참신한 텍스트를 생성합니다. 시장 조사 수행, 비즈니스의 얼굴 바꾸기, 팟캐스트 콘텐츠 준비, 항공편 예약 및 음식 주문, 파이토구이 및 웹스크래핑을 위한 루틴 만들기, 소셜 미디어, 재정 조언 및 고객 서비스에 AutoGPT 사용, 더 나은 기업가가 되는 방법 배우기 등 AutoGPT의 놀라운 사용 사례는 다음과 같습니다.'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 명령 write_to_file이 반환되었습니다: 파일이 성공적으로 기록되었습니다.
-생각: 메모리 사전 시딩과 이를 통해 기대할 수 있는 이점을 살펴봅시다.
-추론: 메모리 사전 시딩을 이해하면 AutoGPT를 더 효율적으로 사용할 수 있는 방법을 이해하는 데 도움이 됩니다.
-계획:
-- 메모리 프리시딩과 AutoGPT의 적용 사례 조사하기
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 메모리 프리시딩에 대해 철저히 연구하고 이해해야 한다.
-말하기: 메모리 프리시딩과 이를 통해 기대할 수 있는 이점을 살펴봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = google ARGUMENTS = {'input': 'AutoGPT 메모리 사전 시딩'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
-입력:y 
+    - 자동-GPT를 활용하는 방법의 예시를 찾아보세요.
+    - 가장 흥미로운 사례를 요약합니다.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
+    말하기: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = google ARGUMENTS = {'input': '자동-GPT를 활용하는 방법의 예시'}
+    SYSTEM: 명령 google이 반환했습니다: ['[https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/](https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://en.wikipedia.org/wiki/Auto-GPT](https://en.wikipedia.org/wiki/Auto-GPT)', '[https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/](https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/)', '[https://www.nextbigfuture.com/2023/04/auto-gpt-and-other-semi-autonomous-ai.html](https://www.nextbigfuture.com/2023/)'
+    생각: 우리가 찾은 몇 가지 웹 사이트를 탐색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
+    추론: 웹사이트를 둘러보면 AutoGPT가 활용될 수 있는 다양한 방법과 다양한 문제를 해결하는 데 어떻게 사용될 수 있는지 더 잘 이해할 수 있습니다.
+    계획:
+    - 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아본다.
+    - 가장 흥미로운 사례 요약하기
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 한다.
+    말하기: 우리가 찾은 몇 가지 웹사이트를 검색하여 AutoGPT가 활용될 수 있는 다양한 방법에 대해 알아봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', 'question': 'AutoGPT를 어떻게 활용할 수 있나요?'}
+    텍스트 길이: 17243자
+    메모리에 청크 1/3 추가
+    청크 1 / 3 요약
+    메모리에 청크 1 요약 추가
+    메모리에 청크 2/3 추가
+    청크 2/3 요약 중
+    메모리에 청크 2 요약 추가
+    메모리에 청크 3 / 3 추가
+    청크 3 / 3 요약
+    메모리에 청크 3 요약 추가
+    청크 3을 요약했습니다.
+    SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 다양한 작업에 활용할 수 있습니다. 또한 콘텐츠 제작, 요약, 의역, 재작성을 위한 자동 텍스트 생성에도 사용할 수 있습니다. AutoGPT는 키워드 삽입 메커니즘과 다양성 증진 목표를 사용하여 적절한 키워드 사용을 보장하고 유창함과 일관성을 유지하면서 다양하고 참신한 텍스트를 생성합니다. 그러나 주어진 텍스트에는 그 활용도가 명시되어 있지 않습니다. \n \n 링크: ['Leadergamer ([https://leadergamer.com.tr](https://leadergamer.com.tr/))', 'Leadergamer ([https://en.leadergamer.com.tr](https://en.leadergamer.com.tr/)', 'tır oyunları ([https://leadergamer.com.tr/en-iyi-tir-oyunlari](https://leadergamer.com.tr/en-iyi-tir-oyunlari)', 'gta 5 hileleri ([https://leadergamer.com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk](https://leadergamer. com.tr/gta-5-hileleri-ucak-araba-para-silah-sinirsiz-mermi-olumsuzluk))', 'pubg şekilli nick ([https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri](https://leadergamer.com.tr/pubg-sekilli-nick-listesi-ve-sekilli-klan-nickleri)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="994671ace8a48fd4beb82de6a4713dfd")>))
+    생각: 다른 웹사이트를 탐색하여 AutoGPT의 활용에 대한 자세한 정보를 수집해 봅시다.
+    추론: 여러 웹 사이트를 검색하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법에 대해 더 포괄적으로 이해할 수 있습니다.
+    계획: 
+    - 다른 웹사이트를 검색하여 AutoGPT 활용에 대한 자세한 정보를 확인하세요.
+    - 가장 흥미로운 사례 요약하기
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
+    말하기: 다른 웹사이트를 찾아서 AutoGPT의 활용에 대한 더 많은 정보를 수집해 봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': 'AutoGPT를 활용할 수 있는 몇 가지 예는 무엇인가요?'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    텍스트 길이: 6536자
+    메모리에 청크 1/1 추가
+    청크 1 / 1 요약
+    메모리에 청크 1 요약 추가
+    청크 1을 요약했습니다.
+    SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: AutoGPT는 연구 논문이나 기사 생성, 코딩, 스토리 분석 및 개선, 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 다양한 용도로 사용할 수 있습니다. 또한 학습 자료를 만들거나 시험 문제를 생성하는 등 교육 목적으로도 사용할 수 있습니다. \n \n 링크: ['\\n콘텐츠 바로가기 ([https://openaimaster.com/autogpt-examples/#content](https://openaimaster.com/autogpt-examples/#content))', '([https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '([https://twitter.com/openaimaster?s=11](https://twitter.com/openaimaster?s=11)', '([https://www.instagram.com/openaimaster/?igshid=YmMyMTA2M2Y=](https://www.instagram.com/openaimaster/?igshid=YmMyMTA2M2Y=))', '([https://openaimaster.com/](https://openaimaster.com/)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="0e346bcd89dc8362dc4f54f0fc1abd2a")>)
+    생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
+    추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
+    계획:
+    - 지금까지 수집한 AutoGPT의 활용에 관한 정보를 요약한다.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대한 조사 및 이해를 철저히 해야겠어.
+    말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = do_nothing ARGUMENTS = {}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:찾아보기_웹사이트 URL은 [https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)
+    시스템: 사람 피드백: browse_website url은 [https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)
+    생각: 다른 웹사이트를 탐색하여 AutoGPT 활용에 대한 자세한 정보를 수집해 봅시다.
+    추론: 여러 웹 사이트를 탐색하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법에 대해 더 포괄적으로 이해할 수 있습니다.
+    계획: 
+    - 다른 웹사이트를 검색하여 AutoGPT 활용에 대한 자세한 정보를 확인하세요.
+    - 가장 흥미로운 사례 요약하기
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
+    말하기: 다른 웹사이트를 찾아서 AutoGPT의 활용에 대한 더 많은 정보를 수집해 봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/](https://autogpt.net/amazing-use-cases-for-auto-gpt-on-twitter/)', 'question': '트위터에서 AutoGPT의 놀라운 사용 사례는 무엇인가요?'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    텍스트 길이: 2454자
+    메모리에 청크 1/1 추가
+    청크 1 / 1 요약
+    메모리에 청크 1 요약 추가
+    청크 1을 요약했습니다.
+    SYSTEM: 명령 browse_website 반환됨: ("웹 사이트에서 수집한 답변입니다: 이 텍스트는 시장 조사 수행, 비즈니스의 얼굴 바꾸기, 팟캐스트 콘텐츠 준비, 항공편 예약 및 음식 주문, 파이토구이 및 웹스크래핑을 위한 루틴 만들기, 소셜 미디어, 재정 조언 및 고객 서비스에 AutoGPT 사용, 더 나은 기업가가 되는 방법 배우기 등 사람들이 이미 트위터에서 AutoGPT로 하고 있는 놀라운 일들의 목록을 제공합니다. \n \n 링크: ['([https://autogpt.net](https://autogpt.net/)', '홈 ([https://autogpt.net/](https://autogpt.net/))', 'AutoGPT ([https://autogpt.net/category/autogpt/](https://autogpt.net/category/autogpt/)', '모두 보기 ([https://autogpt.net/category/autogpt/](https://autogpt.net/category/autogpt/))', '\\n ([https://autogpt.net/auto-gpt-vs-chatgpt-how-do-they-differ-and-everything-you-need-to-know/](https://autogpt.net/auto-gpt-vs-chatgpt-how-do-they-differ-and-everything-you-need-to-know/)']", <selenium.webdriver.chrome.webdriver.WebDriver (session="eab98cb48722c89be070c7bc8761ac46")>)
+    생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
+    추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
+    계획: 
+    - 지금까지 수집한 AutoGPT 활용에 관한 정보를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례를 철저히 조사하고 이해해야 합니다.
+    말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = do_nothing ARGUMENTS = {}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
+    입력:y
+    사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 명령
+    SYSTEM: 명령 do_nothing이 반환되었습니다: 수행된 작업이 없습니다.
+    생각: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 요약해 봅시다.
+    추론: 지금까지 수집한 정보를 요약하면 AutoGPT를 활용할 수 있는 다양한 방법과 다양한 문제를 해결하는 데 사용할 수 있는 방법을 이해하는 데 도움이 될 것입니다.
+    계획:
+    - 지금까지 수집한 AutoGPT의 활용에 관한 정보를 요약한다.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대한 조사 및 이해를 철저히 해야겠어.
+    말하기: 지금까지 수집한 AutoGPT의 활용에 대한 정보를 정리해 보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = write_to_file ARGUMENTS = {'file': 'autogpt_utilization_summary.txt', 'text': 'AutoGPT는 GPT-4 언어 모델을 사용하여 웹사이트 제작, 기사 작성, 로고 생성, 제품 마케팅 등 비즈니스를 자율적으로 개발 및 관리하는 오픈 소스 애플리케이션입니다. 또한 콘텐츠 제작, 요약, 의역, 재작성을 위한 자동 텍스트 생성에도 사용할 수 있습니다. AutoGPT는 키워드 삽입 메커니즘과 다양성 증진 목표를 사용하여 적절한 키워드 사용을 보장하고 유창함과 일관성을 유지하면서 다양하고 참신한 텍스트를 생성합니다. 시장 조사 수행, 비즈니스의 얼굴 바꾸기, 팟캐스트 콘텐츠 준비, 항공편 예약 및 음식 주문, 파이토구이 및 웹스크래핑을 위한 루틴 만들기, 소셜 미디어, 재정 조언 및 고객 서비스에 AutoGPT 사용, 더 나은 기업가가 되는 방법 배우기 등 AutoGPT의 놀라운 사용 사례는 다음과 같습니다.'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 명령 write_to_file이 반환되었습니다: 파일이 성공적으로 기록되었습니다.
+    생각: 메모리 사전 시딩과 이를 통해 기대할 수 있는 이점을 살펴봅시다.
+    추론: 메모리 사전 시딩을 이해하면 AutoGPT를 더 효율적으로 사용할 수 있는 방법을 이해하는 데 도움이 됩니다.
+    계획:
+    - 메모리 프리시딩과 AutoGPT의 적용 사례 조사하기
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 메모리 프리시딩에 대해 철저히 연구하고 이해해야 한다.
+    말하기: 메모리 프리시딩과 이를 통해 기대할 수 있는 이점을 살펴봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = google ARGUMENTS = {'input': 'AutoGPT 메모리 사전 시딩'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
+    입력:y 
 
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 구글 명령이 반환되었습니다: ['[https://github.com/Significant-Gravitas/Auto-GPT/discussions/1499](https://github.com/Significant-Gravitas/Auto-GPT/discussions/1499)', '[https://medium.com/sopmac-ai/vector-databases-as-memory-for-your-ai-agents-986288530443](https://medium.com/sopmac-ai/vector-databases-as-memory-for-your-ai-agents-986288530443)', '[https://github.com/Significant-Gravitas/Auto-GPT/actions/runs/4707383693](https://github.com/Significant-Gravitas/Auto-GPT/actions/runs/4707383693)', '[https://gitee.com/mirrors/Auto-GPT](https://gitee.com/mirrors/Auto-GPT)', '[https://github.com/Significant-Gravitas/Auto-GPT/discussions/2244](https://github.com/Significant-Gravitas/Auto-GPT/discussions/2244)', '[https://www.reddit.com/r/AutoGPT/comments/12nrcce/roboamerican_studies_101/](https://www.reddit.com/r/AutoGPT/comments/12nrcce/roboamerican_studies_101/)', '[https://github.com/Torantulino/Auto-GPT/actions/runs/4701760398](https://github.com/Torantulino/Auto-GPT/actions/runs/4701760398)', '[https://www.reddit.com/r/AutoGPT/comments/1'
-생각: 메모리 사전 시딩과 AutoGPT에서의 적용에 대해 자세히 알아봅시다.
-이유: 메모리 프리시딩과 AutoGPT의 적용에 대해 자세히 읽어보면 AutoGPT의 성능을 개선하는 데 메모리 프리시딩을 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
-계획:
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 구글 명령이 반환되었습니다: ['[https://github.com/Significant-Gravitas/Auto-GPT/discussions/1499](https://github.com/Significant-Gravitas/Auto-GPT/discussions/1499)', '[https://medium.com/sopmac-ai/vector-databases-as-memory-for-your-ai-agents-986288530443](https://medium.com/sopmac-ai/vector-databases-as-memory-for-your-ai-agents-986288530443)', '[https://github.com/Significant-Gravitas/Auto-GPT/actions/runs/4707383693](https://github.com/Significant-Gravitas/Auto-GPT/actions/runs/4707383693)', '[https://gitee.com/mirrors/Auto-GPT](https://gitee.com/mirrors/Auto-GPT)', '[https://github.com/Significant-Gravitas/Auto-GPT/discussions/2244](https://github.com/Significant-Gravitas/Auto-GPT/discussions/2244)', '[https://www.reddit.com/r/AutoGPT/comments/12nrcce/roboamerican_studies_101/](https://www.reddit.com/r/AutoGPT/comments/12nrcce/roboamerican_studies_101/)', '[https://github.com/Torantulino/Auto-GPT/actions/runs/4701760398](https://github.com/Torantulino/Auto-GPT/actions/runs/4701760398)', '[https://www.reddit.com/r/AutoGPT/comments/1'
+    생각: 메모리 사전 시딩과 AutoGPT에서의 적용에 대해 자세히 알아봅시다.
+    이유: 메모리 프리시딩과 AutoGPT의 적용에 대해 자세히 읽어보면 AutoGPT의 성능을 개선하는 데 메모리 프리시딩을 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
+    계획:
 
-- 메모리 프리시딩과 AutoGPT에서의 적용에 대한 기사를 읽어보세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 메모리 프리시딩에 대해 철저히 연구하고 이해해야 합니다.
-말하기: 메모리 사전 시딩과 AutoGPT에서의 적용에 대해 자세히 알아봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = read_file ARGUMENTS = {'file': 'memory_pre_seeding.txt'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 명령 read_file이 반환되었습니다: 오류: [오류 2] 해당 파일 또는 디렉터리 없음: '/Users/sunu/VscodeProjects/Auto-GPT/auto_gpt_workspace/memory_pre_seeding.txt'
-생각: 메모리 사전 시딩과 AutoGPT의 애플리케이션에 대한 정보를 저장하는 새 파일을 만들어 봅시다.
-이유: 새 파일을 생성하면 나중에 참조할 수 있도록 메모리 사전 시딩 및 해당 애플리케이션에 대한 정보를 AutoGPT에 저장할 수 있습니다.
-계획:
-- 'memory_pre_seeding.txt'라는 새 파일을 생성합니다.
-비판: 올바른 파일 이름을 사용하고 있는지, 파일이 올바른 디렉터리에 생성되고 있는지 확인해야 합니다.
-말하기: 메모리 프리시딩과 그 애플리케이션에 대한 정보를 저장하기 위해 새 파일을 만들어 AutoGPT에 저장해 봅시다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = write_to_file ARGUMENTS = {'file': 'memory_pre_seeding.txt', 'text': "메모리 사전 시딩은 모델의 메모리에 관련 정보를 미리 로드하여 AutoGPT의 성능을 향상시키는 데 사용되는 기술입니다. 이는 모델에 당면한 작업과 관련된 일련의 시드 문장 또는 키워드를 제공하여 수행 할 수 있습니다. 이렇게 하면 모델이 보다 정확하고 관련성 높은 응답을 생성할 수 있습니다. AutoGPT에서 메모리 사전 시딩의 일부 응용 분야에는 텍스트 생성의 정확성 향상, 생성된 텍스트의 관련성 향상, 모델에서 텍스트를 생성하는 데 필요한 시간 단축 등이 있습니다."}.
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 ...에 대한 피드백을 입력하세요.
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 명령 write_to_file이 반환되었습니다: 파일이 성공적으로 기록되었습니다.
-생각: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 놀라운 예를 살펴봅시다.
-이유: Auto-GPT를 활용할 수 있는 다양한 방법에 대해 알아봄으로써 그 잠재력을 최대한 이해하고 다양한 문제를 해결하는 데 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
-계획: 
+    - 메모리 프리시딩과 AutoGPT에서의 적용에 대한 기사를 읽어보세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 메모리 프리시딩에 대해 철저히 연구하고 이해해야 합니다.
+    말하기: 메모리 사전 시딩과 AutoGPT에서의 적용에 대해 자세히 알아봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = read_file ARGUMENTS = {'file': 'memory_pre_seeding.txt'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 명령 read_file이 반환되었습니다: 오류: [오류 2] 해당 파일 또는 디렉터리 없음: '/Users/sunu/VscodeProjects/Auto-GPT/auto_gpt_workspace/memory_pre_seeding.txt'
+    생각: 메모리 사전 시딩과 AutoGPT의 애플리케이션에 대한 정보를 저장하는 새 파일을 만들어 봅시다.
+    이유: 새 파일을 생성하면 나중에 참조할 수 있도록 메모리 사전 시딩 및 해당 애플리케이션에 대한 정보를 AutoGPT에 저장할 수 있습니다.
+    계획:
+    - 'memory_pre_seeding.txt'라는 새 파일을 생성합니다.
+    비판: 올바른 파일 이름을 사용하고 있는지, 파일이 올바른 디렉터리에 생성되고 있는지 확인해야 합니다.
+    말하기: 메모리 프리시딩과 그 애플리케이션에 대한 정보를 저장하기 위해 새 파일을 만들어 AutoGPT에 저장해 봅시다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도 중
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = write_to_file ARGUMENTS = {'file': 'memory_pre_seeding.txt', 'text': "메모리 사전 시딩은 모델의 메모리에 관련 정보를 미리 로드하여 AutoGPT의 성능을 향상시키는 데 사용되는 기술입니다. 이는 모델에 당면한 작업과 관련된 일련의 시드 문장 또는 키워드를 제공하여 수행 할 수 있습니다. 이렇게 하면 모델이 보다 정확하고 관련성 높은 응답을 생성할 수 있습니다. AutoGPT에서 메모리 사전 시딩의 일부 응용 분야에는 텍스트 생성의 정확성 향상, 생성된 텍스트의 관련성 향상, 모델에서 텍스트를 생성하는 데 필요한 시간 단축 등이 있습니다."}.
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 ...에 대한 피드백을 입력하세요.
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 명령 write_to_file이 반환되었습니다: 파일이 성공적으로 기록되었습니다.
+    생각: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 놀라운 예를 살펴봅시다.
+    이유: Auto-GPT를 활용할 수 있는 다양한 방법에 대해 알아봄으로써 그 잠재력을 최대한 이해하고 다양한 문제를 해결하는 데 어떻게 사용할 수 있는지 이해하는 데 도움이 될 것입니다.
+    계획: 
 
-- 자동-GPT를 활용하는 방법의 예시를 찾아보세요.
-- 가장 흥미로운 사례를 요약합니다.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
-말하기: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = google ARGUMENTS = {'input': '자동-GPT를 활용하는 방법의 예시'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-SYSTEM: 구글 명령이 반환되었습니다: ['[https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/](https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://en.wikipedia.org/wiki/Auto-GPT](https://en.wikipedia.org/wiki/Auto-GPT)', '[https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/](https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/)', '[https://www.nextbigfuture.com/2023/04/auto-gpt-and-other-semi-autonomous-ai.html](https://www.nextbigfuture.com/2023/)'
-생각: '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색하여 자동-GPT가 어떻게 활용될 수 있는지에 대한 몇 가지 흥미로운 사례를 찾아보자.
-추론: 웹사이트를 검색하면 자동-GPT가 어떻게 활용될 수 있는지에 대한 흥미로운 사례를 찾을 수 있고 그 기능에 대해 더 잘 이해할 수 있을 것입니다.
-계획:
-- '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색한다.
-- Auto-GPT가 어떻게 활용될 수 있는지에 대한 흥미로운 사례를 찾아보세요.
-- 가장 흥미로운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대해 철저히 조사하고 이해해야겠어요.
-말하기: '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색하여 자동-GPT가 어떻게 활용될 수 있는지 흥미로운 예시를 찾아보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': 'Auto-GPT를 어떻게 활용할 수 있는지에 대한 흥미로운 예시'}
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:y
--=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
-시스템: browse_website 명령이 반환되었습니다: 오류: 메시지: 시간 초과: 렌더러로부터 메시지 수신 시간 초과: 299.126 (세션 정보: 크롬=112.0.5615. 49) 스택 추적: 0 크롬드라이버 0x0000000102695ae8 크롬드라이버 + 4958952 1 크롬드라이버 0x000000010268d7b3 크롬드라이버 + 4925363 2 크롬드라이버 0x000000010224f1d6 크롬드라이버 + 475606 3 크롬드라이버 0x000000010223744F 크롬드라이버 + 377935 4 크롬드라이버 0x0000000102236FFB 크롬드라이버 + 376827 5 크롬드라이버 0x000000010223581A 크롬드라이버 + 370714 6 크롬드라이버 0x0000000102235d4c 크로메드라이버 + 372044 7 크로메드라이버 0x0000000102244b0b 크로메드라이버 + 432907 8 크로메드라이버 0x0000000102246412 크로메드라이버 + 439314 9 크로메드라이버 0x0000000102257d74 511348 10 크롬드라이버 0x000000010225D2FB 크롬드라이버 + 533243 11 크롬드라이버 0x00000001022361A8 크롬드라이버 + 373160 12 크롬드라이버 0x0000000102257Bbf 크롬드라이버 + 510911 13 크롬드라이버 0x00000001022d44a4 크롬드라이버 + 1021092 14 크롬드라이버 0x00000001022b89e3 크롬드라이버 + 907747 15 크롬드라이버 0x0000000102282aef 크롬드라이버 + 686831 16 크롬드라이버 0x000000010228400e 크롬드라이버 + 692238 17 크롬드라이버 0x00000001026519ad 크롬드라이버 + 4680109 18 크롬드라이버 0x0000000102656c12 크롬드라이버 + 4701202 19 크로미드라이버 0x000000010265D79F 크로미드라이버 + 4728735 20 크로미드라이버 0x0000000102657B7A 크로미드라이버 + 4705146 21 크로미드라이버 0x000000010262A27E 크로미드라이버 + 4518526 22 크로미드라이버 0x0000000102677908 크롬드라이버 + 4835592 23 크롬드라이버 0x0000000102677a87 크롬드라이버 + 4835975 24 크롬드라이버 0x000000010268700f 크롬드라이버 + 4898831 25 libsystem_pthread. dylib 0x00007ff80501d4e1 _pthread_start + 125 26 libsystem_pthread.dylib 0x00007ff805018f6b thread_start + 15
-THOUGHTS: 
+    - 자동-GPT를 활용하는 방법의 예시를 찾아보세요.
+    - 가장 흥미로운 사례를 요약합니다.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 합니다.
+    말하기: 이제 로컬 환경에서 Auto-GPT를 설정하는 방법을 배웠으니, 이를 어떻게 활용할 수 있는지 몇 가지 흥미로운 예시를 살펴보겠습니다.
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = google ARGUMENTS = {'input': '자동-GPT를 활용하는 방법의 예시'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    SYSTEM: 구글 명령이 반환되었습니다: ['[https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/](https://www.allabtai.com/auto-gpt-how-use-this-mini-agi-system/)', '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', '[https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/](https://dataconomy.com/2023/04/what-is-autogpt-and-how-to-use-ai-agents/)', '[https://mobile.twitter.com/heyBarsee/status/1646271016832835586](https://mobile.twitter.com/heyBarsee/status/1646271016832835586)', '[https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)', '[https://en.wikipedia.org/wiki/Auto-GPT](https://en.wikipedia.org/wiki/Auto-GPT)', '[https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/](https://www.zdnet.com/article/what-is-auto-gpt-everything-to-know-about-the-next-powerful-ai-tool/)', '[https://www.nextbigfuture.com/2023/04/auto-gpt-and-other-semi-autonomous-ai.html](https://www.nextbigfuture.com/2023/)'
+    생각: '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색하여 자동-GPT가 어떻게 활용될 수 있는지에 대한 몇 가지 흥미로운 사례를 찾아보자.
+    추론: 웹사이트를 검색하면 자동-GPT가 어떻게 활용될 수 있는지에 대한 흥미로운 사례를 찾을 수 있고 그 기능에 대해 더 잘 이해할 수 있을 것입니다.
+    계획:
+    - '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색한다.
+    - Auto-GPT가 어떻게 활용될 수 있는지에 대한 흥미로운 사례를 찾아보세요.
+    - 가장 흥미로운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 사례에 대해 철저히 조사하고 이해해야겠어요.
+    말하기: '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)' 웹사이트를 검색하여 자동-GPT가 어떻게 활용될 수 있는지 흥미로운 예시를 찾아보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': 'Auto-GPT를 어떻게 활용할 수 있는지에 대한 흥미로운 예시'}
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:y
+    -=-=-=-=-=-=-= 사용자가 승인한 명령 -=-=-=-=-=-=-=-=-=
+    시스템: browse_website 명령이 반환되었습니다: 오류: 메시지: 시간 초과: 렌더러로부터 메시지 수신 시간 초과: 299.126 (세션 정보: 크롬=112.0.5615. 49) 스택 추적: 0 크롬드라이버 0x0000000102695ae8 크롬드라이버 + 4958952 1 크롬드라이버 0x000000010268d7b3 크롬드라이버 + 4925363 2 크롬드라이버 0x000000010224f1d6 크롬드라이버 + 475606 3 크롬드라이버 0x000000010223744F 크롬드라이버 + 377935 4 크롬드라이버 0x0000000102236FFB 크롬드라이버 + 376827 5 크롬드라이버 0x000000010223581A 크롬드라이버 + 370714 6 크롬드라이버 0x0000000102235d4c 크로메드라이버 + 372044 7 크로메드라이버 0x0000000102244b0b 크로메드라이버 + 432907 8 크로메드라이버 0x0000000102246412 크로메드라이버 + 439314 9 크로메드라이버 0x0000000102257d74 511348 10 크롬드라이버 0x000000010225D2FB 크롬드라이버 + 533243 11 크롬드라이버 0x00000001022361A8 크롬드라이버 + 373160 12 크롬드라이버 0x0000000102257Bbf 크롬드라이버 + 510911 13 크롬드라이버 0x00000001022d44a4 크롬드라이버 + 1021092 14 크롬드라이버 0x00000001022b89e3 크롬드라이버 + 907747 15 크롬드라이버 0x0000000102282aef 크롬드라이버 + 686831 16 크롬드라이버 0x000000010228400e 크롬드라이버 + 692238 17 크롬드라이버 0x00000001026519ad 크롬드라이버 + 4680109 18 크롬드라이버 0x0000000102656c12 크롬드라이버 + 4701202 19 크로미드라이버 0x000000010265D79F 크로미드라이버 + 4728735 20 크로미드라이버 0x0000000102657B7A 크로미드라이버 + 4705146 21 크로미드라이버 0x000000010262A27E 크로미드라이버 + 4518526 22 크로미드라이버 0x0000000102677908 크롬드라이버 + 4835592 23 크롬드라이버 0x0000000102677a87 크롬드라이버 + 4835975 24 크롬드라이버 0x000000010268700f 크롬드라이버 + 4898831 25 libsystem_pthread. dylib 0x00007ff80501d4e1 _pthread_start + 125 26 libsystem_pthread.dylib 0x00007ff805018f6b thread_start + 15
+    THOUGHTS: 
 
-- 웹사이트를 검색하여 AutoGPT를 활용하는 방법의 예를 찾아보세요.
-- 가장 흥미로운 사례를 요약하세요.
-비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 해요.
-말하기: 웹사이트를 다시 검색하여 AutoGPT가 어떻게 활용될 수 있는지 몇 가지 예를 찾아보겠습니다.
-가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
-JSON이 수정된 것 같습니다.
-다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': '예제 AutoGPT 활용 방법'}
-명령어를 승인하려면 'y', 연속 명령어를 N개 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
-입력:건너뛰기
-시스템: 사용자 피드백: 건너뛰기
-경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
-이 경고가 자주 표시되면 프롬프트가 AI를 혼동하고 있을 가능성이 높습니다. 프롬프트를 약간 변경해 보세요.
-생각: 생각
-추론: 추론
-PLAN:
-- 짧은 글머리 기호
-- 전달하는 목록
-- 장기 계획
-비판: 건설적인 자기 비판
-SPEAK: 사용자에게 전달할 생각 요약
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
-오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
+    - 웹사이트를 검색하여 AutoGPT를 활용하는 방법의 예를 찾아보세요.
+    - 가장 흥미로운 사례를 요약하세요.
+    비판: 사용자에게 정확한 정보를 제공할 수 있도록 예제를 철저히 조사하고 이해해야 해요.
+    말하기: 웹사이트를 다시 검색하여 AutoGPT가 어떻게 활용될 수 있는지 몇 가지 예를 찾아보겠습니다.
+    가장 바깥쪽 괄호를 찾아 JSON 수정 시도하기
+    JSON이 수정된 것 같습니다.
+    다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://openaimaster.com/autogpt-examples/](https://openaimaster.com/autogpt-examples/)', 'question': '예제 AutoGPT 활용 방법'}
+    명령어를 승인하려면 'y', 연속 명령어를 N개 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나 피드백을 입력하세요...
+    입력:건너뛰기
+    시스템: 사용자 피드백: 건너뛰기
+    경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
+    이 경고가 자주 표시되면 프롬프트가 AI를 혼동하고 있을 가능성이 높습니다. 프롬프트를 약간 변경해 보세요.
+    생각: 생각
+    추론: 추론
+    PLAN:
+    - 짧은 글머리 기호
+    - 전달하는 목록
+    - 장기 계획
+    비판: 건설적인 자기 비판
+    SPEAK: 사용자에게 전달할 생각 요약
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
+    오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
 
-다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
-입력: 목표 3으로 이동
-시스템: 사용자 피드백: 목표 3으로 이동
-경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
-이 경고가 자주 표시된다면 프롬프트가 AI를 혼동하고 있는 것일 수 있습니다. 프롬프트를 약간 변경해 보세요.
-생각: 생각
-추론: 추론
-PLAN:
+    다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
+    입력: 목표 3으로 이동
+    시스템: 사용자 피드백: 목표 3으로 이동
+    경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
+    이 경고가 자주 표시된다면 프롬프트가 AI를 혼동하고 있는 것일 수 있습니다. 프롬프트를 약간 변경해 보세요.
+    생각: 생각
+    추론: 추론
+    PLAN:
 
-- 짧은 글머리 기호
-- 전달하는 목록
-- 장기 계획
-비판: 건설적인 자기 비판
-SPEAK: 사용자에게 전달할 생각 요약
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
-오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
+    - 짧은 글머리 기호
+    - 전달하는 목록
+    - 장기 계획
+    비판: 건설적인 자기 비판
+    SPEAK: 사용자에게 전달할 생각 요약
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
+    오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
 
-다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 개체에 'replace' 속성이 없습니다.
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
-입력: autogpt_utilization_summary.txt 및 memory_pre_seeding.txt 파일 2개를 가져와서 사람들이 읽고 파일로 저장할 수 있는 블로그 게시물로 변환합니다.
-시스템: 사람 피드백: autogpt_utilization_summary.txt 및 memory_pre_seeding.txt 파일 2개를 가져와서 사람들이 읽고 파일로 저장할 수 있는 블로그 게시물로 변환합니다.
-경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
-이 경고가 자주 표시된다면 프롬프트가 AI를 혼동하고 있는 것일 수 있습니다. 프롬프트를 약간 변경해 보세요.
-생각: 생각
-추론: 추론
-PLAN:
+    다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 개체에 'replace' 속성이 없습니다.
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력합니다.
+    입력: autogpt_utilization_summary.txt 및 memory_pre_seeding.txt 파일 2개를 가져와서 사람들이 읽고 파일로 저장할 수 있는 블로그 게시물로 변환합니다.
+    시스템: 사람 피드백: autogpt_utilization_summary.txt 및 memory_pre_seeding.txt 파일 2개를 가져와서 사람들이 읽고 파일로 저장할 수 있는 블로그 게시물로 변환합니다.
+    경고: AI 출력 구문 분석에 실패하여 수정을 시도 중입니다.
+    이 경고가 자주 표시된다면 프롬프트가 AI를 혼동하고 있는 것일 수 있습니다. 프롬프트를 약간 변경해 보세요.
+    생각: 생각
+    추론: 추론
+    PLAN:
 
-- 짧은 글머리 기호
-- 전달하는 목록
-- 장기 계획
-비판: 건설적인 자기 비판
-SPEAK: 사용자에게 전달할 생각 요약
-가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
-오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
+    - 짧은 글머리 기호
+    - 전달하는 목록
+    - 장기 계획
+    비판: 건설적인 자기 비판
+    SPEAK: 사용자에게 전달할 생각 요약
+    가장 바깥쪽 대괄호를 찾아 JSON 수정 시도
+    오류: 잘못된 JSON, 지금 빈 JSON으로 설정합니다.
 
-다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.
-명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
-입력:ㅜ	
-종료...
-```
+    다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.
+    명령을 승인하려면 'y', N개의 연속 명령을 실행하려면 'y -N', 프로그램을 종료하려면 'n'을 입력하거나...에 대한 피드백을 입력하세요.
+    입력:ㅜ	
+    종료...
+    ```
