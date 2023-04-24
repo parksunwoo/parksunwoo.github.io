@@ -7,7 +7,7 @@ tags:
   - autogpt
   - prompt
   - memory seeding
-last_modified_at: 2023-04-16T09:40:00-00:00
+last_modified_at: 2023-04-25T00:40:00-00:00
 ---
 
 주목받는 오픈소스 Auto-GPT는 어떻게 시작되었나. 초기 커밋을 살펴보면서 Auto-GPT의 구조를 파악해보고 주요 특징 및 실제로 돌려본 몇가지 케이스와 후기를 남겨본다.
@@ -18,11 +18,11 @@ Auto-GPT 오픈소스 주소는 아래와 같다
 
 # Auto-GPT 는 어떻게 시작되었고 어떤 기능을 갖고 있나
 
-## 프롬프트 형식
+## 프롬프트
 
 chatGPT에게 장/단기 기억에 대한 개념과 사용할 수 있는 명령어 그리고 응답 형식, 사용자와의 대화 내용에 대해 알려주는 것을 확인할 수 있다.
 
-```jsx
+```
 #Auto-GPT 초기 커밋내역 참고
 #[Adds messgae log of first conversation. · Significant-Gravitas/Auto-GPT@68d1fd8 (github.com)](https://github.com/Significant-Gravitas/Auto-GPT/commit/68d1fd8869ab050421aeb3eb107177514ad02e13)
 
@@ -80,14 +80,14 @@ Twitter: @En_GPT
 
 ```
 
-위 커밋에 대해서 Torantulino(Auto-GPT를 시작한 인물)는 이렇게 답변을 남겼다.
+위 커밋에 대해서 Torantulino는 이렇게 답변을 남겼다.
 ---
 저에게 가장 흥미로운 순간은 Entrepreneur-GTP가 Youtube 비디오를 "시청"하기로 결정했을 때였습니다.
 그것은 오랜 시간을 연구하고 잘못된 방향으로 향했고, 자기 비판을 위해 노력해야했습니다.
 
 - 아래는 전체 커밋 내역 번역
     
-    ```jsx
+    ```
     기업가-GTP: 
     {
     "명령":
@@ -646,7 +646,7 @@ Twitter: @En_GPT
 
 while True 구문을 사용해 사용자의 입력을 받고 저장하고 계속 chatGPT와 대화하는 반복구조
 
-```jsx
+```
 # 설명 편의상 chat_with_ai()와 create_chat_message() 를 아래로 이동시켰다.
 # 관련 커밋
 # https://github.com/Significant-Gravitas/Auto-GPT/commit/b082449998f3e9fb005204a85eb5be8930ec4850
@@ -726,11 +726,11 @@ ELEVENLABS는 음성 디자인, 음성 합성, 미리 만들어진 음성 등 Au
 2. Choose and setup the `Starter` plan.
 3. Click the top right icon and find "Profile" to locate your API Key.
 
-```jsx
+```
 python -m autogpt --speak
 ```
 
-```jsx
+```
 THOUGHTS:  We can use the 'browse_website' command to access the article on geeksforgeeks.org titled 'Linux System Call in Detail'. This will allow us to read the article and gather the information we need to answer the question.
 REASONING:  Browsing the website will allow us to read the article and gather the information we need to answer the question about system calls for backend developers. Additionally, it will allow us to easily access the article in the future.
 PLAN:
@@ -801,7 +801,7 @@ SMART_LLM_MODEL = gpt4
 
 FAST_LLM_MODEL = gpt-3.5-turbo
 
-```jsx
+```
 if gpt3only:
       logger.typewriter_log("GPT3.5 Only Mode: ", Fore.GREEN, "ENABLED")
       CFG.set_smart_llm_model(CFG.fast_llm_model)
@@ -815,6 +815,8 @@ if gpt4only:
 
 - 🧠 GPT-4 instances for text generation
 - 🗃️ File storage and summarization with GPT-3.5
+
+
 
 # Auto-GPT 사용해보기
 
@@ -1052,7 +1054,7 @@ Goal 2 에 대한 생성파일
 
 - autogpt 전문
 
-```jsx
+```
 메모리 유형 사용:  LocalCache
 브라우저 사용: 크롬
 생각:  로컬 환경에서 설정하는 방법을 배우기 위해 AutoGPT 설명서를 검색하는 것부터 시작하는 것이 좋습니다.
@@ -1404,5 +1406,3 @@ SPEAK: 사용자에게 전달할 생각 요약
 입력:ㅜ	
 종료...
 ```
-
-
