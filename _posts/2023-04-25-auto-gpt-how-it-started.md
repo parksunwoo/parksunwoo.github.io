@@ -81,7 +81,7 @@ Twitter: @En_GPT
 ```
 
 위 커밋에 대해서 Torantulino는 이렇게 답변을 남겼다.
----
+ㅡㅡ
 저에게 가장 흥미로운 순간은 Entrepreneur-GTP가 Youtube 비디오를 "시청"하기로 결정했을 때였습니다.
 그것은 오랜 시간을 연구하고 잘못된 방향으로 향했고, 자기 비판을 위해 노력해야했습니다.
 
@@ -947,7 +947,7 @@ Name: prophetGPT
 
 SYSTEM: 명령 google이 반환했습니다: ['https://www.un.org/en/climatechange/reports', 'https://www.unep.org/geo/', 'https://public.wmo.int/en/our-mandate/climate/wmo-statement-state-of-global-climate', 'https://www.unep.org/resources/report/state-environment-and-outlook-report-occupied-palestinian-territory-2020', 'https://press.un.org/en/2019/ga12131.doc.htm', 'https://news.un.org/en/story/2022/04/1115452', 'https://research.un.org/en/climate-change/reports', 'https://news.un.org/en/story/2022/11/1130237']
 
-—-
+ㅡㅡ
 
 생각: 'browse_website' 명령을 사용하여 유엔 웹사이트로 이동하여 환경 현황에 대한 최신 보고서에 대한 정보를 찾겠습니다.
 
@@ -969,7 +969,7 @@ Name: investGPT
 
 목표: 2023년 현재 기준으로 시작할수있는 온라인 사업 아이템은 무엇인가?
 
-—-
+ㅡㅡ
 
 생각:  2023년부터 시작할 수 있는 몇 가지 온라인 비즈니스 아이디어를 살펴보는 것부터 시작하겠습니다. Google 검색을 통해 관련 기사를 찾아보겠습니다.
 이유: 2023년에 시작할 수 있는 온라인 비즈니스 아이디어에 대한 정보를 수집해야 한다.
@@ -981,7 +981,7 @@ Name: investGPT
 비판: 없음
 다음 작업: COMMAND = google ARGUMENTS = {'input': '2023년에 시작할 온라인 비즈니스 아이디어'}
 
-—
+ㅡㅡ
 
 생각:  실현 가능한 온라인 비즈니스 아이디어를 찾기 위해 기사를 찾아보겠습니다. Shopify의 첫 번째 기사를 검색하는 것부터 시작하겠습니다.
 이유: 실현 가능한 온라인 비즈니스 아이디어를 찾기 위해 기사를 검색해야 합니다.
@@ -992,21 +992,21 @@ Name: investGPT
 비판: 없음
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.shopify.com/blog/online-business-ideas](https://www.shopify.com/blog/online-business-ideas)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
-—
+ㅡㅡ
 
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.shopify.com/blog/online-business-ideas](https://www.shopify.com/blog/online-business-ideas)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
-—
+ㅡㅡ
 
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.businessnewsdaily.com/2747-great-business-ideas.html](https://www.businessnewsdaily.com/2747-great-business-ideas.html)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어에는 어떤 것이 있나요?'}
 
-—
+ㅡㅡ
 
 다음 작업: COMMAND = google ARGUMENTS = {'input': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
 SYSTEM: 명령 구글이 반환했습니다: ['https://www.shopify.com/blog/online-business-ideas', 'https://www.hostinger.com/tutorials/online-business-ideas', 'https://www.nerdwallet.com/article/small-business/online-business-ideas', 'https://www.visitor-analytics.io/en/blog/best-online-business-ideas/', 'https://woocommerce.com/posts/best-online-business-start/', 'https://stockarea.io/blogs/22-online-business-ideas-to-become-rich-and-make-money/', 'https://99designs.com/blog/business/online-business-ideas/', 'https://www.businessnewsdaily.com/2747-great-business-ideas.html']
 
-—
+ㅡㅡ
 
 ## Auto-GPT 를 사용해보며..
 
@@ -1046,7 +1046,7 @@ Goal 2 에 대한 생성파일
 목표 3: **결과 블로그를 파일로 저장**
 목표 4: **목표 달성 시 종료**
 
----
+ㅡㅡ
 
 목표2까지 진행후 
 
