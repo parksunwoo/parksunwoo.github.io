@@ -10,22 +10,18 @@ tags:
 last_modified_at: 2023-04-25T00:40:00-00:00
 ---
 
-주목받는 오픈소스 Auto-GPT는 어떻게 시작되었나. 초기 커밋을 살펴보면서 Auto-GPT의 구조를 파악해보고 주요 특징 및 실제로 돌려본 몇가지 케이스와 후기를 남겨본다.
+주목받는 오픈소스 [Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)는 어떻게 시작되었나. 초기 커밋을 살펴보면서 Auto-GPT의 구조와 기능을 파악해보고 실제로 돌려본 몇가지 케이스와 후기를 남겨본다.
 
 ---
-Auto-GPT 오픈소스 주소는 아래와 같다
-[Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
-
-# Auto-GPT 는 어떻게 시작되었고 어떤 기능을 갖고 있나
 
 ## 프롬프트
 
 chatGPT에게 장/단기 기억에 대한 개념과 사용할 수 있는 명령어 그리고 응답 형식, 사용자와의 대화 내용에 대해 알려주는 것을 확인할 수 있다.
 
-```
-#Auto-GPT 초기 커밋내역 참고
-#[Adds messgae log of first conversation. · Significant-Gravitas/Auto-GPT@68d1fd8 (github.com)](https://github.com/Significant-Gravitas/Auto-GPT/commit/68d1fd8869ab050421aeb3eb107177514ad02e13)
+-Auto-GPT 초기 커밋내역 참고
+[Adds messgae log of first conversation. · Significant-Gravitas/Auto-GPT@68d1fd8 (github.com)](https://github.com/Significant-Gravitas/Auto-GPT/commit/68d1fd8869ab050421aeb3eb107177514ad02e13)
 
+```
 USER:
 현재 잔액: $100.00
 
@@ -81,9 +77,11 @@ Twitter: @En_GPT
 ```
 
 위 커밋에 대해서 Torantulino는 이렇게 답변을 남겼다.
-ㅡㅡ
-저에게 가장 흥미로운 순간은 Entrepreneur-GTP가 Youtube 비디오를 "시청"하기로 결정했을 때였습니다.
-그것은 오랜 시간을 연구하고 잘못된 방향으로 향했고, 자기 비판을 위해 노력해야했습니다.
+
+
+"저에게 가장 흥미로운 순간은 Entrepreneur-GTP가 Youtube 비디오를 "시청"하기로 결정했을 때였습니다.
+그것은 오랜 시간을 연구하고 잘못된 방향으로 향했고, 자기 비판을 위해 노력해야했습니다."
+
 
 - 아래는 전체 커밋 내역 번역
     
@@ -644,13 +642,12 @@ Twitter: @En_GPT
 
 ## 코드 구조
 
+설명 편의상 chat_with_ai()와 create_chat_message() 를 아래로 이동시켰다.
+[관련 커밋](https://github.com/Significant-Gravitas/Auto-GPT/commit/b082449998f3e9fb005204a85eb5be8930ec4850)
 while True 구문을 사용해 사용자의 입력을 받고 저장하고 계속 chatGPT와 대화하는 반복구조
 
-```
-# 설명 편의상 chat_with_ai()와 create_chat_message() 를 아래로 이동시켰다.
-# 관련 커밋
-# https://github.com/Significant-Gravitas/Auto-GPT/commit/b082449998f3e9fb005204a85eb5be8930ec4850
 
+```python
 # Initialize variables
 full_message_history = []
 permanent_memory = []
@@ -726,7 +723,7 @@ ELEVENLABS는 음성 디자인, 음성 합성, 미리 만들어진 음성 등 Au
 2. Choose and setup the `Starter` plan.
 3. Click the top right icon and find "Profile" to locate your API Key.
 
-```
+```shell
 python -m autogpt --speak
 ```
 
@@ -763,45 +760,36 @@ Links to memory backends
 - [Redis](https://redis.io/)
 - [Weaviate](https://weaviate.io/)
 
-- **Memory pre-seeding 내용 번역**
+- **Memory pre-seeding 은...**
     
-    <aside>
-    💡 autogpt/data_ingestion.py에 있는 이 스크립트를 사용하면 Auto-GPT를 실행하기 전에 파일을 메모리에 수집하고 사전 시딩할 수 있습니다.
-    
-    메모리 사전 시딩은 관련 문서나 데이터를 AI의 메모리에 수집하여 이 정보를 사용하여 더 많은 정보에 기반한 정확한 응답을 생성할 수 있도록 하는 기술입니다.
-    
-    메모리를 미리 시드하려면 각 문서의 콘텐츠를 지정된 최대 길이의 청크로 분할하고 청크 간에 지정된 중첩을 지정한 다음 각 청크를 .env 파일에 설정된 메모리 백엔드에 추가합니다. AI는 정보를 불러오라는 메시지가 표시되면 미리 시드된 메모리에 액세스하여 더 많은 정보를 바탕으로 정확한 응답을 생성할 수 있습니다.
-    
-    이 기술은 대량의 데이터로 작업하거나 AI가 빠르게 액세스할 수 있어야 하는 특정 정보가 있을 때 특히 유용합니다. 메모리를 미리 시딩하면 AI가 이 정보를 보다 효율적으로 검색하고 사용할 수 있어 시간과 API 호출을 절약하고 응답의 정확성을 높일 수 있습니다.
-    
-    예를 들어, API의 문서, GitHub 리포지토리 등을 다운로드하여 Auto-GPT를 실행하기 전에 메모리에 수집할 수 있습니다.
-    
-    ⚠️ Redis를 메모리로 사용하는 경우, .env 파일에서 WIPE_REDIS_ON_START를 False로 설정한 상태에서 Auto-GPT를 실행해야 합니다.
-    
-    ⚠️For 다른 메모리 백엔드의 경우, 현재 자동-GPT를 시작할 때 메모리를 강제로 지웁니다. 이러한 메모리 백엔드로 데이터를 수집하려면 자동-GPT 실행 중 언제든지 data_ingestion.py 스크립트를 호출하면 됩니다.
-    
-    메모리는 수집되는 즉시 AI에서 사용할 수 있으며, Auto-GPT가 실행되는 동안 수집된 경우에도 마찬가지입니다.
-    
-    위의 예제에서 스크립트는 메모리를 초기화하고 /seed_data 디렉터리 내의 모든 파일을 청크 간 겹침이 200이고 각 청크의 최대 길이가 4000인 메모리로 수집합니다. 파일 인수를 사용하여 단일 파일을 메모리에 수집할 수도 있으며, 이 스크립트는 /auto_gpt_workspace 디렉터리 내의 파일만 수집합니다.
-    
-    최대 길이 및 오버랩 매개 변수를 조정하여 AI가 해당 메모리를 '불러올' 때 문서가 표시되는 방식을 미세 조정할 수 있습니다:
-    
-    오버랩 값을 조정하면 AI가 정보를 불러올 때 각 청크에서 더 많은 컨텍스트 정보에 액세스할 수 있지만, 더 많은 청크가 생성되므로 메모리 백엔드 사용량과 OpenAI API 요청이 증가하게 됩니다.
-    max_length 값을 줄이면 더 많은 청크가 생성되어 컨텍스트에서 더 많은 메시지 기록을 허용함으로써 프롬프트 토큰을 절약할 수 있지만, 청크의 수도 증가합니다.
-    max_length 값을 늘리면 각 청크에서 더 많은 컨텍스트 정보를 AI에 제공하므로 생성되는 청크 수가 줄어들고 OpenAI API 요청을 절약할 수 있습니다. 그러나 이렇게 하면 프롬프트 토큰이 더 많이 사용되어 AI가 사용할 수 있는 전체 컨텍스트가 줄어들 수도 있습니다.
-    
-    </aside>
-    
+> 💡 autogpt/data_ingestion.py에 있는 이 스크립트를 사용하면 Auto-GPT를 실행하기 전에 파일을 메모리에 수집하고 사전 시딩할 수 있습니다.
+> 메모리 사전 시딩은 관련 문서나 데이터를 AI의 메모리에 수집하여 이 정보를 사용하여 더 많은 정보에 기반한 정확한 응답을 생성할 수 있도록 하는 기술입니다.
+> 메모리를 미리 시드하려면 각 문서의 콘텐츠를 지정된 최대 길이의 청크로 분할하고 청크 간에 지정된 중첩을 지정한 다음 각 청크를 .env 파일에 설정된 메모리 백엔드에 추가합니다. 
+> AI는 정보를 불러오라는 메시지가 표시되면 미리 시드된 메모리에 액세스하여 더 많은 정보를 바탕으로 정확한 응답을 생성할 수 있습니다.
+> 이 기술은 대량의 데이터로 작업하거나 AI가 빠르게 액세스할 수 있어야 하는 특정 정보가 있을 때 특히 유용합니다. 
+> 메모리를 미리 시딩하면 AI가 이 정보를 보다 효율적으로 검색하고 사용할 수 있어 시간과 API 호출을 절약하고 응답의 정확성을 높일 수 있습니다.
+> 예를 들어, API의 문서, GitHub 리포지토리 등을 다운로드하여 Auto-GPT를 실행하기 전에 메모리에 수집할 수 있습니다.
+> ⚠️ Redis를 메모리로 사용하는 경우, .env 파일에서 WIPE_REDIS_ON_START를 False로 설정한 상태에서 Auto-GPT를 실행해야 합니다.  
+> ⚠️For 다른 메모리 백엔드의 경우, 현재 자동-GPT를 시작할 때 메모리를 강제로 지웁니다. 
+> 이러한 메모리 백엔드로 데이터를 수집하려면 자동-GPT 실행 중 언제든지 data_ingestion.py 스크립트를 호출하면 됩니다.
+> 메모리는 수집되는 즉시 AI에서 사용할 수 있으며, Auto-GPT가 실행되는 동안 수집된 경우에도 마찬가지입니다.
+> 위의 예제에서 스크립트는 메모리를 초기화하고 /seed_data 디렉터리 내의 모든 파일을 청크 간 겹침이 200이고 각 청크의 최대 길이가 4000인 메모리로 수집합니다. 
+> 파일 인수를 사용하여 단일 파일을 메모리에 수집할 수도 있으며, 이 스크립트는 /auto_gpt_workspace 디렉터리 내의 파일만 수집합니다.
+> 최대 길이 및 오버랩 매개 변수를 조정하여 AI가 해당 메모리를 '불러올' 때 문서가 표시되는 방식을 미세 조정할 수 있습니다:
+> 오버랩 값을 조정하면 AI가 정보를 불러올 때 각 청크에서 더 많은 컨텍스트 정보에 액세스할 수 있지만, 더 많은 청크가 생성되므로 메모리 백엔드 사용량과 OpenAI API 요청이 증가하게 됩니다.
+> max_length 값을 줄이면 더 많은 청크가 생성되어 컨텍스트에서 더 많은 메시지 기록을 허용함으로써 프롬프트 토큰을 절약할 수 있지만, 청크의 수도 증가합니다.
+> max_length 값을 늘리면 각 청크에서 더 많은 컨텍스트 정보를 AI에 제공하므로 생성되는 청크 수가 줄어들고 OpenAI API 요청을 절약할 수 있습니다. 그러나 이렇게 하면 프롬프트 토큰이 더 많이 사용되어 AI가 사용할 수 있는 전체 컨텍스트가 줄어들 수도 있습니다.
+
+
 
 ## GPT3/GPT4
 
 gpt3와 gpt4를 각각 지정해서 사용할수 있음
 
-SMART_LLM_MODEL = gpt4
+```python
+#SMART_LLM_MODEL = gpt4
+#FAST_LLM_MODEL = gpt-3.5-turbo
 
-FAST_LLM_MODEL = gpt-3.5-turbo
-
-```
 if gpt3only:
       logger.typewriter_log("GPT3.5 Only Mode: ", Fore.GREEN, "ENABLED")
       CFG.set_smart_llm_model(CFG.fast_llm_model)
@@ -818,9 +806,9 @@ if gpt4only:
 
 
 
-# Auto-GPT 사용해보기
+## Auto-GPT 사용해보기
 
-## case1
+### case1
 
 Name:  investGPT
 
@@ -829,7 +817,7 @@ Name:  investGPT
 
 목표: 한국의 스타트업 지니파이가 투자 유치에 성공할 수있는 방법을 알려줘
 
-—
+* * *
 
 생각: 시장의 현황을 조사하고 유망한 스타트업을 파악하는 것부터 시작해야 할 것 같아요.
 
@@ -845,7 +833,8 @@ Name:  investGPT
 
 다음 작업: COMMAND = google ARGUMENTS = {'input': '투자 시장의 현재 상태'}
 
-—
+* * *
+
 생각: 웹사이트를 검색하여 유망한 스타트업을 파악해야 한다.
 
 이유: 웹사이트를 검색하면 현재 시장에서 두각을 나타내고 있고 앞으로 성장할 가능성이 있는 스타트업을 파악하는 데 도움이 될 것입니다.
@@ -860,21 +849,29 @@ Name:  investGPT
 
 다음 작업: COMMAND = browse_website ARGUMENTS = {'url': 'https://thegiin.org/impact-investing/need-to-know/', 'question': '임팩트 투자 분야에서 유망한 스타트업에는 어떤 것이 있나요?'}
 
-—
+* * *
+
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.wellbeingintlstudiesrepository.org/cgi/viewcontent.cgi?article=1014&context=aw_farm_gen](https://www.wellbeingintlstudiesrepository.org/cgi/viewcontent.cgi?article=1014&context=aw_farm_gen)', 'question': '임팩트 투자 분야에서 유망한 스타트업은 어떤 것이 있나요?'}
 
-—
+* * *
+
 다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://wellfound.com/startups/l/earth/impact-investing](https://wellfound.com/startups/l/earth/impact-investing)', 'question': 'wellfound.com에 등록된 임팩트 투자 스타트업의 웹사이트를 방문하세요'}
 
-—
+* * *
+
 다음 작업: COMMAND = browse_website ARGUMENTS = {'url': '[https://sifted.eu/articles/norrsken-100-impact-list/](https://sifted.eu/articles/norrsken-100-impact-list/)', 'question': 'sifted.eu에 등록된 임팩트 투자 스타트업의 웹사이트 방문'}
-—
+
+* * *
+
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://sifted.eu/articles/norrsken-100-impact-list/](https://sifted.eu/articles/norrsken-100-impact-list/)', 'question': '노르스켄 100 임팩트 리스트에 등록된 스타트업의 웹사이트 방문'}
 
-—
+* * *
+
 다음 작업: COMMAND = message_agent ARGUMENTS = {'key': 'startup_analysis', 'message': '노르스켄 100 임팩트 리스트에 등재된 가장 유망한 스타트업에 대해 수집한 정보를 분석하여 비즈니스 모델, 수익원, 성장 잠재력에 대한 인사이트를 제공해 주세요.'}
 
-## case2
+* * *
+
+### case2
 
 Name:  k8sGPT
 
@@ -882,7 +879,7 @@ Name:  k8sGPT
 
 목표: 클러스터 내 100개 이상의 노드를 모니터링하는 방법
 
-—
+* * *
 
 생각: 클러스터에 있는 100개 이상의 노드를 모니터링하려면 모든 노드에서 메트릭을 수집하고 표시할 수 있는 도구를 사용해야 합니다. 그러한 도구 중 하나는 Kubernetes 노드에서 메트릭을 스크랩하여 시계열 데이터베이스에 저장할 수 있는 Prometheus입니다. 그런 다음 Grafana를 사용하여 데이터를 시각화하고 클러스터를 모니터링하기 위한 대시보드를 만들 수 있습니다.
 
@@ -898,7 +895,9 @@ Name:  k8sGPT
 
 중요성: 올바른 메트릭을 모니터링하고 있는지, 대시보드가 유용한 정보를 제공하고 있는지 확인해야 합니다. 또한 대시보드를 정기적으로 검토하여 대시보드가 최신 상태이고 관련성이 있는지 확인해야 합니다.
 
-## case3
+* * *
+
+### case3
 
 Name: prophetGPT
 
@@ -906,7 +905,7 @@ Name: prophetGPT
 
 목표: 인류는 언제 멸망하는가
 
-—
+* * *
 
 생각:  현재 세계 정세에 대한 정보를 수집하는 것이 유용할 것 같아요. Google 검색을 통해 관련 뉴스 기사를 찾아보겠습니다.
 추론: 예언 인공지능으로서 미래에 대한 정확한 예측을 하기 위해서는 시사 및 트렌드에 대한 최신 정보를 파악하는 것이 중요합니다.
@@ -917,7 +916,7 @@ Name: prophetGPT
 
 비판: 내가 찾은 기사가 평판이 좋은 출처에서 나온 것인지, 정보를 분석할 때 편향되지 않았는지 확인해야 합니다.
 
-—
+* * *
 
 생각: 'write_to_file' 명령을 사용하여 나중에 참조할 수 있도록 IMF의 경제 전망 보고서를 파일에 저장하겠습니다.
 
@@ -931,7 +930,7 @@ Name: prophetGPT
 
 다음 작업: COMMAND = write_to_file ARGUMENTS = {'file': 'imf_economic_outlook_report.txt', 'text': 'IMF는 1년에 두 번 세계 경제 전망 보고서를 발행하여 단기 및 중기 세계 경제 동향을 분석합니다. 2023년 4월에 발표된 가장 최근 보고서에 따르면, 세계 경제 성장률은 2022년 3.4%에서 2023년 2.8%로 하락한 후 2024년 3.0%를 기록하며 완만한 회복세를 보일 것으로 예측했습니다. 특히 선진국은 2022년 2.7%에서 2023년 1.3%로 뚜렷한 성장 둔화를 보일 것으로 예상됩니다. 인플레이션은 2022년 8.7%에서 2023년 7.0%로 하락할 것으로 예상되지만 근원(근원) 인플레이션은 더 느리게 하락할 것으로 보입니다.}
 
-—
+* * *
 
 생각: '구글' 명령을 사용하여 유엔의 환경 현황에 관한 최신 보고서에 대한 정보를 검색하겠습니다.
 
@@ -947,7 +946,7 @@ Name: prophetGPT
 
 SYSTEM: 명령 google이 반환했습니다: ['https://www.un.org/en/climatechange/reports', 'https://www.unep.org/geo/', 'https://public.wmo.int/en/our-mandate/climate/wmo-statement-state-of-global-climate', 'https://www.unep.org/resources/report/state-environment-and-outlook-report-occupied-palestinian-territory-2020', 'https://press.un.org/en/2019/ga12131.doc.htm', 'https://news.un.org/en/story/2022/04/1115452', 'https://research.un.org/en/climate-change/reports', 'https://news.un.org/en/story/2022/11/1130237']
 
-ㅡㅡ
+* * *
 
 생각: 'browse_website' 명령을 사용하여 유엔 웹사이트로 이동하여 환경 현황에 대한 최신 보고서에 대한 정보를 찾겠습니다.
 
@@ -961,7 +960,9 @@ SYSTEM: 명령 google이 반환했습니다: ['https://www.un.org/en/climatechan
 
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': 'https://www.un.org/en/climatechange/reports', 'question': '환경 상태에 대한 최신 보고서'}
 
-## case4
+* * *
+
+### case4
 
 Name: investGPT
 
@@ -969,7 +970,7 @@ Name: investGPT
 
 목표: 2023년 현재 기준으로 시작할수있는 온라인 사업 아이템은 무엇인가?
 
-ㅡㅡ
+* * *
 
 생각:  2023년부터 시작할 수 있는 몇 가지 온라인 비즈니스 아이디어를 살펴보는 것부터 시작하겠습니다. Google 검색을 통해 관련 기사를 찾아보겠습니다.
 이유: 2023년에 시작할 수 있는 온라인 비즈니스 아이디어에 대한 정보를 수집해야 한다.
@@ -981,7 +982,7 @@ Name: investGPT
 비판: 없음
 다음 작업: COMMAND = google ARGUMENTS = {'input': '2023년에 시작할 온라인 비즈니스 아이디어'}
 
-ㅡㅡ
+* * *
 
 생각:  실현 가능한 온라인 비즈니스 아이디어를 찾기 위해 기사를 찾아보겠습니다. Shopify의 첫 번째 기사를 검색하는 것부터 시작하겠습니다.
 이유: 실현 가능한 온라인 비즈니스 아이디어를 찾기 위해 기사를 검색해야 합니다.
@@ -992,21 +993,23 @@ Name: investGPT
 비판: 없음
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.shopify.com/blog/online-business-ideas](https://www.shopify.com/blog/online-business-ideas)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
-ㅡㅡ
+* * *
 
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.shopify.com/blog/online-business-ideas](https://www.shopify.com/blog/online-business-ideas)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
-ㅡㅡ
+* * *
 
 다음 작업: COMMAND = 찾아보기_웹사이트 ARGUMENTS = {'url': '[https://www.businessnewsdaily.com/2747-great-business-ideas.html](https://www.businessnewsdaily.com/2747-great-business-ideas.html)', 'question': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어에는 어떤 것이 있나요?'}
 
-ㅡㅡ
+* * *
 
 다음 작업: COMMAND = google ARGUMENTS = {'input': '2023년에 시작할 수 있는 실현 가능한 온라인 비즈니스 아이디어'}
 
 SYSTEM: 명령 구글이 반환했습니다: ['https://www.shopify.com/blog/online-business-ideas', 'https://www.hostinger.com/tutorials/online-business-ideas', 'https://www.nerdwallet.com/article/small-business/online-business-ideas', 'https://www.visitor-analytics.io/en/blog/best-online-business-ideas/', 'https://woocommerce.com/posts/best-online-business-start/', 'https://stockarea.io/blogs/22-online-business-ideas-to-become-rich-and-make-money/', 'https://99designs.com/blog/business/online-business-ideas/', 'https://www.businessnewsdaily.com/2747-great-business-ideas.html']
 
-ㅡㅡ
+* * *
+
+
 
 ## Auto-GPT 를 사용해보며..
 
@@ -1018,12 +1021,12 @@ speak 모드로 AI가 텍스트를 음성으로 읽는것에서 한발 더 나�
 
 무한 loop 을 벗어나서 사람이 만족하는 결과를 가져올수있다면 강력한 제품이 될것으로 예상
 
-AutoGPT Github 상 해결되지 않은 이슈들.
-[Invalid JSON](https://github.com/Significant-Gravitas/Auto-GPT/issues/21)
+AutoGPT Github 상 해결되지 않은 이슈들이 있다.
 
+[Invalid JSON](https://github.com/Significant-Gravitas/Auto-GPT/issues/21)
 [Auto-GPT Recursive Self Improvement](https://github.com/Significant-Gravitas/Auto-GPT/issues/15)
 
-같은 부분에서 무한반복하고 오류발생 예시
+같은 부분에서 무한반복하고 오류발생 예시는 아래와 같다.
 
 AI 이름: **TechBlogger-GPT**
 
@@ -1044,10 +1047,9 @@ Goal 2 에 대한 생성파일
 메모리 사전 시딩은 모델의 메모리에 관련 정보를 미리 로드하여 AutoGPT의 성능을 향상시키는 데 사용되는 기술입니다. 이는 모델에 당면한 작업과 관련된 일련의 시드 문장 또는 키워드를 제공하여 수행할 수 있습니다. 이렇게 하면 모델이 보다 정확하고 관련성 높은 응답을 생성할 수 있습니다. AutoGPT에서 메모리 사전 시딩의 일부 응용 분야에는 텍스트 생성의 정확성 향상, 생성된 텍스트의 관련성 향상, 모델에서 텍스트를 생성하는 데 필요한 시간 단축 등이 있습니다.
 
 목표 3: **결과 블로그를 파일로 저장**
+
 목표 4: **목표 달성 시 종료**
 
-ㅡㅡ
+...
 
-목표2까지 진행후 
-
-에러 발생(다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.)으로 종료 되었다.
+목표2까지 진행후 에러 발생(다음 작업: COMMAND = 오류: ARGUMENTS = '딕셔너리' 객체에 'replace' 속성이 없습니다.)으로 종료 되었다.
