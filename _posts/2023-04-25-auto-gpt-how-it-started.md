@@ -19,7 +19,7 @@ last_modified_at: 2023-04-25T00:40:00-00:00
 chatGPT에게 장/단기 기억에 대한 개념과 사용할 수 있는 명령어 그리고 응답 형식, 사용자와의 대화 내용에 대해 알려주는 것을 확인할 수 있다.
 
 -Auto-GPT 초기 커밋내역 참고
-[Adds messgae log of first conversation. · Significant-Gravitas/Auto-GPT@68d1fd8 (github.com)](https://github.com/Significant-Gravitas/Auto-GPT/commit/68d1fd8869ab050421aeb3eb107177514ad02e13)
+[Adds messgae log of first conversation](https://github.com/Significant-Gravitas/Auto-GPT/commit/68d1fd8869ab050421aeb3eb107177514ad02e13)
 
 ```
 USER:
@@ -1023,7 +1023,7 @@ speak 모드로 AI가 텍스트를 음성으로 읽는것에서 한발 더 나�
 
 AutoGPT Github 상 해결되지 않은 이슈들이 있다.
 
-[Invalid JSON](https://github.com/Significant-Gravitas/Auto-GPT/issues/21)
+[Invalid JSON](https://github.com/Significant-Gravitas/Auto-GPT/issues/21),
 [Auto-GPT Recursive Self Improvement](https://github.com/Significant-Gravitas/Auto-GPT/issues/15)
 
 같은 부분에서 무한반복하고 오류발생 예시는 아래와 같다.
