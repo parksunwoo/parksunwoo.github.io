@@ -6,6 +6,7 @@ tags:
   - architecture
   - msa
   - monolitic
+  - interview
 last_modified_at: 2022-12-05T02:40:00-00:00
 ---
 
