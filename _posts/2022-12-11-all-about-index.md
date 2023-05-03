@@ -296,4 +296,6 @@ SELECT * FROM table_name WHERE column2 = 'value2';
 ## 참고자료
 
 [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4)
+
+
 [성능 향상을 위한 SQL 작성법](https://d2.naver.com/helloworld/1155)
