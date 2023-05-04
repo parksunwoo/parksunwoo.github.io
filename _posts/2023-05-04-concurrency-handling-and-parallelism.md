@@ -30,14 +30,14 @@ last_modified_at: 2023-05-02T00:28:00-00:00
 | 한번에 많은 것을 처리 | 한번에 많은 일을 처리 |
 | 논리적인 개념 | 물리적인 개념 |
 
-![concurrent_parallel](/assets/images/concurrent_parallel.png)
-- Concurrent Parallel
+![concurrent_parallel](/assets/images/concurrent_parallel.png "Concurrent Parallel")
+
 
 ## What Is Concurrency?
 
 python의 동시성은 스레드, 작업 및 프로세스와 같은 동시 요소의 조정을 나타낸다.
 
-이러한 오쇼는 순서대로 실행되는 일련의 명령을 나타내며 서로 다른 사고 방식으로 생각할 수 있다
+이러한 요소는 순서대로 실행되는 일련의 명령을 나타내며 서로 다른 사고 방식으로 생각할 수 있다
 
 python의 동시성은 다중 처리, 스레딩 또는 비동기 프로그래밍을 통해 달성할 수 있다. 
 
@@ -45,7 +45,7 @@ python의 동시성은 다중 처리, 스레딩 또는 비동기 프로그래밍
 
 프로세스 속도를 높이는 방법을 찾습니다.
 
-스레딩은 운영 체제가 어넺든지 스레드를 중단하고 스레드 간에 전환할 수 있는 선점형 멀티태스킹을 사용한다.
+스레딩은 운영 체제가 언제든지 스레드를 중단하고 스레드 간에 전환할 수 있는 선점형 멀티태스킹을 사용한다.
 
 이것은 스레드의 코드가 스위치를 처리할 필요가 없기 때문에 편리하지만 전환이 언제든지 발생할 수 있으므로 어려울 수 있다.
 
@@ -69,7 +69,7 @@ Asyncio는 협력 멀티태스킹을 사용하여 작업이 협업하고 전환�
 | 협력적 멀티태스킹 (비동기식) | 태스크는 제어를 포기할 시기를 결정 | 1 |
 | 다중 처리 (멀티프로세싱) | 프로세스는 서로 다른 프로세서에서 동시에 실행 | N |
 
-## Synchronous Version
+### Synchronous Version
 
 ```python
 import requests
@@ -94,14 +94,14 @@ if __name__ == "__main__":
     duration = time.time() - start_time
     print(f"Downloaded {len(sites)} in {duration} seconds")
 
-Downloaded 160 in 14.289619207382202 seconds
+# Downloaded 160 in 14.289619207382202 seconds
 ```
 
-동기식 버전이 좋은 이유
+- 동기식 버전이 좋은 이유
 
 이 버전의 코드의 가장 큰 장점은 바로 쉽다는 것. 생각의 흐름이 하나뿐이므로 다음 단계가 무엇이고 어떻게 작동할지 예측할 수 있음
 
-동기식 버전의 문제점
+- 동기식 버전의 문제점
 
 동기식 버전의 가장 큰 문제점은 앞으로 제공할 다른 솔루션에 비해 상대적으로 느리다는 점. 
 
@@ -109,7 +109,7 @@ Downloaded 160 in 14.289619207382202 seconds
 
 스레딩을 사용하여 이 프로그램을 다시 작성하여 동시성에 대해 살펴본다.
 
-## threading Version
+### threading Version
 
 ```python
 import concurrent.futures
@@ -143,12 +143,12 @@ if __name__ == "__main__":
     duration = time.time() - start_time
     print(f"Downloaded {len(sites)} in {duration} seconds")
 
-Downloaded 160 in 3.7238826751708984 seconds
+# Downloaded 160 in 3.7238826751708984 seconds
 ```
 
-### Why the threading Version Rocks
+- Why the threading Version Rocks
 
-### The Problems with the threading Version
+- The Problems with the threading Version
 
 14초에 비하면 훨씬 빠르긴 하지만 이를 구현하려면 코드가 조금 더 필요하며 스레드 간에 어떤 데이터가 공유되는지 잘 생각해야 합니다
 
@@ -171,9 +171,9 @@ asyncio의 일반적인 개념은 이벤트 루프라고 하는 단일 파이썬
 
 단순화된 이벤트 루프는 이러한 각 상태에 대해 하나씩 두 개의 작업목록을 유지
 
-준비된 작업 중 하나를 선택하고 다시 실행을 시작합니다. 해당 작업은 이벤트 루프에 협조적으로 제어권을 다시 넘길 때까지 완전한 제어궈을 갖는다.
+준비된 작업 중 하나를 선택하고 다시 실행을 시작합니다. 해당 작업은 이벤트 루프에 협조적으로 제어권을 다시 넘길 때까지 완전한 제어권을 갖는다.
 
-실행중인 작업이 이벤트 루프에 제어권을 다시 넘기면 이벤트 루프는 해당 작업을 준비 또는 대기 목록에 배치한 다음 대기 목록에 있는 각 작업을 살펴보고 I/O 작업이 완료되어 준비가 되었는지 확인. 준비 목록에 있는 작업은 아직 실되행해 않았음을 알기 때문에 아직 준비된 상태임을 알수 있음.
+실행중인 작업이 이벤트 루프에 제어권을 다시 넘기면 이벤트 루프는 해당 작업을 준비 또는 대기 목록에 배치한 다음 대기 목록에 있는 각 작업을 살펴보고 I/O 작업이 완료되어 준비가 되었는지 확인. 준비 목록에 있는 작업은 아직 실행되지 않았음을 알기 때문에 아직 준비된 상태임을 알수 있음.
 
 모든 작업이 다시 올바른 목록으로 정렬되면 이벤트 루프는 실행할 다음 작업을 선택하고 프로세스가 반복됩니다. 단순화된 이벤트 루프는 가장 오래 대기 중인 작업을 선택하여 실행합니다. 이 프로세스는 이벤트 루프가 완료될 때까지 반복됩니다.
 
@@ -210,7 +210,7 @@ if __name__ == "__main__":
     duration = time.time() - start_time
     print(f"Downloaded {len(sites)} sites in {duration} seconds")
 
-Downloaded 160 in 2.5727896690368652 seconds
+# Downloaded 160 in 2.5727896690368652 seconds
 ```
 
 스레딩 예제에서는 최적의 스레드 수가 무엇인지 명확하지 않았지만
@@ -256,7 +256,7 @@ if __name__ == "__main__":
     duration = time.time() - start_time
     print(f"Downloaded {len(sites)} in {duration} seconds")
 
-Downloaded 160 in 5.718175172805786 seconds
+# Downloaded 160 in 5.718175172805786 seconds
 ```
 
 다중 처리 버전의 문제점은 비동기 및 스레딩 버전보다 확실히 느립니다:
@@ -282,8 +282,8 @@ if __name__ == "__main__":
     duration = time.time() - start_time
     print(f"Duration {duration} seconds")
 
-Duration 2.5175397396087646 seconds
-Duration 10.407078266143799 seconds (단순 실행시)
+# Duration 2.5175397396087646 seconds
+# Duration 10.407078266143799 seconds (단순 실행시)
 ```
 
 프로젝트에 어떤 동시성 모듈을 사용할지 결정하는 데 도움이 되는 몇 가지 결정 사항에 대해 논의해 보겠습니다.
@@ -299,9 +299,9 @@ Duration 10.407078266143799 seconds (단순 실행시)
 `I/O 바운드 문제의 경우`, 파이썬 커뮤니티에는 일반적인 경험 법칙이 있습니다: `"가능하면 비동기화를 사용하고, 꼭 필요한 경우 스레딩을 사용하세요."` 비동기화는 이러한 유형의 프로그램에 최고의 속도 향상을 제공할 수 있지만, 때로는 비동기화를 활용하기 위해 포팅되지 않은 중요한 라이브러리가 필요할 수 있습니다. 이벤트 루프에 대한 제어권을 포기하지 않는 모든 작업은 다른 모든 작업을 차단한다는 점을 기억하세요.
 
 
-## 포인트 전환 로직 설계시 중복처리를 어떠한 로직 체크로 막을 것인지, 동시성에 대해서.
+## 포인트 전환 로직 설계시 중복처리를 제한 그리고 동시성에 대해서.
 
-이전 변환 결과를 캐싱하면 동일한 변환을 여러 번 수행하는 것을 피할 수 있습니다.
+이전 포인트 전환결과를 캐싱하면 동일한 변환을 여러 번 수행하는 것을 피할 수 있습니다.
 
 다음은 사전을 캐시로 사용하는 간단한 Python 코드 예제입니다.
 
@@ -325,7 +325,7 @@ def perform_conversion(points):
     return points * conversion_factor
 ```
 
-이 예에서는 `conversion_cache`라는 사전을 사용하여 이전 변환 결과를 저장합니다. 
+이 예에서는 `conversion_cache`라는 사전을 사용하여 이전 포인트 전환결과를 저장합니다. 
 
 `convert_points` 함수는 주어진 `company_a_points` 값에 대한 변환 결과가 이미 캐시에 있는지 확인합니다.
 
@@ -337,12 +337,12 @@ def perform_conversion(points):
 
 1. 입력 유효성 검사: 입력 포인트가 유효한지 확인합니다(예: 음수가 아니거나 특정 범위 내 또는 올바른 데이터 유형). 잘못된 입력을 처리하고 오류를 반환하거나 예외를 발생시키기 위해 함수에 검사를 추가할 수 있습니다.
 
-```python
-def convert_points(company_a_points):
-    if company_a_points < 0:
-        raise ValueError("Points must be non-negative")
-    # ...
-```
+    ```python
+    def convert_points(company_a_points):
+        if company_a_points < 0:
+            raise ValueError("Points must be non-negative")
+        # ...
+    ```
 
 2. 전환 규칙: 전환 논리가 정확하고 A사 및 B사에서 정의한 규칙을 준수하는지 확인합니다. 여기에는 특별한 전환율 또는 추가 조건이 필요한 특정 포인트 값과 같은 극단적인 경우 처리가 포함될 수 있습니다.
 3. 동시성: 응용 프로그램에 변환 기능에 동시에 액세스하는 여러 스레드 또는 프로세스가 있는 경우 잠금 또는 세마포어와 같은 동기화 메커니즘을 사용하여 캐시가 올바르게 업데이트되고 경합 상태가 방지되도록 하는 것이 좋습니다.
@@ -357,7 +357,7 @@ def convert_points(company_a_points):
 다음은 예제 코드가 포함된 단계별 설명.
 
 1. 필요한 모듈 가져오기
-    a. python 에서 잠금 및 스레드를 사용하려면 threading 모듈을 가져와야 합니다
+    - python 에서 잠금 및 스레드를 사용하려면 threading 모듈을 가져와야 합니다
     
     ```python
     import threading
@@ -434,8 +434,8 @@ def convert_points(company_a_points):
     
     이 접근 방식은 경합 상태를 방지하고 캐시의 정확성을 보장하는 데 도움이 될 수 있다.
     
-    ### 참고자료
-    
-    [https://seamless.tistory.com/42](https://seamless.tistory.com/42)
-    
-    [https://realpython.com/python-concurrency/](https://realpython.com/python-concurrency/)
+## 참고자료
+
+[https://seamless.tistory.com/42](https://seamless.tistory.com/42)
+
+[https://realpython.com/python-concurrency/](https://realpython.com/python-concurrency/)
