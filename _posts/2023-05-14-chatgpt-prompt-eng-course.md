@@ -12,17 +12,12 @@ last_modified_at: 2023-05-14T21:01:00-00:00
 ---
 
 ChatGPT Prompt Engineering for Developers 강의를 들었습니다
+1시간정도 분량인데 pompt 에 대해서 이런방식으로 사용하면 좋다는 howto를 알려줍니다
+다양한 예시와 함께 알려줘서 prompt 예제를 기록해두고 필요한 경우에 맞춰서 사용하려고 합니다
 
 ---
 
-1시간정도 분량인데 pompt 에 대해서 이런방식으로 사용하면 좋다는 howto를 알려줍니다
-
-다양한 예시와 함께 알려줘서 prompt 예제를 기록해두고 필요한 경우에 맞춰서 사용하려고 합니다
-
-****
-
-
-Introduction
+[Introduction](#)
 [Guidelines](#-Guidelines)
 [Iterative](#-Iterative-Prompt-Develelopment)
 [Summarizing](#-Summarizing)
@@ -30,7 +25,7 @@ Introduction
 [Transforming](#-Transforming)
 [Expanding](#-Expanding)
 [Chatbot](#-Chatbot)
-[Conclusion](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/9/conclusion)
+[Conclusion](#)
 
 
 chapter 시작하는 부분에는 OPENAI_API_KEY를 아래의 코드로 제공하고 있습니다
@@ -48,9 +43,9 @@ print(openai.api_key)
 ## Prompting Principles
 
 - **Principle 1: Write clear and specific instructions**
-- 원칙 1: 명확하고 구체적인 지침을 작성하세요**.
-- Principle 2: Give the model time to “think”
-- 원칙 2: 모델에게 '생각할 시간'을 주세요**.
+- 원칙 1: 명확하고 구체적인 지침을 작성하세요.
+- **Principle 2: Give the model time to “think”**
+- 원칙 2: 모델에게 '생각할 시간'을 주세요.
 
 ### Principle 1: Write clear and specific instructions
 
@@ -253,29 +248,29 @@ you have done the problem yourself.
 
 Use the following format:
 Question:
-```
+`
 question here
-```
+`
 Student's solution:
-```
+`
 student's solution here
-```
+`
 Actual solution:
-```
+`
 steps to work out the solution and your solution here
-```
+`
 Is the student's solution the same as actual solution \
 just calculated:
-```
+`
 yes or no
-```
+`
 Student grade:
-```
+`
 correct or incorrect
-```
+`
 
 Question:
-```
+`
 I'm building a solar power installation and I need help \
 working out the financials. 
 - Land costs $100 / square foot
@@ -285,16 +280,16 @@ me a flat $100k per year, and an additional $10 / square \
 foot
 What is the total cost for the first year of operations \
 as a function of the number of square feet.
-``` 
+`
 Student's solution:
-```
+`
 Let x be the size of the installation in square feet.
 Costs:
 1. Land cost: 100x
 2. Solar panel cost: 250x
 3. Maintenance cost: 100,000 + 100x
 Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
-```
+`
 Actual solution:
 """
 ```
@@ -477,7 +472,7 @@ Review: ```{prod_review}```
 """
 ```
 
-****Try "extract" instead of "summarize"****
+**Try "extract" instead of "summarize"**
 
 ```python
 prompt = f"""
@@ -827,3 +822,5 @@ messages.append(
 )
 response = get_completion_from_messages(messages, temperature=0)
 ```
+
+
