@@ -11,7 +11,7 @@ tags:
 last_modified_at: 2023-05-14T21:01:00-00:00
 ---
 
-ChatGPT Prompt Engineering for Developers 강의를 들었습니다
+[ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) 강의를 들었습니다
 1시간정도 분량인데 pompt 에 대해서 이런방식으로 사용하면 좋다는 howto를 알려줍니다
 다양한 예시와 함께 알려줘서 prompt 예제를 기록해두고 필요한 경우에 맞춰서 사용하려고 합니다
 
