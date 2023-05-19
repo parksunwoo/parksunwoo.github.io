@@ -21,7 +21,6 @@ last_modified_at: 2023-05-20T08:01:00-00:00
 
 하나씩 그러나 끝없이 올라오는 슬랙 에러 알림.
 
-
 ![slack alert](/assets/images/slack-alert-bomb.png)
 
 퇴근후 발생한 장애상황을 뒤늦게 받은 전화를 통해 알게되었고,
@@ -71,6 +70,7 @@ connection termination, connect: connection refused 와 같은 내용이 있었�
 무슨이유에서인지 커넥션을 맺지 못하고 있었고, 
 
 `kubectl logs istiod-xxx-xxx -n istio-system` 
+
 로그를 조회해보면 아래 내용이 확인되었다.
 
 ```python
@@ -142,8 +142,11 @@ istio in-place 업그레이드는 아래순서로 진행.
 
 1. [새 Istio 릴리스를 다운로드](https://istio.io/latest/docs/setup/getting-started/#download)하고 디렉터리를 새 릴리스 디렉토리로 변경
 2. 업그레이드할 클러스터를 가리키는 Kubernetes 구성이 있는지 확인
+
 `$ kubectl config view`
+
 3. 업그레이드가 사용 중인 환경과 호환되는지 확인
+
 `$ istioctl x precheck`
 
 ![Cloud shell](/assets/images/cloud-shell.png)
@@ -195,8 +198,11 @@ running 중인 pod의 초록색 불이 새삼 고맙게 느껴지는 긴 하루�
 
 
 
+
 ## 추천자료
 
 [조대협의 블로그 -Istio #3- Istio에 대한 소개](https://bcho.tistory.com/1296)
+
 [Istio는 무엇이고 왜 중요할까?](https://www.linkedin.com/pulse/istio%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%A0%EA%B9%8C-sean-lee/?originalSubdomain=kr)
+
 [Incrementally Adopting Istio (Cloud Next '19)](https://www.youtube.com/watch?v=0cgTHQFXYPQ)
