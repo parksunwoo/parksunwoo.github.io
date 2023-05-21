@@ -109,7 +109,7 @@ GCP GKE 메뉴에 들어가 관측가능성 탭에서 제어영역 , prometheus 
 
 현재 화면은 운영환경의 버전을 업데이트한 이후이고 장애상황 당시에는 istio 의 버전이 무려 1.7.4 이고 개발환경의 istio 버전은 1.16.1 이었다.
 
-흠.. 버전 차이가 나도 너무 차이가 많이 나는 느낌이 바로 들었다.
+흠.. 버전 차이가 나도 너무 많이 나는 느낌이 들었다.
 
 [istio 깃허브](https://github.com/istio/istio) 에서 확인한 최신버전은 1.17.2 이고 4월 5일에 릴리즈가 된 것을 확인했다.
 
@@ -141,13 +141,14 @@ istio 버전 업그레이드는 canary 방식 또는 in-place 방식, helm을 �
 istio in-place 업그레이드는 아래순서로 진행.
 
 1. [새 Istio 릴리스를 다운로드](https://istio.io/latest/docs/setup/getting-started/#download)하고 디렉터리를 새 릴리스 디렉토리로 변경
+
 2. 업그레이드할 클러스터를 가리키는 Kubernetes 구성이 있는지 확인
 
-`$ kubectl config view`
+  `$ kubectl config view`
 
 3. 업그레이드가 사용 중인 환경과 호환되는지 확인
 
-`$ istioctl x precheck`
+  `$ istioctl x precheck`
 
 ![Cloud shell](/assets/images/cloud-shell.png)
 
@@ -156,16 +157,18 @@ No issue found ~ 메시지가 나온다.
 
 4. 다음 명령을 실행하여 업그레이드를 시작:
 
-`$ istioctl upgrade`
+  `$ istioctl upgrade`
 
 명령을 실행하면 몇 가지 검사를 수행한 후 istioctl에서 계속 진행할지 여부를 확인하라는 메시지가 표시됩니다.
 
 업그레이드 당시에는 엔드포인트와의 통신이 실패로 나오고 있었지만 무시하고 계속 진행을 선택했다.
 
 5. istioctl은 Istio 컨트롤 플레인과 게이트웨이를 새 버전으로 제자리에서 업그레이드하고 완료 상태를 표시.
+
 6. istioctl이 업그레이드를 완료한 후, Istio 사이드카가 있는 모든 파드를 재시작하여 Istio 데이터 플레인을 수동으로 업데이트:
 
-`$ kubectl rollout restart deployment`
+  `$ kubectl rollout restart deployment`
+
 
 다행히도 해당작업으로 운영환경의 istio 버전은 1.13.3 으로 업그레이드 되었다. 
 물론 해당버전도 end of life 기간이 이미 지나서 지원하는 k8s 버전 업그레이드와 발맞춰서 업그레이드를 진행할 예정이다. 정상적으로 운영중인 상황이기에 이번과는 다르게 canary 방식으로 진행해볼 생각
@@ -189,12 +192,12 @@ istio 버전 업그레이드와 동시에 container가 정상으로 바뀌었고
 
 아주 잠시지만 istio 업그레이드를 어떻게 할지 고민을 하고 있었는데 동료와 이야기해서 빠른 장애해결을 위해 in-place 방식 으로 진행한것은 잘한일인 것 같다.
 
-다른 한가지 canary 방식 으로 진행하게 된다면 그때에도 진행된 상황을 정리해보겠다.
+이후에 canary 방식 으로 진행하게 된다면 그때에는 다시 진행된 상황을 정리해보겠다.
 
 모니터링은 평소의 정상적인 상황에서는 그 중요성을 간과하기 쉽지만 
 장애상황에서 빠르게 원인을 찾고 조치를 취하는데 나침반 역할을 해주는 것 같다.
 
-running 중인 pod의 초록색 불이 새삼 고맙게 느껴지는 긴 하루였다.
+running 중인 pod의 초록색 불들이 새삼 고맙게 느껴지는 긴 하루였다.
 
 
 
