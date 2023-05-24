@@ -30,7 +30,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
             - somethimes return a response
             - calling service needs to know who handles the command
             
-            ![Command service](https://capture.dropbox.com/bRnBvXMjptcJpQfj)
+            ![Command service](https://capture.dropbox.com/bRnBvXMjptcJpQfj?raw=1)
             
         - Query
             - Retrieve data
@@ -172,9 +172,9 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - Every row documents a change in a property/ies of the entity
         - in this pattern, the database is called Event Store
         
-        ![Event Sourcing1](https://capture.dropbox.com/QCj40YAcgmstW6pe)
+        ![Event Sourcing1](https://capture.dropbox.com/QCj40YAcgmstW6pe?raw=1)
         
-        ![Event Sourcing2](https://capture.dropbox.com/aFwHd46a6Vo2oJGy)
+        ![Event Sourcing2](https://capture.dropbox.com/aFwHd46a6Vo2oJGy?raw=1)
         
         - Pros.
             - Extremely easy to view historical data
@@ -240,7 +240,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - each event handled by a consumer is completely autonomous and is not related to past/ future events
         - should be used when the event is an independant unit with its own outcomes
         
-        ![Stateless EDA](https://capture.dropbox.com/n5MGlZy6LP71pk39)
+        ![Stateless EDA](https://capture.dropbox.com/n5MGlZy6LP71pk39?raw=1)
         
         - it doesn’t matter which consumer is handling the event
         - the outcome is always the same
@@ -253,7 +253,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
             - send an email if more than 5 failure events were received in a single minute
             - calculate the amount of orders submitted in an hour
     
-        ![Stateful EDA](https://capture.dropbox.com/S1GvFYld07R3rqiG)
+        ![Stateful EDA](https://capture.dropbox.com/S1GvFYld07R3rqiG?raw=1)
     
     - it’s extremely important which consumer handles the event
     - current state is stored in specific consumer(s)
@@ -275,7 +275,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - consumers subscribe to specific stream
         - events are retained in a stream for a specified amount of time
         
-        ![Event streaming](https://capture.dropbox.com/CZgYafvvYA8GBs2f)
+        ![Event streaming](https://capture.dropbox.com/CZgYafvvYA8GBs2f?raw=1)
         
     - event streaming
         - consumers can retrieve events that were sent in the past (usually up to a few days)
@@ -307,7 +307,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - this identifier is logged as part of the log record
         - allows tracing across components
         
-        ![Using Correlation Id in Logging](https://capture.dropbox.com/EUI0uBbn4tA1iN4l)
+        ![Using Correlation Id in Logging](https://capture.dropbox.com/EUI0uBbn4tA1iN4l?raw=1)
         
     - central logging engine
         - central engine used for aggregating all the log records
@@ -343,7 +343,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - The wrapper expose a synchronous Web API
         - Calls the producer and performs all the dirty work of sending → wating → handling response
         
-        ![Synchronous EDA](https://capture.dropbox.com/js5pTbha7N7KvWKf)
+        ![Synchronous EDA](https://capture.dropbox.com/js5pTbha7N7KvWKf?raw=1)
         
         - Not easy to implement
         - Do it only if you absolutely need a response from the event
@@ -364,13 +364,13 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
         - No accepted, widely used solution
         - 2-phase commit protocal exists, but difficult to implement
         
-        ![The Saga Pattern1](https://capture.dropbox.com/tOrTiGsMGyVTB5C1)
+        ![The Saga Pattern1](https://capture.dropbox.com/tOrTiGsMGyVTB5C1?raw=1)
         
         - The sage pattern strive to solve this problem
         - A sequence of service- scoped transaction, triggerd by events
         - when a transaction fails, a compensating transaction is triggered
         
-        ![The Saga Pattern2](https://capture.dropbox.com/EAiBpWPoJYjaURbn)
+        ![The Saga Pattern2](https://capture.dropbox.com/EAiBpWPoJYjaURbn?raw=1)
         
         - Not easy to implement
         - Consistency is not ensured - compensating transaction can fail
@@ -427,7 +427,7 @@ Udemy 강의 [Event Driven Architecture - The Complete Guide](https://kmooc.udem
             - easy to implement
             - supported by github, dropbox, paypal, stripe and more
 
-        ![Webhooks Flow](https://capture.dropbox.com/1mcts5U0uEqGxMP4)
+        ![Webhooks Flow](https://capture.dropbox.com/1mcts5U0uEqGxMP4?raw=1)
 
     - HTTP Push Notification
         - send events from the server to client
