@@ -15,6 +15,8 @@ last_modified_at: 2023-06-06T22:30:00-00:00
 
 ---
 
+## OK카우를 만들어보자
+
 음악 저작권 투자거래 서비스 ok카우 서비스의 투자자 관리시스템 개발을 진행한다.
 
 투자자의 다음 사항을 시스템화하여 ok카우 운영자가 각각의 투자자들에 대한 현황 파악을 돕도록 한다.
@@ -46,6 +48,8 @@ last_modified_at: 2023-06-06T22:30:00-00:00
 모든 이벤트는 이벤트 로그로 기록되며, 이벤트 로그를 조합하면 특정 시간의 펀드 자산 가치 확인이 가능하다
 
 ---
+
+## 테이터베이스 스키마 설계
 
 언어는 Python FastAPI를 Database는 mysql 을 사용합니다.
 
@@ -115,6 +119,8 @@ class Event(Base):
     type = Column(String, nullable=False)
     payload = Column(JSON)
 ```
+
+## API 설계
 
 위에서 만든 데이터베이스 스키마를 기반으로 API를 작성해보겠습니다.
 
@@ -327,6 +333,8 @@ async def withdraw_investment(withdraw: WithdrawInvestment):
     return {"responseCode": 200, "withdrawn_amount": withdrawn_amount}  # 정상 응답 코드
 ```
 
+## 동시성처리를 어떻게 할 것인가?
+
 위 API는 투자자 ID와 주식 수를 입력으로 받아 투자금을 회수하는 이벤트를 생성하고 저장합니다.
 
 Event Sourcing을 사용하는 경우, 이벤트를 생성하고 저장하는 것이 주된 작업이지만, 실제 상태 변경은 이벤트를 처리하는 별도의 로직에서 수행되어야 합니다
@@ -390,7 +398,8 @@ async def withdraw_investment(withdraw: WithdrawInvestment):
 
 처음 언급했던 https://github.com/teamhide/fastapi-boilerplate 를 보면 아래와 같은 부분이 [READ](http://README.md)ME 에 나옵니다.
 
-## SQLAlchemy for asyncio context
+
+## Transactional 데코레이터 활용
 
 ```python
 from core.db import Transactional, session
@@ -494,7 +503,7 @@ async def create_investor(investor: InvestorCreate):
 ```
 
 
-## 참고자료
+### 참고자료
 
 
 [뮤직카우](https://www.musicow.com/about/guide)
