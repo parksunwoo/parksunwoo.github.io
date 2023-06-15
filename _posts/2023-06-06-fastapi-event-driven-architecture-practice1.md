@@ -1,5 +1,5 @@
 ---
-title: fastapi event driven architecture practice - ok카우
+title: fastapi event driven architecture practice- part1
 categories:
   - Dev
 tags:
@@ -503,7 +503,7 @@ async def create_investor(investor: InvestorCreate):
 ```
 
 
-### 참고자료
+## 참고자료
 
 
 [뮤직카우](https://www.musicow.com/about/guide)
