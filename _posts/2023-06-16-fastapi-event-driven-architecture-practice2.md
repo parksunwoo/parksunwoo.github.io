@@ -222,7 +222,7 @@ def update_mcp_asset_value():
         funds = db.query(models.Fund).all()  # Retrieve all funds from DB
         for fund in funds:
             total_value = 0
-            for mcp in fund.mcps:  # Retrieve all NFTs belong to the fund
+            for mcp in fund.mcps:  # Retrieve all MCPs belong to the fund
                 estimated_price = get_mcp_index(mcp.copyright_code, mcp.registration_number, mcp.music_id)
                 if estimated_price is not None:
                     total_value += estimated_price
