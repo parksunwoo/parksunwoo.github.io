@@ -57,7 +57,7 @@ async def create_investor(investor: InvestorCreate):
 
 아래는 이를 반영한 코드입니다:
 
-## `store_event_async` celery 처리
+## store_event_async() celery 처리
 
 해당 코드는 Celery 비동기 작업으로 이벤트를 저장하는 역할을 하고 있습니다. 현재 코드는 이벤트를 단순히 `events` 리스트에 추가하고 있는데, 이것을 SQLAlchemy를 사용해 데이터베이스에 저장하도록 변경하겠습니다.
 
@@ -203,7 +203,7 @@ def purchase_mcp(mcp_purchase: McpPurchase, db: Session = Depends(session)):
 
 전체 메서드는 @Transactional() 데코레이터로 감싸져있으며 메서드 중간에서 실패한다면 롤백됩니다.
 
-## celery를 사용한`update_mcp_asset_value`() 주기적 실행
+## celery를 사용한 update_mcp_asset_value() 주기적 실행
 
 ```python
 @celery_app.on_after_configure.connect
