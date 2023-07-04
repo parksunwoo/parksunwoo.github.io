@@ -30,17 +30,17 @@ TO. 고객에게  보낼 FROM 메일주소가 필요하다.
 
 ![Identifier](/assets/images/identifier.png)
 
-해당하는 자격증명, 여기서는 이메일 주소인 cs@aiffel.io 를 클릭해 상세화면으로 들어가면
+해당하는 자격증명, 여기서는 이메일 주소인 를 클릭해 상세화면으로 들어가면
 
 ![DKIM](/assets/images/dkim.png)
 
-아래 섹션에 **DomainKeys Identified Mail(DKIM) 를 확인할 수 있다.**
+아래 "인증" 섹션에 **DomainKeys Identified Mail(DKIM) 를 확인할 수 있다.**
 
-*DomainKeys Identified Mail(DKIM)* 은 발신자가 암호화 키를 사용하여 이메일 메시지에 서명할 수 있도록 허용하는 표준입니다. 그런 다음 이메일 공급자는 이러한 서명을 사용하여 메시지가 전송 중에 타사에 의해 수정되지 않았는지 확인합니다.
+*DomainKeys Identified Mail(DKIM)* 은 발신자가 암호화 키를 사용하여 이메일 메시지에 서명할 수 있도록 허용하는 표준. 그런 다음 이메일 공급자는 이러한 서명을 사용하여 메시지가 전송 중에 타사에 의해 수정되지 않았는지 확인한다.
 
 ![How does DKIM work? - https://dmarcian.com/what-is-dkim/](https://dmarcian.com/wp-content/uploads/2022/05/Frame-1975-1-1024x555.png)
 
-**DKIM** 작동 방식을 단순화한 버전은 다음과 같습니다.
+**DKIM** 작동 방식을 단순화한 버전은 다음과 같다.
 
 1. **서명:** 아웃바운드 이메일 서버(이메일을 보내는 서버)가 메시지를 보낼 때 개인 키를 사용하여 해당 이메일에 대한 고유한 DKIM 서명을 생성합니다. 서명은 이메일 헤더에 삽입됩니다.
 2. **게시:** DKIM 서명을 확인하는 데 사용할 해당 공개 키가 이메일을 보내는 도메인의 DNS 레코드에 게시됩니다.
@@ -49,11 +49,11 @@ TO. 고객에게  보낼 FROM 메일주소가 필요하다.
 
 Amazon SES 에서 DKIM 구성을 하는 것은 해당 안내서를 참고한다면 어렵지 않다
 
-https://docs.aws.amazon.com/ko_kr/ses/latest/dg/send-email-authentication-dkim.html’
+[send-email-authentication-dkim](https://docs.aws.amazon.com/ko_kr/ses/latest/dg/send-email-authentication-dkim.html)
 
 보통은 메일 기능을 구현할때 여기까지 정도에서 끝나기마련인데
 
-실제로 메일을 보내는 테스트를 해보면 새로운 사실을 알게된다.
+개발된 기능을 통해 메일을 보내는 테스트를 해보면 새로운 사실을 알게된다!!
 
 ![Spam Mails](/assets/images/spam-mails.png)
 
@@ -61,13 +61,14 @@ https://docs.aws.amazon.com/ko_kr/ses/latest/dg/send-email-authentication-dkim.h
 
 (광고)와 같은 키워드가 붙어서 스팸메일로 분류되었을 수도 있지만
 
-![Spam Mail Detail](assets/images/spam-mail-detail.png)
+![Spam Mail Detail](/assets/images/spam-mail-detail.png)
 
 고객입장에서는 해당메일을 확인하면서 스팸이 아님 이라는 버튼을 눌러 해당 메일을 구제해야한다.
 
 해당 버튼을 누르지 않는다면 이제 저 메일주소로 보내는 메일들은 자연스럽게 스팸함에 쌓이게된다.
 
-고객이 바로 확인하고 피드백을 주어야하는 경우에는 조금더 복잡해진다.
+고객이 바로 확인하고 피드백을 주어야하는 경우에는 조금더 복잡해진다. 해결해야만한다..!
+
 
 ## 스팸함에 들어가는 메일을 구제하라!
 
@@ -82,13 +83,15 @@ chat GPT에게 어떻게 해야하는지 질문을 하니 여러가지 방법을
 7. **Provide Clear Unsubscribe Option**:
 8. **Test Your Emails Before Sending**:
 
-전용 IP를 구성하거나 평판지료를 관리하는 것도 물론 중요하지만
+전용 IP를 구성하거나 평판을 관리하는 것을 안내하고 해당 사항들도 물론 중요하지만
 
 가장 처음에 이야기한 **Authenticate Your Emails 부분을 조금더 자세히 뜯어보면**
 
 **Authenticate Your Emails**: Email authentication helps servers verify that your emails aren't forged and shouldn't be marked as spam. Since you're using Amazon SES, you should set up DKIM (DomainKeys Identified Mail), `SPF (Sender Policy Framework), and DMARC (Domain-based Message Authentication, Reporting & Conformance)`. You mentioned you've confirmed DKIM, which is great, but also ensure SPF and DMARC are correctly configured.
 
-DKIM 구성 이외에도 SPF, DMARC 구성이 나온다
+DKIM 구성 이외에도 SPF, DMARC 구성이 나온다. SPF, DMARC 구성 은 무엇일까?
+DKIM 구성가 어떤게 다를까?
+
 
 *Sender Policy Framework*(SPF)는 이메일 스푸핑 방지를 위해 마련된 이메일 검증 표준입니다.
 
@@ -107,7 +110,7 @@ Amazon SES를 통해 보내는 메시지는 `amazonses.com`의 하위 도메인
 
 ## 확인된 도메인이 지정된 MAIL FROM 도메인을 사용하도록 구성하려면,
 
-1. https://console.aws.amazon.com/ses/에서 Amazon SES 콘솔을 엽니다.
+1. [Amazon SES](https://console.aws.amazon.com/ses/)에서 Amazon SES 콘솔을 엽니다.
 2. 왼쪽 탐색 창의 **구성(Configuration)** 아래에서 **확인된 자격 증명(Verified identities)**을 선택합니다.
 3. 자격 증명 목록에서 **자격 증명 유형(Identity type)**이 **도메인(Domain)**이고 **상태(Status)**가 *확인됨(Verified)*인 경우에 구성하려는 자격 증명을 선택합니다.
 4. 화면의 맨 아래의 **사용자 지정 MAIL FROM 도메인(Custom MAIL FROM domain)** 창에서 **편집(Edit)**을 선택합니다.
@@ -116,6 +119,7 @@ Amazon SES를 통해 보내는 메시지는 `amazonses.com`의 하위 도메인
     2. **MAIL FROM 도메인**에 MAIL FROM 도메인으로 사용할 하위 도메인을 입력합니다.
     
     아래 그림에서는 mail. 서브도메인을 입력했다.
+
     
     ![Mail From Domain](/assets/images/mail-from-domain.png)
     
@@ -129,7 +133,7 @@ Amazon SES를 통해 보내는 메시지는 `amazonses.com`의 하위 도메인
     
     | 이름 | 유형 | 값 |
     | --- | --- | --- |
-    | mail.aiffel.iomail.aiffel.iomail.aiffel.iomail.aiffel.iomail.aiffel.io | MX | 10 feedback-smtp.region.amazonses.com |
+    | subdomain.domain.com | MX | 10 feedback-smtp.region.amazonses.com |
     | subdomain.domain.com | TXT | "v=spf1 include:amazonses.com ~all" |
 
 위의 경우에는 이름부분의 [subdomain.domain.com](http://subdomain.domain.com) 이 [mail.aiffel.io](http://mail.aiffel.io) 로 변경될 것이고
@@ -138,9 +142,9 @@ MX 와 TXT 2개의 유형의 레코드를 Route53에 입력하면 된다.
 
 여기까지 진행하면 이메일 스푸핑 방지하기 위한 SPF 구성은 완료되었다.
 
-Domain-based Message Authentication, Reporting and Conformance(DMARC)는 SPF와 DKIM 을 사용해 이메일 스푸핑을 찾아내는 이메일 인증 프로토콜입니다.
+Domain-based Message Authentication, Reporting and Conformance(DMARC)는 SPF와 DKIM 을 사용해 이메일 스푸핑을 찾아내는 이메일 인증 프로토콜.
 
-위 SPF 구성보다는 조금 더 간결한데 *Amazon Route 53 에 아래 레코드를 추가하면된다*
+위 SPF 구성보다는 조금 더 간결한데 Amazon Route 53 에 아래 레코드를 추가하면된다
 
 | 이름 | 유형 | 값 |
 | --- | --- | --- |
@@ -156,9 +160,9 @@ pct=25; 부분을 제거하고 mailto 부분에는 실제로 레포팅을 받게
 
 뭔가 여러개의 구성을 했는데 이렇게 하면 스팸함에 메일이 들어가는 걸 막을 수 있을까?
 
-https://www.learndmarc.com/ 해당 사이트에서는 SPF, DKIM, DMARC 구성이 제대로 되었는지 웹사이트에서 하나씩 결과를 확인해볼 수 있다.
+[https://www.learndmarc.com/](https://www.learndmarc.com/) 해당 사이트에서는 SPF, DKIM, DMARC 구성이 제대로 되었는지 웹사이트에서 하나씩 결과를 확인해볼 수 있다.
 
-개발한 기능을 통해 아래와 같은 테스트 이메일 주소로 메일을 보내게 되면.
+개발한 기능을 통해 아래와 같은 테스트 이메일 주소(ld- 로 시작하는 이메일)로 메일을 보내게 되면.
 
 ![learn dmarc 1](/assets/images/learn-dmarc-1.png)
 
@@ -178,11 +182,13 @@ SPF 의 DMARC Alignment 부분이 서로 달라 DMARC 구성에서 SPF 가 FAIL�
 
 **DMARC does not take any specific action regarding message delivery. Generally, this means that the message will be successfully delivered. However, it's important to note that other factors like spam filters can still reject or quarantine a message.**
 
-그리고 이제 시스템에서 보내는 메일이 스팸함이 아닌 받은편지함에 나오게된다.
+그리고 이제 시스템에서 보내는 메일이 스팸함이 아닌 받은편지함에서 확인할 수 있게된다.
 
-이제 기술적으로는 스팸메일에서 벗어났지만 무엇보다 중요한건 메일에 담겨지는 내용에서 고객에게 외면받는다면 이제 손쓸수있는 방법이 없다. 
+이제 기술적으로는 스팸메일에서 벗어났지만 무엇보다 중요한건 메일에 담겨지는 내용에서 고객에게 외면받는다면 이제 손쓸 방법이 없다. 
 
 GPT가 물고온 답변에 **Reputation, Content, Feedback 단어들이 있었다는 걸 잊지말자 - 끝**
+
+
 
 ## 참고자료
 
