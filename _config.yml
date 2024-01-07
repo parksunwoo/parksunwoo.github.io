@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: ko-KR
-title: Read the World Write Code.
+title:  개발자 박선우의 노트
 email: psw261@gmail.com
 description: "A blog about Dev, ML, Code"
 baseurl: # the optional subpath of your site, e.g. "/blog"
@@ -25,7 +25,7 @@ author:
   picture: /assets/images/rsz_replicate-prediction-bjqmfly3h5a65nryq6jxye2zrm.jpg
 twitter_username:
 github_username: parksunwoo
-logo: /assets/icons/1664840650178.png
+logo: /assets/icons/logo_code_elephant.png
 search: true
 search_full_content: true
 search_provider: lunr
@@ -101,4 +101,4 @@ google_analytics: UA-127169212-2
 disqus:
     shortname: parksunwoo
 
-copyright: "© 2016-2023 Read the World Write Code."
+copyright: "© 2016-2024 개발자 박선우의 노트"
