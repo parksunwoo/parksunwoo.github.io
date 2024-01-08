@@ -22,10 +22,10 @@ url: "https://parksunwoo.github.io"
 author:
   name: Sunwoo Park
   twitter:
-  picture: /assets/images/rsz_replicate-prediction-bjqmfly3h5a65nryq6jxye2zrm.jpg
+  picture: /assets/icons/logo_code_cycle.png
 twitter_username:
 github_username: parksunwoo
-logo: /assets/icons/logo_code_elephant.png
+logo: /assets/icons/logo_code_cycle.png
 search: true
 search_full_content: true
 search_provider: lunr
