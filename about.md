@@ -3,12 +3,38 @@ title: "About"
 layout: about
 ---
 
-"Read the world Write code"는 기술블로그이자 프로그래머로서의 성장일기입니다.
+# Welcome to the about page!
+# This code is simple, but there's a lot of meaning behind it.
 
-대학졸업 무렵, 인문학도를 대상으로한 프로그래밍 교육을 이수하고 개발을 시작했습니다.
-처음 배운 언어는 Java였는데 지금은 Python을 주언어로 사용하고 있습니다.
-또 다른 언어로 바뀔수있겠지만 아직은 Python이 재밌고 좋아서 다양한 개발을 해보고 싶습니다.
+import datetime
+import sys
 
-유명한 개발자분들은 꾸준한 블로깅으로 실력을 다지고 다른 사람들에게 좋은 영향력을 미치는 것 같습니다.
-저도 짧은 글들이라도 누군가에게 도움될만한 내용이라면 블로그에 남겨보겠습니다.
-이 글을 읽고 있는 당신도 지금 바로 어떤 글이라도 써보시죠. 
+class DeveloperGrowth:
+    def __init__(self):
+        self.knowledge = 0
+        self.day = datetime.datetime.now().day
+
+    def learn(self, hours):
+        """ If you read and learn code, you become a better developer. """
+        self.knowledge += hours
+        print("You can write better code with what you learned today!")
+
+    def reflect(self):
+        """ It's not what you look like that changes the world, it's what you are. """
+        essence = self.knowledge * self.day
+        print(f"Focusing on essence is the key to growth: {essence}")
+
+    def grow(self):
+        """ If you grow a little bit every day, your growth can be infinite. """
+        future = self.knowledge ** (self.day / 365)
+        print(f"Small growths add up to big changes: {future:.2f}")
+
+# Create a developer growth object
+dev = DeveloperGrowth()
+
+# growth process
+dev.learn(3) # hours learned today
+dev.reflect() # reflect back to the essence
+dev.grow() # walk the path of growth
+
+# I hope this code inspires you!
