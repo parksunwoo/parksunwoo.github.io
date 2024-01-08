@@ -98,7 +98,7 @@ defaults:
 
 google_analytics: UA-127169212-2
 
-disqus:
-    shortname: parksunwoo
+# disqus:
+#     shortname: parksunwoo
 
 copyright: "© 2016-2024 Engineer's Notes"
