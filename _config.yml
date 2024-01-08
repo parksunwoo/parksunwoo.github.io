@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: ko-KR
-title:  개발자 박선우의 노트
+title:  Engineer's Notes
 email: psw261@gmail.com
 description: "A blog about Dev, ML, Code"
 baseurl: # the optional subpath of your site, e.g. "/blog"
@@ -101,4 +101,4 @@ google_analytics: UA-127169212-2
 disqus:
     shortname: parksunwoo
 
-copyright: "© 2016-2024 개발자 박선우의 노트"
+copyright: "© 2016-2024 Engineer's Notes"
