@@ -3,38 +3,10 @@ title: "About"
 layout: about
 ---
 
-# Welcome to the about page!
-# This code is simple, but there's a lot of meaning behind it.
+-. 내가 읽은 책과 글들, 그리고 코드는 사라지지 않고 다시금 나를 만든다
 
-import datetime
-import sys
+-. 나는 왜 개발자가 되고싶었을까 만드는 즐거움을 넘어 제품을 사용하는 사람들에게 유용함을 주고싶다
 
-class DeveloperGrowth:
-    def __init__(self):
-        self.knowledge = 0
-        self.day = datetime.datetime.now().day
+-. 분위기나 상황에 휩쓸리지 않고 문제의 본질을 찾고 그것을 해결하기 위해 정면돌파할수 있다면..
 
-    def learn(self, hours):
-        """ If you read and learn code, you become a better developer. """
-        self.knowledge += hours
-        print("You can write better code with what you learned today!")
-
-    def reflect(self):
-        """ It's not what you look like that changes the world, it's what you are. """
-        essence = self.knowledge * self.day
-        print(f"Focusing on essence is the key to growth: {essence}")
-
-    def grow(self):
-        """ If you grow a little bit every day, your growth can be infinite. """
-        future = self.knowledge ** (self.day / 365)
-        print(f"Small growths add up to big changes: {future:.2f}")
-
-# Create a developer growth object
-dev = DeveloperGrowth()
-
-# growth process
-dev.learn(3) # hours learned today
-dev.reflect() # reflect back to the essence
-dev.grow() # walk the path of growth
-
-# I hope this code inspires you!
+-. 내가 지금 이 일을 하고있는 이유는 무엇인가?
