@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: ko-KR
-title:  Engineer's Notes
+title:  Sunwoo's Notes
 email: psw261@gmail.com
 description: "A blog about Dev, ML, Code"
 baseurl: # the optional subpath of your site, e.g. "/blog"
@@ -22,10 +22,10 @@ url: "https://parksunwoo.github.io"
 author:
   name: Sunwoo Park
   twitter:
-  picture: /assets/icons/logo_code_cycle.png
+  picture: /assets/images/about-bigger-splash.png
 twitter_username:
 github_username: parksunwoo
-logo: /assets/icons/logo_code_cycle.png
+logo: /assets/icons/logo-slow-blogger.png
 search: true
 search_full_content: true
 search_provider: lunr
@@ -101,4 +101,4 @@ google_analytics: UA-127169212-2
 # disqus:
 #     shortname: parksunwoo
 
-copyright: "© 2016-2024 Engineer's Notes"
+copyright: "© 2016-2024 Sunwoo's Notes"
