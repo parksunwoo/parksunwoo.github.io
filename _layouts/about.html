@@ -7,15 +7,18 @@ layout: default
 <main id="main" class="page-content" aria-label="Content">
   <div class="inner">
     <div class="entry-wrap">
-      <aside class="entry-sidebar">
+      <!-- 이미지를 먼저 배치합니다 -->
+      <div class="entry-sidebar"> <!-- 변경: <aside>를 <div>로 변경 -->
         {% include author %}
         {% if author_picture %}
           <img class="author-picture" src="{{ author_picture }}" alt="{{ author_name }}">
         {% endif %}
-      </aside>
+      </div>
+      <!-- 그 다음에 글 내용을 배치합니다 -->
       <div class="entry-content">
         {{ content }}
       </div>
     </div>
   </div>
 </main>
+

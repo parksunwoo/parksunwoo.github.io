@@ -122,8 +122,8 @@ main {
     flex-direction: column;
 
     @include breakpoint($medium) {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -ms-flex-direction: row; /* 변경: 미디엄 브레이크포인트 이상에서는 행 방향으로 변경 */
+      flex-direction: row; /* 변경: 미디엄 브레이크포인트 이상에서는 행 방향으로 변경 */
     }
   }
 
@@ -136,13 +136,8 @@ main {
   }
 
   .entry-sidebar {
-    order: -1;
-    -ms-flex-order: -1;
-
-    @include breakpoint($medium) {
-      order: initial;
-      -ms-flex-order: initial;
-    }
+    order: 1; /* 변경: 순서를 1로 변경 */
+    -ms-flex-order: 1; /* 변경: 순서를 1로 변경 */
 
     .author-picture {
       margin: 0 0 2rem;
@@ -155,6 +150,9 @@ main {
   }
 
   .entry-content {
+    order: 2; /* 추가: 순서를 2로 변경 */
+    -ms-flex-order: 2; /* 추가: 순서를 2로 변경 */
+
     @include breakpoint($medium) {
       -ms-flex: 1;
       flex: 1;
