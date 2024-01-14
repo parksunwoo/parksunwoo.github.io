@@ -3,7 +3,7 @@ title: "About"
 layout: about
 ---
 
-David Hockney. 1967.
+David Hockney – A Bigger Splash, 1967
 
 당신은 살면서 어딘가에 온 몸을 내던져 뛰어든 적이 있는가?
 
