@@ -25,7 +25,7 @@ author:
   picture: /assets/images/about-bigger-splash.png
 twitter_username:
 github_username: parksunwoo
-logo: /assets/icons/logo-slow-blogger.png
+logo: /assets/icons/logo-slow-blogger.webp
 search: true
 search_full_content: true
 search_provider: lunr
