@@ -122,8 +122,8 @@ main {
     flex-direction: column;
 
     @include breakpoint($medium) {
-      -ms-flex-direction: row; /* 변경: 미디엄 브레이크포인트 이상에서는 행 방향으로 변경 */
-      flex-direction: row; /* 변경: 미디엄 브레이크포인트 이상에서는 행 방향으로 변경 */
+      -ms-flex-direction: column; /* 변경: 항상 열 방향 유지 */
+      flex-direction: column; /* 변경: 항상 열 방향 유지 */
     }
   }
 
@@ -131,27 +131,27 @@ main {
     width: 100%;
 
     @include breakpoint($medium) {
-      width: auto;
+      width: 100%; /* 변경: 중간 크기 화면에서도 전체 너비 유지 */
     }
   }
 
   .entry-sidebar {
-    order: 1; /* 변경: 순서를 1로 변경 */
-    -ms-flex-order: 1; /* 변경: 순서를 1로 변경 */
+    order: 1; /* 순서 유지 */
+    -ms-flex-order: 1; /* 순서 유지 */
 
     .author-picture {
       margin: 0 0 2rem;
       border-radius: 2 * $border-radius;
 
       @include breakpoint($medium) {
-        margin: 0 0 0 2rem;
+        margin: 0 0 2rem; /* 변경: 중간 크기 화면에서도 마진 유지 */
       }
     }
   }
 
   .entry-content {
-    order: 2; /* 추가: 순서를 2로 변경 */
-    -ms-flex-order: 2; /* 추가: 순서를 2로 변경 */
+    order: 2; /* 순서 유지 */
+    -ms-flex-order: 2; /* 순서 유지 */
 
     @include breakpoint($medium) {
       -ms-flex: 1;
