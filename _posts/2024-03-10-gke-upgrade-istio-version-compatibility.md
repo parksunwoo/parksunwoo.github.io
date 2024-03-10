@@ -9,7 +9,7 @@ tags:
 last_modified_at: 2024-03-10T23:30:00-00:00
 ---
 
-## Istio 버전 업그레이드 후 발생한 슬랙 에러 해결: 문제의 진짜 원인을 쫓는 모험
+## 문제의 진짜 원인을 쫓는 모험
 
 ---
 
@@ -107,7 +107,7 @@ metadata: {
 
 1.7이 오래된 버전이라 commit 기록을 통해서 해당 정보를 찾을 수 있었다.
 
-![https://github.com/istio/istio.io/commit/778b410748c985b6f7949044ebd51c519109efbb](https://prod-files-secure.s3.us-west-2.amazonaws.com/d31c1c0b-3aec-4ebc-9889-bf72ef09cf61/4c04d7ca-fd36-4f9d-b47a-b227aa0b0b0d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-03-10_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.56.09.png)
+![Istio Commit](/assets/images/istio-commit-1.png)
 
 https://github.com/istio/istio.io/commit/778b410748c985b6f7949044ebd51c519109efbb
 
@@ -115,7 +115,7 @@ istio 1.7 버전에서 호환가능한 gke 버전이 1.22(?) 까지였는데 1.2
 
 istio 1.13 버전으로 업그레이드 하면서 gke 1.23 버전과 호환이 되었다고 생각하는게 맞을까?
 
-![https://github.com/istio/istio.io/commit/f0658ddc6899cc6ab7048b6f1825552f7693de48](https://prod-files-secure.s3.us-west-2.amazonaws.com/d31c1c0b-3aec-4ebc-9889-bf72ef09cf61/d510e272-699d-4a34-87e7-4ddc079fc47a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-03-10_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.57.25.png)
+![Istio Commit2](/assets/images/istio-commit-2.png)
 
 https://github.com/istio/istio.io/commit/f0658ddc6899cc6ab7048b6f1825552f7693de48
 
@@ -192,7 +192,7 @@ istio 1.7 버전에서 호환가능한 gke 버전이 1.22(?) 까지였는데 ...
 그래서... 요약하면 아마도 문제 발생 전에 박선우님의 클러스터의 istio 1.7.4 는 공식 지원되지는 않지만 
 k8s 1.21 까지는 동작하는 상태로 예상해봅니다.
 
-https://mail.google.com/mail/u/0?ui=2&ik=5363f94599&attid=0.1&permmsgid=msg-f:1786324580502379117&th=18ca4cbdda649a6d&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8RkOmhCMLMBYkFxSyIN4thIN7BEBtUQAbBLxt8q2-PLj6jFihqFndlk2X5VeAtAqCRiutXxw5oiTiZlKEFQM2pYqKPZbPcMePEoGfTMArzokM2yexAvct0k5o&disp=emb&realattid=ii_lqlxk7p80
+![Istio Release](/assets/images/istio-releases.png)
 
 그럼 여기서 의문이 들 수 있습니다.
 
