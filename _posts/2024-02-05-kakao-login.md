@@ -1,7 +1,7 @@
 ---
 title: 카카오 로그인 어디까지 해봤니?
 categories:
-  - DEV
+  - Dev
 tags:
   - kakao
   - login
