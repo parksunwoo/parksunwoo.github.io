@@ -151,16 +151,18 @@ kubectl -n kubeflow get all
 
 아래와 같이 접속할수있는 HOSTS 가 나오고 해당 HOSTS 를 복사해 접속한다
 
+
 | NAME           | HOSTS                                                     | ADDRESS       | PORTS | AGE   |
 |----------------|-----------------------------------------------------------|---------------|-------|-------|
 | envoy-ingress  | your-kubeflow-name.endpoints.your-gcp-project.cloud.goog  | 34.102.232.34 | 80    | 5d13h |
+
 
 간단히 구글 이메일 인증화면을 볼 수 있고 위에서 입력한 <EMAIL>로 구글 로그인을 하면 드디어 
 
 Kubeflow 화면으로 이동한다
 
-
 ![kubeflow-cluster-4](/assets/images/kubeflow-cluster-4.png)
+
 
 
 ![kubeflow-cluster-5](/assets/images/kubeflow-cluster-5.png)
@@ -169,15 +171,18 @@ Kubeflow 화면으로 이동한다
 
 아래와 같이 접속제한 화면을 확인할 수 있다.
 
+
 ![kubeflow-cluster-6](/assets/images/kubeflow-cluster-6.png)
 
 kubeflow 에서 mnist 예제를 수행해보면 
 
 Notebook 메뉴에서 name 을 입력하고 노트북을 생성하면 
 
+
 ![kubeflow-1](/assets/images/kubeflow-1.png)
 
 Activity에서 workspace 생성 및 도커이미지를 pulling 하는 로그를 확인할 수 있다
+
 
 ![kubeflow-2](/assets/images/kubeflow-2.png)
 
@@ -185,10 +190,14 @@ GKE 화면 kubeflow-dev 클러스터에서도 default 노드풀과는 별개의 
 
 노트북 생성시 입력한 리소스 자원에 맞춰 노드를 생성하는 것을 확인할 수 있다
 
+
 ![kubeflow-3](/assets/images/kubeflow-3.png)
 
 셋업 작업이 완료되면 이전 Notebooks 메뉴에서 신규생성된 notebook을 확인하고 오른쪽 CONNECT 버튼이 활성화 됨을 확인할 수 있다.
 
+
 ![kubeflow-4](/assets/images/kubeflow-4.png)
+
+
 
 ![kubeflow-5](/assets/images/kubeflow-5.png)
