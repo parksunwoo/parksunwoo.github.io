@@ -151,14 +151,17 @@ kubectl -n kubeflow get all
 
 아래와 같이 접속할수있는 HOSTS 가 나오고 해당 HOSTS 를 복사해 접속한다
 
-NAME            HOSTS                                                      ADDRESS         PORTS   AGE
-envoy-ingress   your-kubeflow-name.endpoints.your-gcp-project.cloud.goog   34.102.232.34   80      5d13h
+| NAME           | HOSTS                                                     | ADDRESS       | PORTS | AGE   |
+|----------------|-----------------------------------------------------------|---------------|-------|-------|
+| envoy-ingress  | your-kubeflow-name.endpoints.your-gcp-project.cloud.goog  | 34.102.232.34 | 80    | 5d13h |
 
 간단히 구글 이메일 인증화면을 볼 수 있고 위에서 입력한 <EMAIL>로 구글 로그인을 하면 드디어 
 
 Kubeflow 화면으로 이동한다
 
+
 ![kubeflow-cluster-4](/assets/images/kubeflow-cluster-4.png)
+
 
 ![kubeflow-cluster-5](/assets/images/kubeflow-cluster-5.png)
 
