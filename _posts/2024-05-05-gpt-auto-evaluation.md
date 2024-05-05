@@ -1,5 +1,5 @@
 ---
-title: GPT를 활용한 프로젝트 자동 채점 시스템 개발기 - 도전과 해결 과정
+title: GPT를 활용한 프로젝트 자동 채점 기능 개발기 - 도전과 해결 과정
 categories:
   - Dev
 tags:
@@ -10,7 +10,7 @@ tags:
 last_modified_at: 2024-05-05T22:21:00-00:00
 ---
 
-LMS (학습관리플랫폼) 에서 중요한 부분인 프로젝트 평가의 흐름에 대해 설명해보면
+학습관리플랫폼 에서 중요한 부분인 프로젝트 평가의 흐름에 대해 설명해보면
 
 학생들이 프로젝트 과제를 수행하고 나서 github URL로 프로젝트 결과물을 제출 →
 
@@ -22,17 +22,21 @@ github 상의 쥬피터 노트북 내용을 확인 →
 
 프로젝트 마다 정해져 있는 평가항목을 확인하여 점수와 피드백을 남김. 
 
-해당 부분에서 GPT를 활용해 생산성을 높일수있지않을까 고민하였고
+
+
+일련의 과정에서 GPT를 활용해 생산성을 높일수있지않을까 고민하였고
 
 프로젝트 github URL에 접속했을때 확인가능한 code data & 과정별 평가기준 을
 
-프롬프트에 입력하면 평가기준별 점수를 매기고 또 제출한 프로젝트에 대해 코멘트를 생성할수있지 않을까? 라는 
+프롬프트에 입력하면 평가기준별 점수를 매기고 또 제출한 프로젝트에 대해 코멘트를 생성할 수 있지 않을까?  
 
-결론에 이르렀음
+생각해보게 되었습니다.
 
-간단히 poc 를 진행해보았을떄 생각보다 성능이 나쁘지않았고 GPT를 이용한 자동채점!! 기능 개발을 시작하게 되었습니다. 아래는 어떠한 과정을 거쳐 기능을 개발하였으며 또 발생도중 생긴 이슈들을 어떻게 해결했는지에 대해 설명하였습니다.
 
-먼저 기존 학습데이터를 분석하였을때 전체 프로젝트 중 유형에 따라
+간단히 poc 를 진행해보았을떄 생각보다 성능이 나쁘지 않았고 그렇게 GPT를 이용한 자동채점! 기능 개발을 시작하게 되었습니다. 
+이제부터 어떠한 과정을 거쳐 해당 기능을 개발하였으며 또 진행중 생긴 이슈들을 어떻게 해결했는지에 대해 설명해보겠습니다.
+
+먼저 기존 학습데이터를 분석하였을때 프로젝트는 유형에 따라
 
 A(raw 코드), B(기타 블로그 URL), C(github URL) 으로 나뉘었고
 
@@ -40,9 +44,9 @@ A(raw 코드), B(기타 블로그 URL), C(github URL) 으로 나뉘었고
 
 어느정도 포맷이 정해져있는 유형에서 자동채점이 가능하다고 판단되었고, 프로젝트 유형이 A와 C인 경우에 자동채점을 진행하는 것으로 정리했습니다.
 
-A  유형의 경우 아래와 같은 json 형태의 데이터
+A  유형의 경우 아래와 같은 json 형태의 데이터 입니다.
 
-```jsx
+```json
 [
 	{
 	"code": "import tensorflow as tf\r\nimport numpy as np\r\n\r\nprint(tf.__version__)\r\nprint(np.__version__)", 
@@ -62,23 +66,24 @@ A  유형의 경우 아래와 같은 json 형태의 데이터
 ]
 ```
 
-C 유형의 경우 아래 예시와 같은 jupyter notebook 형태
+C 유형의 경우 아래 예시와 같은 jupyter notebook 형태입니다.
 
-https://github.com/aws/amazon-sagemaker-examples/blob/main/sagemaker-geospatial/processing-geospatial-ndvi/geospatial-processing-ndvi-intro.ipynb
-하
+![jupyter notebook 예시](/assets/images/jupyter_nodetbook_example.png)
 
 큰 구조는 학생이 프로젝트를 제출할때에 위 프로젝트 유형(A, C)에 해당하는지 체크하여
 
 해당 조건을 만족하면 gpt 자동채점 task를 celery 를 사용하여 비동기로 호출하고
 
-자동채점 결과는 별도 DB(RubricGptEvaluation, GptEvaluation) 에 저장하는 구조임.
+자동채점 결과는 별도 DB(RubricGptEvaluation, GptEvaluation) 에 저장하는 구조입니다.
+
+![자동채점 순서도](/assets/images/gpt-auto-eval-diagram.png)
 
 이후 코치가 프로젝트 평가화면에 접속했을때 자동채점 결과가 있다면 해당 정보를 표기하여
 
 평가를 할때에 해당 정보를 참고하여 평가를 할수 있게 하였습니다.
 
-또한 해당 화면에는 잘못 제출된 프로젝트 URL을 코치가 직접 수정하거나 
-자동채점을 다시 수행해보고 싶다는 요구사항을 반영하여 직접 gpt 자동채점을 호출하여 결과를 확인할수있는 버튼을 추가하였습니다.
+또한 해당 화면에는 잘못 제출된 프로젝트 URL을 코치가 직접 수정할수 있고
+또 갱신된 URL 기준으로 자동채점을 다시 수행가능해야 한다는 요구사항을 반영하여 직접 gpt 자동채점을 호출하여 결과를 확인할 수 있는 버튼을 추가하였습니다.
 
 ```python
 # task.py
@@ -86,9 +91,9 @@ https://github.com/aws/amazon-sagemaker-examples/blob/main/sagemaker-geospatial/
 def 프로젝트_제출함수 ():
 ...
 
-		# GPT 자동 채점 실행
-		if submit_type in ["projA", "projC"]:
-		    get_gpt_evaluation_feedback.delay(node_progrs_id, rubric_id_list, submit_type, submit_data)
+# GPT 자동 채점 실행
+if submit_type in ["projA", "projC"]:
+    get_gpt_evaluation_feedback.delay(node_progrs_id, rubric_id_list, submit_type, submit_data)
 		
 ...            
 ```
@@ -101,67 +106,42 @@ get_gpt_evaluation_feedback() 함수는
 
 자동채점을 위한 학습정보 id, 평가기준 id, 프로젝트 유형, 프로젝트 data 를 인자로 합니다.
 
+
 ```python
 @shared_task
 def get_gpt_evaluation_feedback(node_progrs_id, rubric_id_list, submit_type, submission_data):
-    processed_data = process_submission(submit_type, submission_data)
+    processed_data = process_submission(submit_type, submission_data) # 1
     if not processed_data:
         logger.warning(f"No processed data for NodeProgrs ID: {node_progrs_id}")
         return
 
     # Perform GPT evaluation
     try:
-        rubric_info = get_rubric_details(rubric_id_list)
-        response_data = evaluate_with_gpt(node_progrs_id, rubric_info, processed_data)
-        save_gpt_evaluation(node_progrs_id, rubric_id_list, response_data)
+        rubric_info = get_rubric_details(rubric_id_list) # 2
+        response_data = evaluate_with_gpt(node_progrs_id, rubric_info, processed_data) # 3
+        save_gpt_evaluation(node_progrs_id, rubric_id_list, response_data) # 4
         logger.info(f"GPT evaluation feedback recorded for NodeProgrs ID: {node_progrs_id}")
     except Exception as e:
         logger.error(f"Error processing GPT evaluation feedback: {e}")
 ```
 
-process_submission() 메서드에서는
+위 코드를 순서대로 자세히 살펴보면, #1 process_submission() 메서드에서는
 
 프로젝트 유형에 따라 code와 github URL을 구분하여 github URL인 경우 파일의 확장자가 ipynb 쥬피터 노트북 인지 체크하고 
-https://raw.githubusercontent.com/ 로 시작하는 github의 raw data를 가져올수있는 주소로 변환한 이후
+"https://raw.githubusercontent.com/" 로 시작하는 github raw data를 가져올 수 있는 주소로 변환한 이후
 
 parsing 하여 code가 담긴 code cell 부분만 가져오도록 처리하였습니다.
 
-get_rubric_details() 메서드에서는
+
+#2 get_rubric_details() 메서드에서는
 
 평가기준 id를 가지고 평가기준에 대한 상세정보를 조회하여 자동채점을 진행 하기 위한 data 를 셋업하였습니다.
 
-evaluate_with_gpt() -call_chat_gpt_api()-  메서드에서는
+#3 evaluate_with_gpt() -call_chat_gpt_api()-  메서드에서는
 
-준비되어있는 자료를 종합하여 gpt api를 호출, 자동채점 응답을 출력합니다.
+주어진 자료들을 종합하여 gpt api를 호출, 자동채점 응답을 출력합니다.
 
 call_chat_gpt_api() 메서드를 보면 (아래의 코드를 참고, evaluate_with_gpt() 메서드 내부를 확인하면 call_chat_gpt_api()를 호출하게 되어있고 gpt api 를 호출하는 관련로직은 call_chat_gpt_api() 메서드에 작성되어 있음)
-
-summary_data() 를 조회하는 부분이 나오는데 초기 기능 개발시 설계했던 것은 
-
-평가 데이터가 어느정도 쌓였을때
-
-점수별 참고데이터를 가져와 자동채점에 반영하려고 하였습니다.
-
-예를 들면
-
-0점을 받은 평가데이터와 코치의 피드백… X n개
-
-1점을 받은 평가데이터와 코치의 피드백… X n개
-
-2점을 받은 평가데이터와 코치의 피드백… X n개
-
-3점을 받은 평가데이터와 코치의 피드백… X n개
-
-+
-
-현재 학생이 제출한 프로젝트 데이터 
-
-+
-
-평가기준
-
-과 같이 프롬프트를 구성하여 gpt의 응답을 좀더 강건하게 하고싶었습니다. 
-이 내용은 이후 RAG 부분에서 어떻게 진행해 볼 수 있을지 자세히 이야기해보겠습니다.
 
 gpt를 이용해 자동채점을 하기 위해선 적절한 프롬프트를 구성해야합니다.
 
@@ -194,7 +174,7 @@ messages = [
     ]
 ```
 
-아래에서 response_format을 json 형태로 따로 지정하긴 했지만 프롬프트 내에서도 출력 포맷을 다시 한번 json으로 명시적으로 지정하고 각 평가기준(루브릭)에 대해서 개별 점수와 의견을 채점하고
+아래에서 client.chat.completions.create() 에서 response_format을 json 형태로 따로 지정하긴 했지만 프롬프트 내에서도 출력 포맷을 다시 한번 json으로 명시적으로 지정하고 각 평가기준(루브릭)에 대해서 개별 점수와 의견을 채점하고
 
 또 프로젝트 전체에 대한 의견을 제공할 것을 이야기했습니다.
 
@@ -235,6 +215,34 @@ response = client.chat.completions.create(
 각 평가기준의 점수범위를 0점 또는 1점이라고 명시하였습니다. 그렇지 않고 1점까지 가능하다고 하였을때는 소수점을 포함한 값을 출력하기도 하여 0점 또는 1점이라고 명시적으로 이야기하였습니다.
 
 프로젝트 전체에 대한 평가의견 부분에서는 학생이 느끼기에 딱딱하지 않고 친근하게 느낄수있게 어조와 담길 내용의 목표를 지정하였습니다.
+
+
+추가로 summary_data() 를 조회하는 부분이 나오는데 초기 기능 개발시 설계했던 것은 
+
+평가 데이터가 어느정도 쌓였을때
+
+점수별 이전 데이터를 가져와 자동채점에 반영하려고 하였습니다.
+
+예를 들면
+
+0점을 받은 평가데이터와 코치의 피드백… X n개
+
+1점을 받은 평가데이터와 코치의 피드백… X n개
+
+2점을 받은 평가데이터와 코치의 피드백… X n개
+
+3점을 받은 평가데이터와 코치의 피드백… X n개
+
++
+
+현재 학생이 제출한 프로젝트 데이터 
+
++
+
+평가기준
+
+과 같이 프롬프트를 구성하여 gpt의 응답을 좀더 강건하게 하고싶었습니다. 
+이 내용은 이후 RAG 부분에서 어떻게 진행해 볼 수 있을지 더 이야기해보겠습니다.
 
 아래는 call_chat_gpt_api() 함수의 전체 코드입니다.
 
@@ -315,7 +323,7 @@ def call_chat_gpt_api(node_progrs_id, rubric_info, processed_data):
         return None
 ```
 
-이어지는 save_gpt_evaluation() 메서드에서는
+이어지는 #4 save_gpt_evaluation() 메서드에서는
 
 자동채점된 결과를 별도 생성한 테이블 RubricGptEvaluation, GptEvaluation 에 저장합니다.
 
@@ -323,27 +331,29 @@ RubricGptEvaluation 에는 평가 id별  평가기준 점수와 평가의견을 
 
 GptEvaluation 에는 학습정보 id 별 전체 평가의견을 저장하였습니다. 
 
-코치가 프로젝트 평가화면에 접속하였을때 자동채점된 결과가 있는 경우 자동채점 결과를 확인할수 있게 하였습니다.
+코치가 프로젝트 평가화면에 접속하였을때 자동채점된 결과가 있는 경우에 자동채점 결과를 확인할 수 있게 하였습니다.
 
 또한 자동채점 대상이지만 자동채점시 에러가 발생하여 자동채점 결과가 없는 경우 
 
 또는 사용자의 오입력으로 다시 채점해야하는 경우와 같은 예외 경우를 고려하여
 
-자동채점을 진행하기 위해 직접 call_chat_gpt_api()를 호출하는 api를 따로 구현하였습니다.
+자동채점을 직접 진행하기 위해 call_chat_gpt_api()를 호출하는 api를 따로 구현하였습니다.
 
 ![자동채점 결과가 확인가능한 프로젝트 평가화면 예시](/assets/images/auto_evaluation_screen.png)
 
-코치가 평가화면에 접속하면 (위 예시화면) 왼쪽에는 gpt 자동채점 결과를 평가기준별로 
+코치가 평가화면에 접속하면 (위 예시화면) 왼쪽에는 평가 기준별 gpt 자동채점 결과,  
 
-또 프로젝트 전체에 대한 평가의견을 확인할수 있으며 
+프로젝트 전체에 대한 평가의견 순서로 확인할수 있으며 
 
 해당 데이터들은 실제 평가에 활용될 수 있을뿐 실제 평가결과에 바로 적용되지 않습니다.
 
-자동채점 결과를 확인하고 잘못된 부분이 있다면 수정후 평가를 진행할 필요가 있다고 생각되었끼 때문입니다.
+자동채점 결과를 확인하고 잘못된 부분이 있다면 수정후 평가를 진행할 필요가 있다고 생각되었기 때문입니다.
 
 코치는 해당 자동채점 결과 데이터를 활용할 수 있고 본인이 직접 학생의 프로젝트 평가의견을 남길수있습니다.
 
 또한 자동채점 결과가 없는 경우 Github URL을 입력하고 우측 상단의 “GPT 채점하기”버튼을 클릭하여 자동채점을 직접 요청할수 있습니다.
+
+
 
 샘플링한 gpt 자동채점 결과를 확인해보면 평가기준 별 스코어와 평가의견은 아래와 같습니다. 
 
@@ -355,7 +365,10 @@ GptEvaluation 에는 학습정보 id 별 전체 평가의견을 저장하였습�
 
 1 점/	데이터 셋 구성 파악 및 데이터 이해: 학습자께서 제출하신 코드를 살펴보았을 때, ‘digits’ 데이터셋에 대한 feature 및 label의 선정을 위해 기본적인 데이터 분석을 수행하신 것을 확인할 수 있습니다. 특히, `**data**.head()`, `target`, `target_names`, `value_counts()` 및 `**describe**()` 메서드를 사용하여 데이터셋의 구성을 파악함으로써 데이터를 충분히 이해하려는 노력이 엿보입니다. 📊
 
-아래는 프로젝트 전체에 대한 평가의견입니다.
+
+
+아래는 프로젝트 전체에 대한 gpt 자동채점 평가의견입니다.
+
 
 안녕하세요! 프로젝트를 열심히 수행해주셔서 감사합니다.
 
@@ -375,15 +388,17 @@ GptEvaluation 에는 학습정보 id 별 전체 평가의견을 저장하였습�
 
 힘내세요! 💪
 
+
+
 자동채점 기능 개발은 무사히 완료되었지만
 
 실제 운영환경에 반영하고 나서 확인한 이슈들이 있었습니다.
 
 - context 길이 초과로 에러 발생
 
-먼저 아주 드물게 발생하긴 하지만 학생이 제출한 github url 상의 code 데이터가 길어 
+먼저 아주 드물게 발생하긴 했지만 제출한 github url 상의 code 데이터가 길어 
 
-gpt api를 호출시 context 길이 초과로 에러가 발생하고 자동채점이 진행되지 않는 경우가 발생했습니다.
+gpt api를 호출시 context 길이 초과로 에러가 발생하고 이후에 자동채점이 진행되지 않는 경우가 발생했습니다.
 
 예를 들면 아래와 같은 에러가 발생하였는데,
 
@@ -399,33 +414,39 @@ gpt api를 호출시 context 길이 초과로 에러가 발생하고 자동채�
 
 예를 들어 16385 token을 초과하는 경우 메시지를 16385 token 단위로 분할한 다음 
 
-각각의 결과를 확인해 종합하는 형식이 될 것입니다.
+각각의 결과를 확인해 종합하는 방법이 있습니다.
+
 
 2가지 방법중 좀 더 적합한 것은 분할해서 전송한 후 각각의 결과값을 다시 종합하는 2번 방법이었으나
 
-마지막에 수정후 실제 적용한 방법은 다른 모델을 사용 하는 것이었습니다.
+마지막에 실제 적용한 방법은 다른 모델을 사용 하는 것이었습니다.
 
-json 모드를 사용해야하는 조건이 있었기에 해당 기능을 제공하는 모델중 선택을 해야했으며.
+
+json 모드를 사용해야하는 조건이 있었기에 해당 기능을 제공하는 모델중에 선택을 했으며
 
 최초 모델은  “gpt-3.5-turbo-1106” 를 사용하였고 
 
 CONTEXT WINDOW가 16,385 tokens이고 training data 시점이 2021년 9월이었습니다.
 
-이후 “gpt-4-1106-preview” 모델 경우,
+이후 “gpt-4-1106-preview” 모델의 경우
 
 CONTEXT WINDOW가 128,000 tokens이고 training data 시점도 2023년 4월로 확연한 차이를 보였다.
 
 모델 업데이트 시점 이후에는 해당 에러는 따로 발생하지않았습니다.
 
+
+
 - RAG (Retrieval-Augmented Generation)
 
-앞에서도 잠깐 언급하였지만 평가 데이터가 어느정도 쌓였을때를 가정하고 새로운 프로젝트 자동채점시
+앞에서도 잠깐 언급하였지만 평가 데이터가 어느정도 쌓였다면 새로운 프로젝트 건에 대해 자동채점시
 
-기 평가되어 참고할 데이터가 있는지 조회하는 부분이 있었습니다.
+이미 평가되어 참고할 데이터가 있는지 조회하는 부분이 있었습니다.
 
 이미 쌓여있는 자동채점 데이터를 신규 채점건에 반영하는 것은 
 
 평가 일관성을 유지하고 평가 품질의 향상을 기대할수있으며 평가 시간을 단축할 수 있다는 이점이 있습니다.
+
+
 
 향후 RAG을 구성하게 된다면 아래와 같은 방법으로 진행해볼 수 있을 것입니다.
 
@@ -440,6 +461,8 @@ CONTEXT WINDOW가 128,000 tokens이고 training data 시점도 2023년 4월로 �
 -.검색된 유사 과제의 채점결과와 피드백을 현재 과제의 자동채점에 활용
 
 ![그림 2.LLM과 함께 RAG를 사용하는 개념적 흐름 -출처: https://aws.amazon.com/ko/what-is/retrieval-augmented-generation/](/assets/images/jumpstart-fm-rag.jpg)
+그림 2.LLM과 함께 RAG를 사용하는 개념적 흐름 -출처: https://aws.amazon.com/ko/what-is/retrieval-augmented-generation/
+
 
 
 - 자동채점을 사용자가 직접 실행시 결과값을 스트리밍으로 전달할수 있을까?
@@ -513,3 +536,5 @@ collected_chunks 리스트에 chunk 를 별도 저장합니다.
 return StreamingHttpResponse(generate_response(), content_type='text/plain')
 
 StreamingHttpResponse 에는 앞서 선언한 generate_response() 제너레이터를 응답의 콘텐츠로 전달합니다.
+
+위와 같이 코드를 작성하면 gpt 화면에서처럼 응답값을 일정단위로 전달받아 화면에서 확인할수 있습니다.
